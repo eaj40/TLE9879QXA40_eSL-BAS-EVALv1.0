@@ -1,0 +1,2189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
+
+  <SchemaVersion>2.1</SchemaVersion>
+
+  <Header>### uVision Project, (C) Keil Software</Header>
+
+  <Targets>
+    <Target>
+      <TargetName>Target 1</TargetName>
+      <ToolsetNumber>0x4</ToolsetNumber>
+      <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>6190000::V6.19::ARMCLANG</pCCUsed>
+      <uAC6>1</uAC6>
+      <TargetOption>
+        <TargetCommonOption>
+          <Device>TLE9879QXA40</Device>
+          <Vendor>Infineon</Vendor>
+          <PackID>Infineon.TLE987x_DFP.1.5.0</PackID>
+          <PackURL>https://www.infineon.com/cmsis_packs/TLE987x/</PackURL>
+          <Cpu>IRAM(0x18000018,0x17E8) IRAM2(0x18000000,0x10) IROM(0x11000000,0x1EFFC) IROM2(0x1101EFFC,0x1004) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
+          <FlashUtilSpec></FlashUtilSpec>
+          <StartupFile></StartupFile>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD18000018 -FC1000 -FN2 -FF0TLE9879 -FS011000000 -FL01F000 -FF1TLE9879_EEP -FS11101F000 -FL11000 -FP0($$Device:TLE9879QXA40$Flash\TLE9879.FLM) -FP1($$Device:TLE9879QXA40$Flash\TLE9879_EEP.FLM))</FlashDriverDll>
+          <DeviceId>0</DeviceId>
+          <RegisterFile>$$Device:TLE9879QXA40$Device\Include\tle987x.h</RegisterFile>
+          <MemoryEnv></MemoryEnv>
+          <Cmp></Cmp>
+          <Asm></Asm>
+          <Linker></Linker>
+          <OHString></OHString>
+          <InfinionOptionDll></InfinionOptionDll>
+          <SLE66CMisc></SLE66CMisc>
+          <SLE66AMisc></SLE66AMisc>
+          <SLE66LinkerMisc></SLE66LinkerMisc>
+          <SFDFile>$$Device:TLE9879QXA40$SVD\TLE987x.svd</SFDFile>
+          <bCustSvd>0</bCustSvd>
+          <UseEnv>0</UseEnv>
+          <BinPath></BinPath>
+          <IncludePath></IncludePath>
+          <LibPath></LibPath>
+          <RegisterFilePath></RegisterFilePath>
+          <DBRegisterFilePath></DBRegisterFilePath>
+          <TargetStatus>
+            <Error>0</Error>
+            <ExitCodeStop>0</ExitCodeStop>
+            <ButtonStop>0</ButtonStop>
+            <NotGenerated>0</NotGenerated>
+            <InvalidFlash>1</InvalidFlash>
+          </TargetStatus>
+          <OutputDirectory>.\Objects\</OutputDirectory>
+          <OutputName>FOC</OutputName>
+          <CreateExecutable>1</CreateExecutable>
+          <CreateLib>0</CreateLib>
+          <CreateHexFile>0</CreateHexFile>
+          <DebugInformation>1</DebugInformation>
+          <BrowseInformation>1</BrowseInformation>
+          <ListingPath>.\Listings\</ListingPath>
+          <HexFormatSelection>1</HexFormatSelection>
+          <Merge32K>0</Merge32K>
+          <CreateBatchFile>0</CreateBatchFile>
+          <BeforeCompile>
+            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg2>0</RunUserProg2>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
+            <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
+            <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopU1X>0</nStopU1X>
+            <nStopU2X>0</nStopU2X>
+          </BeforeCompile>
+          <BeforeMake>
+            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg2>0</RunUserProg2>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
+            <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
+            <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopB1X>0</nStopB1X>
+            <nStopB2X>0</nStopB2X>
+          </BeforeMake>
+          <AfterMake>
+            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg2>0</RunUserProg2>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
+            <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
+            <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopA1X>0</nStopA1X>
+            <nStopA2X>0</nStopA2X>
+          </AfterMake>
+          <SelectedForBatchBuild>0</SelectedForBatchBuild>
+          <SVCSIdString></SVCSIdString>
+        </TargetCommonOption>
+        <CommonProperty>
+          <UseCPPCompiler>0</UseCPPCompiler>
+          <RVCTCodeConst>0</RVCTCodeConst>
+          <RVCTZI>0</RVCTZI>
+          <RVCTOtherData>0</RVCTOtherData>
+          <ModuleSelection>0</ModuleSelection>
+          <IncludeInBuild>1</IncludeInBuild>
+          <AlwaysBuild>0</AlwaysBuild>
+          <GenerateAssemblyFile>0</GenerateAssemblyFile>
+          <AssembleAssemblyFile>0</AssembleAssemblyFile>
+          <PublicsOnly>0</PublicsOnly>
+          <StopOnExitCode>3</StopOnExitCode>
+          <CustomArgument></CustomArgument>
+          <IncludeLibraryModules></IncludeLibraryModules>
+          <ComprImg>1</ComprImg>
+        </CommonProperty>
+        <DllOption>
+          <SimDllName>SARMCM3.DLL</SimDllName>
+          <SimDllArguments> -REMAP</SimDllArguments>
+          <SimDlgDll>DCM.DLL</SimDlgDll>
+          <SimDlgDllArguments>-pCM3</SimDlgDllArguments>
+          <TargetDllName>SARMCM3.DLL</TargetDllName>
+          <TargetDllArguments></TargetDllArguments>
+          <TargetDlgDll>TCM.DLL</TargetDlgDll>
+          <TargetDlgDllArguments>-pCM3</TargetDlgDllArguments>
+        </DllOption>
+        <DebugOption>
+          <OPTHX>
+            <HexSelection>1</HexSelection>
+            <HexRangeLowAddress>0</HexRangeLowAddress>
+            <HexRangeHighAddress>0</HexRangeHighAddress>
+            <HexOffset>0</HexOffset>
+            <Oh166RecLen>16</Oh166RecLen>
+          </OPTHX>
+        </DebugOption>
+        <Utilities>
+          <Flash1>
+            <UseTargetDll>1</UseTargetDll>
+            <UseExternalTool>0</UseExternalTool>
+            <RunIndependent>0</RunIndependent>
+            <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
+            <Capability>1</Capability>
+            <DriverSelection>-1</DriverSelection>
+          </Flash1>
+          <bUseTDR>1</bUseTDR>
+          <Flash2>BIN\UL2CM3.DLL</Flash2>
+          <Flash3></Flash3>
+          <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
+          <FcArmLst>0</FcArmLst>
+        </Utilities>
+        <TargetArmAds>
+          <ArmAdsMisc>
+            <GenerateListings>0</GenerateListings>
+            <asHll>1</asHll>
+            <asAsm>1</asAsm>
+            <asMacX>1</asMacX>
+            <asSyms>1</asSyms>
+            <asFals>1</asFals>
+            <asDbgD>1</asDbgD>
+            <asForm>1</asForm>
+            <ldLst>0</ldLst>
+            <ldmm>1</ldmm>
+            <ldXref>1</ldXref>
+            <BigEnd>0</BigEnd>
+            <AdsALst>1</AdsALst>
+            <AdsACrf>1</AdsACrf>
+            <AdsANop>0</AdsANop>
+            <AdsANot>0</AdsANot>
+            <AdsLLst>1</AdsLLst>
+            <AdsLmap>1</AdsLmap>
+            <AdsLcgr>1</AdsLcgr>
+            <AdsLsym>1</AdsLsym>
+            <AdsLszi>1</AdsLszi>
+            <AdsLtoi>1</AdsLtoi>
+            <AdsLsun>1</AdsLsun>
+            <AdsLven>1</AdsLven>
+            <AdsLsxf>1</AdsLsxf>
+            <RvctClst>0</RvctClst>
+            <GenPPlst>0</GenPPlst>
+            <AdsCpuType>"Cortex-M3"</AdsCpuType>
+            <RvctDeviceName></RvctDeviceName>
+            <mOS>0</mOS>
+            <uocRom>0</uocRom>
+            <uocRam>0</uocRam>
+            <hadIROM>1</hadIROM>
+            <hadIRAM>1</hadIRAM>
+            <hadXRAM>0</hadXRAM>
+            <uocXRam>0</uocXRam>
+            <RvdsVP>0</RvdsVP>
+            <RvdsMve>0</RvdsMve>
+            <RvdsCdeCp>0</RvdsCdeCp>
+            <nBranchProt>0</nBranchProt>
+            <hadIRAM2>1</hadIRAM2>
+            <hadIROM2>1</hadIROM2>
+            <StupSel>8</StupSel>
+            <useUlib>1</useUlib>
+            <EndSel>0</EndSel>
+            <uLtcg>0</uLtcg>
+            <nSecure>0</nSecure>
+            <RoSelD>3</RoSelD>
+            <RwSelD>4</RwSelD>
+            <CodeSel>0</CodeSel>
+            <OptFeed>0</OptFeed>
+            <NoZi1>0</NoZi1>
+            <NoZi2>0</NoZi2>
+            <NoZi3>0</NoZi3>
+            <NoZi4>0</NoZi4>
+            <NoZi5>0</NoZi5>
+            <Ro1Chk>0</Ro1Chk>
+            <Ro2Chk>0</Ro2Chk>
+            <Ro3Chk>0</Ro3Chk>
+            <Ir1Chk>1</Ir1Chk>
+            <Ir2Chk>1</Ir2Chk>
+            <Ra1Chk>0</Ra1Chk>
+            <Ra2Chk>0</Ra2Chk>
+            <Ra3Chk>0</Ra3Chk>
+            <Im1Chk>1</Im1Chk>
+            <Im2Chk>1</Im2Chk>
+            <OnChipMemories>
+              <Ocm1>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </Ocm1>
+              <Ocm2>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </Ocm2>
+              <Ocm3>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </Ocm3>
+              <Ocm4>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </Ocm4>
+              <Ocm5>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </Ocm5>
+              <Ocm6>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </Ocm6>
+              <IRAM>
+                <Type>0</Type>
+                <StartAddress>0x18000018</StartAddress>
+                <Size>0x17e8</Size>
+              </IRAM>
+              <IROM>
+                <Type>1</Type>
+                <StartAddress>0x11000000</StartAddress>
+                <Size>0x1effc</Size>
+              </IROM>
+              <XRAM>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </XRAM>
+              <OCR_RVCT1>
+                <Type>1</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT1>
+              <OCR_RVCT2>
+                <Type>1</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT2>
+              <OCR_RVCT3>
+                <Type>1</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT3>
+              <OCR_RVCT4>
+                <Type>1</Type>
+                <StartAddress>0x11000000</StartAddress>
+                <Size>0x1effc</Size>
+              </OCR_RVCT4>
+              <OCR_RVCT5>
+                <Type>1</Type>
+                <StartAddress>0x1101effc</StartAddress>
+                <Size>0x1004</Size>
+              </OCR_RVCT5>
+              <OCR_RVCT6>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT6>
+              <OCR_RVCT7>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT7>
+              <OCR_RVCT8>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT8>
+              <OCR_RVCT9>
+                <Type>0</Type>
+                <StartAddress>0x18000018</StartAddress>
+                <Size>0x17e8</Size>
+              </OCR_RVCT9>
+              <OCR_RVCT10>
+                <Type>0</Type>
+                <StartAddress>0x18000000</StartAddress>
+                <Size>0x10</Size>
+              </OCR_RVCT10>
+            </OnChipMemories>
+            <RvctStartVector></RvctStartVector>
+          </ArmAdsMisc>
+          <Cads>
+            <interw>1</interw>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
+            <SplitLS>0</SplitLS>
+            <OneElfS>1</OneElfS>
+            <Strict>0</Strict>
+            <EnumInt>0</EnumInt>
+            <PlainCh>0</PlainCh>
+            <Ropi>0</Ropi>
+            <Rwpi>0</Rwpi>
+            <wLevel>3</wLevel>
+            <uThumb>0</uThumb>
+            <uSurpInc>0</uSurpInc>
+            <uC99>1</uC99>
+            <uGnu>1</uGnu>
+            <useXO>0</useXO>
+            <v6Lang>3</v6Lang>
+            <v6LangP>3</v6LangP>
+            <vShortEn>1</vShortEn>
+            <vShortWch>1</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
+            <VariousControls>
+              <MiscControls></MiscControls>
+              <Define></Define>
+              <Undefine></Undefine>
+              <IncludePath>.\MHA\include;.\Math\include;.\MAS\include;.\MS\include;.\MDA\include;.\Probescope\include;.\util</IncludePath>
+            </VariousControls>
+          </Cads>
+          <Aads>
+            <interw>1</interw>
+            <Ropi>0</Ropi>
+            <Rwpi>0</Rwpi>
+            <thumb>0</thumb>
+            <SplitLS>0</SplitLS>
+            <SwStkChk>0</SwStkChk>
+            <NoWarn>0</NoWarn>
+            <uSurpInc>0</uSurpInc>
+            <useXO>0</useXO>
+            <ClangAsOpt>4</ClangAsOpt>
+            <VariousControls>
+              <MiscControls></MiscControls>
+              <Define></Define>
+              <Undefine></Undefine>
+              <IncludePath></IncludePath>
+            </VariousControls>
+          </Aads>
+          <LDads>
+            <umfTarg>0</umfTarg>
+            <Ropi>0</Ropi>
+            <Rwpi>0</Rwpi>
+            <noStLib>0</noStLib>
+            <RepFail>1</RepFail>
+            <useFile>0</useFile>
+            <TextAddressRange>0x11000000</TextAddressRange>
+            <DataAddressRange>0x18000018</DataAddressRange>
+            <pXoBase></pXoBase>
+            <ScatterFile>.\Objects\FOC.sct</ScatterFile>
+            <IncludeLibs></IncludeLibs>
+            <IncludeLibsPath></IncludeLibsPath>
+            <Misc></Misc>
+            <LinkerInputFile></LinkerInputFile>
+            <DisabledWarnings></DisabledWarnings>
+          </LDads>
+        </TargetArmAds>
+      </TargetOption>
+      <Groups>
+        <Group>
+          <GroupName>Example</GroupName>
+          <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Example\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Probescope</GroupName>
+          <Files>
+            <File>
+              <FileName>probe_scope.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Probescope\src\probe_scope.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::TLE987x-eSL-BAS-EVAL</GroupName>
+        </Group>
+      </Groups>
+    </Target>
+  </Targets>
+
+  <RTE>
+    <packages>
+      <filter>
+        <targetInfos/>
+      </filter>
+      <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0">
+        <targetInfos>
+          <targetInfo name="Target 1" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0">
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </package>
+      <package license="Licence/CMSIS_END_USER_LICENCE_AGREEMENT.txt" name="TLE987x_DFP" schemaVersion="1.3" supportContact="http://www.infineon.com/cms/en/corporate/company/contact/support/index.html" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0">
+        <targetInfos>
+          <targetInfo name="Target 1" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+    </packages>
+    <apis/>
+    <components>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.3.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="CMSIS" Cgroup="DSP" Cvariant="Library" Cvendor="ARM" Cversion="1.7.0" condition="CMSIS DSP">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="BF-Stepping" Cvendor="Infineon" Cversion="0.0.1" condition="cond_TLE987x_BF_Step">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="ADC1" Cvendor="Infineon" Cversion="0.2.8" condition="cond_TLE987x_ADC1">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="ADC2" Cvendor="Infineon" Cversion="0.2.5" condition="cond_TLE987x_ADC2">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="BDRV" Cvendor="Infineon" Cversion="0.4.8" condition="cond_TLE987x_BDRV">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="BOOTROM" Cvendor="Infineon" Cversion="0.3.0" condition="cond_TLE987x_BOOTROM">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="CCU6" Cvendor="Infineon" Cversion="0.3.2" condition="cond_TLE987x_CCU6">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="CSA" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_CSA">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="DMA" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_DMA">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="GPT12E" Cvendor="Infineon" Cversion="0.2.0" condition="cond_TLE987x_GPT12E">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="INT" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_INT">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="ISR" Cvendor="Infineon" Cversion="0.2.8" condition="cond_TLE987x_ISR">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="LIN" Cvendor="Infineon" Cversion="0.1.9" condition="cond_TLE987x_LIN">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="PMU" Cvendor="Infineon" Cversion="0.2.0" condition="cond_TLE987x_PMU">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="PORT" Cvendor="Infineon" Cversion="0.5.7" condition="cond_TLE987x_PORT">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="SCU" Cvendor="Infineon" Cversion="0.5.4" condition="cond_TLE987x_SCU">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="SSC" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_SSC">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="TIMER3" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_TIMER3">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="UART" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_UART">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SDK" Csub="WDT1" Cvendor="Infineon" Cversion="0.3.2" condition="cond_TLE987x_WDT1">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup">
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MAS-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0">
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0">
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0">
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MS-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0">
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0">
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+    </components>
+    <files>
+      <file attr="config" category="doc" condition="cond_TLE987x_noSDADC" name="Device\SDK\cfgwiz\script\v2\ICW_TLE987x.xml" version="2.2.3">
+        <instance index="0">RTE\Device\TLE9879QXA40\ICW_TLE987x.xml</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="doc" condition="cond_TLE987x_noSDADC" name="Device\SDK\cfgwiz\script\v2\TLE987x.mig" version="2.0.5">
+        <instance index="0">RTE\Device\TLE9879QXA40\TLE987x.mig</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="doc" condition="cond_TLE987x_noSDADC" name="Device\SDK\cfgwiz\script\v2\TLE987x.svd" version="4.1.0">
+        <instance index="0">RTE\Device\TLE9879QXA40\TLE987x.svd</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\adc1.c" version="0.2.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\adc1.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="ADC1" Cvendor="Infineon" Cversion="0.2.8" condition="cond_TLE987x_ADC1"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\adc1.h" version="0.2.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\adc1.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="ADC1" Cvendor="Infineon" Cversion="0.2.8" condition="cond_TLE987x_ADC1"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\adc1_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\adc1_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\adc2.c" version="0.2.5">
+        <instance index="0">RTE\Device\TLE9879QXA40\adc2.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="ADC2" Cvendor="Infineon" Cversion="0.2.5" condition="cond_TLE987x_ADC2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\adc2.h" version="0.2.5">
+        <instance index="0">RTE\Device\TLE9879QXA40\adc2.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="ADC2" Cvendor="Infineon" Cversion="0.2.5" condition="cond_TLE987x_ADC2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\adc2_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\adc2_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\bdrv.c" version="0.4.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\bdrv.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="BDRV" Cvendor="Infineon" Cversion="0.4.8" condition="cond_TLE987x_BDRV"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\bdrv.h" version="0.4.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\bdrv.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="BDRV" Cvendor="Infineon" Cversion="0.4.8" condition="cond_TLE987x_BDRV"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\bdrv_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\bdrv_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\bootrom.c" version="0.3.0">
+        <instance index="0">RTE\Device\TLE9879QXA40\bootrom.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="BOOTROM" Cvendor="Infineon" Cversion="0.3.0" condition="cond_TLE987x_BOOTROM"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\bootrom.h" version="0.3.0">
+        <instance index="0">RTE\Device\TLE9879QXA40\bootrom.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="BOOTROM" Cvendor="Infineon" Cversion="0.3.0" condition="cond_TLE987x_BOOTROM"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\bsl_defines.h" version="1.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\bsl_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\ccu6.c" version="0.3.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\ccu6.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="CCU6" Cvendor="Infineon" Cversion="0.3.2" condition="cond_TLE987x_CCU6"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\ccu6.h" version="0.3.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\ccu6.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="CCU6" Cvendor="Infineon" Cversion="0.3.2" condition="cond_TLE987x_CCU6"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\ccu6_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\ccu6_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\Include\cmsis_misra.h" version="0.1.4">
+        <instance index="0">RTE\Device\TLE9879QXA40\cmsis_misra.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="doc" condition="cond_TLE987x_noSDADC_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\config.icwp" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\config.icwp</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\csa.c" version="0.1.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\csa.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="CSA" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_CSA"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\csa.h" version="0.1.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\csa.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="CSA" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_CSA"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\csa_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\csa_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\dma.c" version="0.2.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\dma.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="DMA" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_DMA"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\dma.h" version="0.2.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\dma.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="DMA" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_DMA"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\dma_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\dma_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\Include\eval_board.h" version="0.1.1">
+        <instance index="0">RTE\Device\TLE9879QXA40\eval_board.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\gpt12e.c" version="0.2.0">
+        <instance index="0">RTE\Device\TLE9879QXA40\gpt12e.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="GPT12E" Cvendor="Infineon" Cversion="0.2.0" condition="cond_TLE987x_GPT12E"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\gpt12e.h" version="0.2.0">
+        <instance index="0">RTE\Device\TLE9879QXA40\gpt12e.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="GPT12E" Cvendor="Infineon" Cversion="0.2.0" condition="cond_TLE987x_GPT12E"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\gpt12e_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\gpt12e_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\int.c" version="0.2.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\int.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="INT" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_INT"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\int.h" version="0.2.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\int.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="INT" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_INT"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\int_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\int_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\isr.c" version="0.2.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\isr.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="ISR" Cvendor="Infineon" Cversion="0.2.8" condition="cond_TLE987x_ISR"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\isr.h" version="0.2.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\isr.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="ISR" Cvendor="Infineon" Cversion="0.2.8" condition="cond_TLE987x_ISR"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_noSDADC_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\isr_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\isr_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\lin.c" version="0.1.9">
+        <instance index="0">RTE\Device\TLE9879QXA40\lin.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="LIN" Cvendor="Infineon" Cversion="0.1.9" condition="cond_TLE987x_LIN"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\lin.h" version="0.1.9">
+        <instance index="0">RTE\Device\TLE9879QXA40\lin.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="LIN" Cvendor="Infineon" Cversion="0.1.9" condition="cond_TLE987x_LIN"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\lin_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\lin_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\mon_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\mon_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\pmu.c" version="0.2.0">
+        <instance index="0">RTE\Device\TLE9879QXA40\pmu.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="PMU" Cvendor="Infineon" Cversion="0.2.0" condition="cond_TLE987x_PMU"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\pmu.h" version="0.2.0">
+        <instance index="0">RTE\Device\TLE9879QXA40\pmu.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="PMU" Cvendor="Infineon" Cversion="0.2.0" condition="cond_TLE987x_PMU"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\pmu_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\pmu_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\port.c" version="0.5.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\port.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="PORT" Cvendor="Infineon" Cversion="0.5.7" condition="cond_TLE987x_PORT"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\port.h" version="0.5.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\port.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="PORT" Cvendor="Infineon" Cversion="0.5.7" condition="cond_TLE987x_PORT"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\port_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\port_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\scu.c" version="0.5.4">
+        <instance index="0">RTE\Device\TLE9879QXA40\scu.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="SCU" Cvendor="Infineon" Cversion="0.5.4" condition="cond_TLE987x_SCU"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\scu.h" version="0.5.4">
+        <instance index="0">RTE\Device\TLE9879QXA40\scu.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="SCU" Cvendor="Infineon" Cversion="0.5.4" condition="cond_TLE987x_SCU"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\scu_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\scu_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\Include\sfr_access.h" version="0.1.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\sfr_access.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\ssc.c" version="0.1.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\ssc.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="SSC" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_SSC"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\ssc.h" version="0.1.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\ssc.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="SSC" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_SSC"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\ssc_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\ssc_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" condition="cond_TLE987x_ARMCC" name="Device\Source\ARM\startup_tle987x.S" version="1.1.0">
+        <instance index="0">RTE\Device\TLE9879QXA40\startup_tle987x.S</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\Source\system_tle987x.c" version="0.4.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\system_tle987x.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\Include\system_tle987x.h" version="0.4.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\system_tle987x.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\timer2x_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\timer2x_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\timer3.c" version="0.1.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\timer3.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="TIMER3" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_TIMER3"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\timer3.h" version="0.1.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\timer3.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="TIMER3" Cvendor="Infineon" Cversion="0.1.7" condition="cond_TLE987x_TIMER3"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\timer3_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\timer3_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\Include\tle987x.h" version="3.0.7">
+        <instance index="0">RTE\Device\TLE9879QXA40\tle987x.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\Source\tle_device.c" version="1.1.1">
+        <instance index="0">RTE\Device\TLE9879QXA40\tle_device.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\Include\tle_device.h" version="1.1.1">
+        <instance index="0">RTE\Device\TLE9879QXA40\tle_device.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\Include\tle_variants.h" version="0.2.1">
+        <instance index="0">RTE\Device\TLE9879QXA40\tle_variants.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\Include\types.h" version="0.2.8">
+        <instance index="0">RTE\Device\TLE9879QXA40\types.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Infineon" Cversion="1.1.0" condition="cond_TLE987x_startup"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\uart.c" version="0.2.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\uart.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="UART" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_UART"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\uart.h" version="0.2.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\uart.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="UART" Cvendor="Infineon" Cversion="0.2.2" condition="cond_TLE987x_UART"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" condition="cond_TLE987x_40MHz" name="Device\SDK\cfgwiz\TLE987x_40\v2\uart_defines.h" version="1.8.6">
+        <instance index="0">RTE\Device\TLE9879QXA40\uart_defines.h</instance>
+        <component Cclass="Device" Cgroup="ConfigWizard_v2" Cvendor="Infineon" Cversion="2.1.12" condition="cond_TLE987x_ConfigWizard_2"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\SDK\src\wdt1.c" version="0.3.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\wdt1.c</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="WDT1" Cvendor="Infineon" Cversion="0.3.2" condition="cond_TLE987x_WDT1"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\SDK\inc\wdt1.h" version="0.3.2">
+        <instance index="0">RTE\Device\TLE9879QXA40\wdt1.h</instance>
+        <component Cclass="Device" Cgroup="SDK" Csub="WDT1" Cvendor="Infineon" Cversion="0.3.2" condition="cond_TLE987x_WDT1"/>
+        <package name="TLE987x_DFP" schemaVersion="1.3" url="https://www.infineon.com/cmsis_packs/TLE987x/" vendor="Infineon" version="1.5.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_ComponentID.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_ComponentID.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_ComponentVersion.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_ComponentVersion.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MAS-BAS_v1.3.0-PR\src\Ifx_MAS_ModulatorF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MAS_ModulatorF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MAS-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MAS-BAS_v1.3.0-PR\include\Ifx_MAS_ModulatorF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MAS_ModulatorF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MAS-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MAS-BAS_v1.3.0-PR\cfgwiz\Ifx_MAS_ModulatorF16.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MAS_ModulatorF16.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MAS-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MAS-BAS_v1.3.0-PR\src\Ifx_MAS_ModulatorF16_tableSin60Sqrt3.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MAS_ModulatorF16_tableSin60Sqrt3.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MAS-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MDA-BAS_v1.3.0-PR\src\Ifx_MDA_FluxEstimatorF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_FluxEstimatorF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MDA-BAS_v1.3.0-PR\include\Ifx_MDA_FluxEstimatorF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_FluxEstimatorF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MDA-BAS_v1.3.0-PR\cfgwiz\Ifx_MDA_FluxEstimatorF16.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_FluxEstimatorF16.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MDA-BAS_v1.3.0-PR\src\Ifx_MDA_FocControllerF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_FocControllerF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MDA-BAS_v1.3.0-PR\include\Ifx_MDA_FocControllerF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_FocControllerF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MDA-BAS_v1.3.0-PR\cfgwiz\Ifx_MDA_FocControllerF16.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_FocControllerF16.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MDA-BAS_v1.3.0-PR\src\Ifx_MDA_IToFControllerF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_IToFControllerF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MDA-BAS_v1.3.0-PR\include\Ifx_MDA_IToFControllerF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_IToFControllerF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MDA-BAS_v1.3.0-PR\cfgwiz\Ifx_MDA_IToFControllerF16.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_IToFControllerF16.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MDA-BAS_v1.3.0-PR\src\Ifx_MDA_StartAngleIdentF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_StartAngleIdentF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MDA-BAS_v1.3.0-PR\include\Ifx_MDA_StartAngleIdentF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_StartAngleIdentF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MDA-BAS_v1.3.0-PR\cfgwiz\Ifx_MDA_StartAngleIdentF16.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_StartAngleIdentF16.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MDA-BAS_v1.3.0-PR\src\Ifx_MDA_VToFControllerF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_VToFControllerF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MDA-BAS_v1.3.0-PR\include\Ifx_MDA_VToFControllerF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_VToFControllerF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MDA-BAS_v1.3.0-PR\cfgwiz\Ifx_MDA_VToFControllerF16.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MDA_VToFControllerF16.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MHA-BAS_TLE987x_v1.3.0-PR\include\Ifx_MHA_BridgeDrv.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_BridgeDrv.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MHA-BAS_TLE987x_v1.3.0-PR\cfgwiz\Ifx_MHA_BridgeDrv.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_BridgeDrv.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MHA-BAS_TLE987x_v1.3.0-PR\src\Ifx_MHA_BridgeDrv_TLE987.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_BridgeDrv_TLE987.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MHA-BAS_TLE987x_v1.3.0-PR\include\Ifx_MHA_BridgeDrv_TLE987.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_BridgeDrv_TLE987.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MHA-BAS_TLE987x_v1.3.0-PR\include\Ifx_MHA_MeasurementADC.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_MeasurementADC.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MHA-BAS_TLE987x_v1.3.0-PR\cfgwiz\Ifx_MHA_MeasurementADC.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_MeasurementADC.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MHA-BAS_TLE987x_v1.3.0-PR\src\Ifx_MHA_MeasurementADC_TLE987.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_MeasurementADC_TLE987.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MHA-BAS_TLE987x_v1.3.0-PR\include\Ifx_MHA_MeasurementADC_TLE987.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_MeasurementADC_TLE987.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MHA-BAS_TLE987x_v1.3.0-PR\include\Ifx_MHA_PatternGen.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_PatternGen.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MHA-BAS_TLE987x_v1.3.0-PR\cfgwiz\Ifx_MHA_PatternGen.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_PatternGen.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MHA-BAS_TLE987x_v1.3.0-PR\src\Ifx_MHA_PatternGen_TLE987.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_PatternGen_TLE987.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MHA-BAS_TLE987x_v1.3.0-PR\include\Ifx_MHA_PatternGen_TLE987.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MHA_PatternGen_TLE987.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="MS-BAS_TLE987x_v1.3.0-PR\src\Ifx_MS_FocSolutionF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MS_FocSolutionF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MS-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MS-BAS_TLE987x_v1.3.0-PR\include\Ifx_MS_FocSolutionF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MS_FocSolutionF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MS-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MS-BAS_TLE987x_v1.3.0-PR\cfgwiz\Ifx_MS_FocSolutionF16.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_MS_FocSolutionF16.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MS-BAS_TLE987x_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Abs.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Abs.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_AbsSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_AbsSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_AccelLimitF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_AccelLimitF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_AccelLimitF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_AccelLimitF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Add.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Add.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_AddSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_AddSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_AdvancedMath.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_AdvancedMath.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_AdvancedMath.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_AdvancedMath.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_All.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_All.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Arithmetic.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Arithmetic.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Arithmetic.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Arithmetic.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Atan.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Atan.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Atan2.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Atan2.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Atan2.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Atan2.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_CartToPolar.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_CartToPolar.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_CartToPolar.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_CartToPolar.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Clarke.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Clarke.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Clarke.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Clarke.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_ConvSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_ConvSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Cos.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Cos.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_CurrentReconstruction.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_CurrentReconstruction.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_CurrentReconstruction.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_CurrentReconstruction.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Div.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Div.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_DivSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_DivSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_DivShL.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_DivShL.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_DivShLR.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_DivShLR.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_DivShLRSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_DivShLRSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_DivShLSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_DivShLSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_DivShLSatNZ.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_DivShLSatNZ.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_DqDecouplingF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_DqDecouplingF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Interp1DLut.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Interp1DLut.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Interp1DLut.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Interp1DLut.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_InvClarke.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_InvClarke.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_InvClarke.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_InvClarke.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_InvPark.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_InvPark.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_InvPark.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_InvPark.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_LimitF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_LimitF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_LowPass1stF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_LowPass1stF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_LowPass1stF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_LowPass1stF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Lut_Atan_F16_Table.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Lut_Atan_F16_Table.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Lut_CartToPolar_F16_Table.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Lut_CartToPolar_F16_Table.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Lut_DivShL_F32_Table.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Lut_DivShL_F32_Table.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Lut_SinCos_F16_Table.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Lut_SinCos_F16_Table.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_MotorControl.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MotorControl.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MotorControl.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MotorControl.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Mul.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Mul.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShL.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShL.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShLR.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShLR.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShLRAdd.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShLRAdd.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShLRAddSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShLRAddSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShLRSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShLRSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShLRSub.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShLRSub.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShLRSubSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShLRSubSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShR.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShR.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShRAdd.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShRAdd.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShRAddSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShRAddSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShRSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShRSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShRSub.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShRSub.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_MulShRSubSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_MulShRSubSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Neg.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Neg.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_NegSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_NegSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_PLLF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_PLLF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_PLLF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_PLLF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Park.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Park.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Park.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Park.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_PiF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_PiF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_PiF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_PiF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_PolarToCart.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_PolarToCart.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_PolarToCart.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_PolarToCart.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_RateLimitF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_RateLimitF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_RateLimitF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_RateLimitF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Sat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Sat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_ShL.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_ShL.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_ShLR.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_ShLR.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_ShLRSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_ShLRSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_ShLSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_ShLSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_ShR.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_ShR.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_ShRRnd.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_ShRRnd.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Sin.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Sin.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_SinCos.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_SinCos.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_SpeedPreControlF16.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_SpeedPreControlF16.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_SpeedPreControlF16.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_SpeedPreControlF16.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Sub.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Sub.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_SubSat.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_SubSat.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR\src\Ifx_Math_Trigonometric.c" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Trigonometric.c</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_Trigonometric.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_Trigonometric.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Math-BAS_TLE98xx_v1.3.0-PR\include\Ifx_Math_UsrOpt.h" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\Ifx_Math_UsrOpt.h</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="Math-BAS_TLE98xx_v1.3.0-PR\cfgwiz\MATHPKG.xml" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\MATHPKG.xml</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="MDA-BAS_v1.3.0-PR\cfgwiz\pos_est_ab.png" version="1.3.0">
+        <instance index="0">RTE\TLE987x-eSL-BAS-EVAL\TLE9879QXA40\pos_est_ab.png</instance>
+        <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cvendor="Infineon" Cversion="1.3.0" condition="cond_TLE987x"/>
+        <package name="TLE9879QXA40_eSL-BAS-EVAL" schemaVersion="1.7.2" url="https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas" vendor="Infineon" version="1.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </file>
+    </files>
+  </RTE>
+
+</Project>

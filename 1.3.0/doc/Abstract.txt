@@ -1,0 +1,2 @@
+The TLE987x MCTRL SW Library consists of software components offering optimized configuration options for motor control applications.
+This version is free-of-charge and can be used for evaluation only. There is no documentation and no support.

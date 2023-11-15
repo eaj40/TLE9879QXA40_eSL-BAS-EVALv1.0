@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+    <checksum>1f518304dcbe41fbeb3bf5e8ff3655ace9ed3a66ad4ed47a355f6f2b368047ad</checksum>
+    <version label="V1.0.4"/>
+    <header file="Ifx_MDA_StartAngleIdentF16_Cfg.h" fullname="1"/>
+    <!--********************************************************************************-->
+    <!--                            Start Angle Identification                          -->
+    <!--********************************************************************************-->    
+    <groupcontainer label="Start Angle Identification" desc="Start Angle Identification Parameters">
+        <gridcontainer columns="3">
+            <groupcontainer label="System Parameters">
+                <treecontainer headerlabels="Structure;Settings;"  columnwidths="350;150">
+                    <!-- Used to convert values from seconds to ticks -->
+                    <spinbox label="Timer clock requency" suffix=" MHz" define="IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ" svd="0" default="40">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ.min=0"/>
+                    </spinbox>
+
+                    <!-- Period -->
+                    <spinbox label="PWM frequency" suffix=" kHz" define="IFX_MDA_STARTANGLEIDENTF16_CFG.FREQUENCY_KHZ" svd="0" default="20" range="1;40"/>
+                    <math label="Period" unit=" ticks" formula="floor(IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ*1000/IFX_MDA_STARTANGLEIDENTF16_CFG.FREQUENCY_KHZ/2)-1" define="IFX_MDA_STARTANGLEIDENTF16_CFG.PERIOD_TICK" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" svd="0" />
+
+                    <!-- Sampling time -->
+                    <spinbox label="Sampling time" suffix=" us" define="IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US" svd="0" default="50" range="25;10000"/>
+
+                    <!-- Deadtime -->
+                    <spinbox label="Deadtime" suffix=" ns" define="IFX_MDA_STARTANGLEIDENTF16_CFG.DEADTIME_NS" svd="0" default="500">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.DEADTIME_NS.min=0"/>
+                    </spinbox>
+
+                    <math label="Deadtime" unit="ticks" define="IFX_MDA_STARTANGLEIDENTF16_CFG.DEADTIME_TICK" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" formula="floor((IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ)*(IFX_MDA_STARTANGLEIDENTF16_CFG.DEADTIME_NS/1000))"/>
+                    
+                    <!-- Pulse configuration -->
+                    <!-- Zero pulse -->
+                    <doublespinbox label="Zero pulse length" suffix=" us" define="IFX_MDA_STARTANGLEIDENTF16_CFG.ZERO_PULSE_LENGTH_US" svd="0" default="1000.00000">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.ZERO_PULSE_LENGTH_US.min=0"/>
+                    </doublespinbox>
+                    
+                    <math label="Zero pulse length cycles" define="IFX_MDA_STARTANGLEIDENTF16_CFG.ZERO_PULSE_LENGTH_CYCLES" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" formula="floor(IFX_MDA_STARTANGLEIDENTF16_CFG.ZERO_PULSE_LENGTH_US/IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US)" visible="false"/>
+                    
+                    <math label="Effective zero pulse length" unit=" us" define="IFX_MDA_STARTANGLEIDENTF16_CFG.EFFECTIVE_ZERO_PULSE_LENGTH" formula="IFX_MDA_STARTANGLEIDENTF16_CFG.ZERO_PULSE_LENGTH_CYCLES*IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US"/>
+                    
+                    <!-- Positive pulse -->
+                    <doublespinbox label="Positive pulse length" suffix=" us" define="IFX_MDA_STARTANGLEIDENTF16_CFG.POSITIVE_PULSE_LENGTH_US" svd="0" default="400.00000">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.POSITIVE_PULSE_LENGTH_US.min=0"/>
+                    </doublespinbox>
+
+                    <math label="Positive pulse length cycles" define="IFX_MDA_STARTANGLEIDENTF16_CFG.POSITIVE_PULSE_LENGTH_CYCLES" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" formula="floor(IFX_MDA_STARTANGLEIDENTF16_CFG.POSITIVE_PULSE_LENGTH_US/IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US)" visible="false"/>
+                    
+                    <math label="Effective positive pulse length" unit=" us" define="IFX_MDA_STARTANGLEIDENTF16_CFG.EFFECTIVE_POSITIVE_PULSE_LENGTH" formula="IFX_MDA_STARTANGLEIDENTF16_CFG.POSITIVE_PULSE_LENGTH_CYCLES*IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US"/>
+                    
+                    <!-- Negative pulse -->
+                    <doublespinbox label="Negative pulse length" suffix=" us" define="IFX_MDA_STARTANGLEIDENTF16_CFG.NEGATIVE_PULSE_LENGTH_US" svd="0" default="300.00000">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.NEGATIVE_PULSE_LENGTH_US.min=0"/>
+                    </doublespinbox>
+
+                    <math label="Negative pulse length cycles" define="IFX_MDA_STARTANGLEIDENTF16_CFG.NEGATIVE_PULSE_LENGTH_CYCLES" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" formula="floor(IFX_MDA_STARTANGLEIDENTF16_CFG.NEGATIVE_PULSE_LENGTH_US/IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US)" visible="false"/>
+                    
+                    <math label="Effective negative pulse length" unit=" us" define="IFX_MDA_STARTANGLEIDENTF16_CFG.EFFECTIVE_NEGATIVE_PULSE_LENGTH" formula="IFX_MDA_STARTANGLEIDENTF16_CFG.NEGATIVE_PULSE_LENGTH_CYCLES*IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US"/>
+                    
+                    <!-- Number of averaging cycles -->
+                    <spinbox label="Number of cycles for averaging" define="IFX_MDA_STARTANGLEIDENTF16_CFG.AVERAGING_CYCLES" svd="0" default="8" header="Ifx_MDA_StartAngleIdentF16_Cfg.h">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.AVERAGING_CYCLES.min=0"/>
+                    </spinbox>
+                </treecontainer>
+            </groupcontainer>
+            
+            <groupcontainer label="Measurement trigger">
+                <treecontainer headerlabels="Structure;Settings;"  columnwidths="350;150">
+                    <!-- Ringing Time -->
+                    <spinbox label="Ringing time" suffix=" ns" define="IFX_MDA_STARTANGLEIDENTF16_CFG.RINGINGTIME_NS" svd="0" default="0">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.RINGINGTIME_NS.min=0"/>
+                    </spinbox>
+
+                    <math label="Ringing time" unit=" ticks" define="IFX_MDA_STARTANGLEIDENTF16_CFG.RINGINGTIME_TICK" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" svd="0" formula="floor(IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ*IFX_MDA_STARTANGLEIDENTF16_CFG.RINGINGTIME_NS/1000)"/>
+                    
+                    <!-- Driver Delay -->
+                    <spinbox label="Driver delay" suffix=" ns" define="IFX_MDA_STARTANGLEIDENTF16_CFG.DRIVERDELAY_NS" svd="0" default="0">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.DRIVERDELAY_NS.min=0"/>
+                    </spinbox>
+
+                    <math label="Driver delay" unit=" ticks" define="IFX_MDA_STARTANGLEIDENTF16_CFG.DRIVERDELAY_TICK" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" svd="0" formula="floor(IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ*IFX_MDA_STARTANGLEIDENTF16_CFG.DRIVERDELAY_NS/1000)"/>
+                    
+                    <!-- Measurement Time -->
+                    <spinbox label="Measurement time" suffix=" ns" define="IFX_MDA_STARTANGLEIDENTF16_CFG.MEASUREMENTTIME_NS" svd="0" default="0">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.MEASUREMENTTIME_NS.min=0"/>
+                    </spinbox>
+
+                    <math label="Measurement time" unit=" ticks" define="IFX_MDA_STARTANGLEIDENTF16_CFG.MEASUREMENTTIME_TICK" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" svd="0" formula="floor(IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ*IFX_MDA_STARTANGLEIDENTF16_CFG.MEASUREMENTTIME_NS/1000)"/>
+                </treecontainer>
+            </groupcontainer>
+            
+            <groupcontainer label="Fault options">
+                <treecontainer headerlabels="Structure;Settings;"  columnwidths="350;150">
+                    <spinbox label="Voltage fluctuation range" suffix=" %" define="IFX_MDA_STARTANGLEIDENTF16_CFG.VOLTAGE_FLUCTUATION_RANGE" svd="0" default="20" range="1;100" />
+                    
+                    <!-- Set fluctuation range in Q15 -->
+                    <math define="IFX_MDA_STARTANGLEIDENTF16_CFG.VOLTAGE_FLUCTUATION_RANGE_Q15" formula="floor(32767*IFX_MDA_STARTANGLEIDENTF16_CFG.VOLTAGE_FLUCTUATION_RANGE/100)" svd="0" visible="false" header="Ifx_MDA_StartAngleIdentF16_Cfg.h"/>
+                    
+                    <combo label="Fault Reaction on Voltage fluctuation" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" define="IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_REACTION_VOLTAGE_FLUCTUATION" svd="0" default="label=Report and React">
+                        <item label="Disable"           value="0" />
+                        <item label="Enable"            value="1" />
+                        <item label="Report Only"       value="2" />
+                        <item label="Report and React"  value="3" />
+                    </combo>
+                    
+                    <combo label="Fault Output Behavior" define="IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_OUT_BEHAVIOR" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" svd="0" default="label=Active Short Low">
+                        <item label="Active Short Low"      value="0"/>
+                    </combo>
+                    
+                    <!-- Fault callback -->
+                    <checkbox label="Enable Fault User Callback" define="IFX_MDA_STARTANGLEIDENTF16_CFG.ENABLE_FAULT_OUT" uielement="branch" svd="0" header="Ifx_MDA_StartAngleIdentF16_Cfg.h">
+                        <edit label="Fault User Callback" define="IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_OUT" default="usrFaultCallback" header="Ifx_MDA_StartAngleIdentF16_Cfg.h" svd="0"/>
+                    </checkbox>
+                </treecontainer>
+            </groupcontainer>
+
+            <groupcontainer visible="false">
+                <!-- If no fault is in report and react, lock the fault output behavior to "Active Short Low" -->
+                <math define="IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_OUT_BEHAVIOR_EN" formula="(IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_REACTION_VOLTAGE_FLUCTUATION != 3)">
+                    <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_OUT_BEHAVIOR_EN_LOCK=IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_OUT_BEHAVIOR_EN"/>
+                </math>
+                
+                <checkbox define="IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_OUT_BEHAVIOR_EN_LOCK" default="0" lockon="IFX_MDA_STARTANGLEIDENTF16_CFG.FAULT_OUT_BEHAVIOR=0"/>
+            </groupcontainer>
+        </gridcontainer>
+    </groupcontainer>
+</ifxmlcfg>

@@ -1,0 +1,1516 @@
+Component: Arm Compiler for Embedded 6.19 Tool: armlink [5e73cb00]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(.text.PendSV_Handler) refers to main.o(.bss.FocDemoClosedLoop) for FocDemoClosedLoop
+    main.o(.text.PendSV_Handler) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) for Ifx_MS_FocSolutionF16_executeControlMode
+    main.o(.ARM.exidx.text.PendSV_Handler) refers to main.o(.text.PendSV_Handler) for [Anonymous Symbol]
+    main.o(.text.Ifx_FOC_oneMatchCallback) refers to main.o(.bss.FocDemoClosedLoop) for FocDemoClosedLoop
+    main.o(.text.Ifx_FOC_oneMatchCallback) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onOneMatch) for Ifx_MHA_PatternGen_TLE987_onOneMatch
+    main.o(.text.Ifx_FOC_oneMatchCallback) refers to main.o(.bss.currentControlCounter) for currentControlCounter
+    main.o(.text.Ifx_FOC_oneMatchCallback) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_oneMatch) for Ifx_MHA_MeasurementADC_TLE987_oneMatch
+    main.o(.ARM.exidx.text.Ifx_FOC_oneMatchCallback) refers to main.o(.text.Ifx_FOC_oneMatchCallback) for [Anonymous Symbol]
+    main.o(.text.Ifx_FOC_periodMatchCallback) refers to main.o(.bss.FocDemoClosedLoop) for FocDemoClosedLoop
+    main.o(.text.Ifx_FOC_periodMatchCallback) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_periodMatch) for Ifx_MHA_MeasurementADC_TLE987_periodMatch
+    main.o(.text.Ifx_FOC_periodMatchCallback) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch) for Ifx_MHA_PatternGen_TLE987_onPeriodMatch
+    main.o(.ARM.exidx.text.Ifx_FOC_periodMatchCallback) refers to main.o(.text.Ifx_FOC_periodMatchCallback) for [Anonymous Symbol]
+    main.o(.text.Ifx_FOC_speedLoop_callback) refers to main.o(.bss.enableControl) for enableControl
+    main.o(.text.Ifx_FOC_speedLoop_callback) refers to main.o(.data.enablePowerStage) for enablePowerStage
+    main.o(.text.Ifx_FOC_speedLoop_callback) refers to main.o(.bss.rotorAlignCounter) for rotorAlignCounter
+    main.o(.text.Ifx_FOC_speedLoop_callback) refers to main.o(.bss.referenceSpeedQ0) for referenceSpeedQ0
+    main.o(.text.Ifx_FOC_speedLoop_callback) refers to main.o(.bss.currentsDqReference) for currentsDqReference
+    main.o(.text.Ifx_FOC_speedLoop_callback) refers to main.o(.bss.FocDemoClosedLoop) for FocDemoClosedLoop
+    main.o(.text.Ifx_FOC_speedLoop_callback) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl) for Ifx_MS_FocSolutionF16_executeSpeedControl
+    main.o(.ARM.exidx.text.Ifx_FOC_speedLoop_callback) refers to main.o(.text.Ifx_FOC_speedLoop_callback) for [Anonymous Symbol]
+    main.o(.text.main) refers to tle_device.o(.text.TLE_Init) for TLE_Init
+    main.o(.text.main) refers to main.o(.bss.FocDemoClosedLoop) for FocDemoClosedLoop
+    main.o(.text.main) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) for Ifx_MS_FocSolutionF16_init
+    main.o(.text.main) refers to main.o(.bss.clrFaultFoc) for clrFaultFoc
+    main.o(.text.main) refers to main.o(.bss.enableControl) for enableControl
+    main.o(.text.main) refers to main.o(.data.controlMode) for controlMode
+    main.o(.text.main) refers to main.o(.bss.enableDirectInterface) for enableDirectInterface
+    main.o(.text.main) refers to main.o(.bss.enableSpeedPreControl) for enableSpeedPreControl
+    main.o(.text.main) refers to main.o(.bss.enableStartAngleIdent) for enableStartAngleIdent
+    main.o(.text.main) refers to wdt1.o(.text.WDT1_Service) for WDT1_Service
+    main.o(.text.main) refers to main.o(.data.enablePowerStage) for enablePowerStage
+    main.o(.text.main) refers to ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_execute) for Ifx_MHA_BridgeDrv_TLE987_execute
+    main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    probe_scope.o(.text.ProbeScope_Init) refers to probe_scope.o(.bss..L_MergedGlobals.1) for .L_MergedGlobals.1
+    probe_scope.o(.text.ProbeScope_Init) refers to probe_scope.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    probe_scope.o(.ARM.exidx.text.ProbeScope_Init) refers to probe_scope.o(.text.ProbeScope_Init) for [Anonymous Symbol]
+    probe_scope.o(.text.ProbeScope_Sampling) refers to probe_scope.o(.bss..L_MergedGlobals.1) for .L_MergedGlobals.1
+    probe_scope.o(.ARM.exidx.text.ProbeScope_Sampling) refers to probe_scope.o(.text.ProbeScope_Sampling) for [Anonymous Symbol]
+    adc1.o(.ARM.exidx.text.ADC1_Init) refers to adc1.o(.text.ADC1_Init) for [Anonymous Symbol]
+    adc1.o(.text.VAREF_Enable) refers to wdt1.o(.text.Delay_us) for Delay_us
+    adc1.o(.ARM.exidx.text.VAREF_Enable) refers to adc1.o(.text.VAREF_Enable) for [Anonymous Symbol]
+    adc1.o(.ARM.exidx.text.ADC1_GetChResult) refers to adc1.o(.text.ADC1_GetChResult) for [Anonymous Symbol]
+    adc1.o(.ARM.exidx.text.ADC1_GetChResult_mV) refers to adc1.o(.text.ADC1_GetChResult_mV) for [Anonymous Symbol]
+    adc1.o(.ARM.exidx.text.ADC1_GetEIMResult) refers to adc1.o(.text.ADC1_GetEIMResult) for [Anonymous Symbol]
+    adc1.o(.ARM.exidx.text.ADC1_GetEIMResult_mV) refers to adc1.o(.text.ADC1_GetEIMResult_mV) for [Anonymous Symbol]
+    adc2.o(.ARM.exidx.text.ADC2_Init) refers to adc2.o(.text.ADC2_Init) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_Init) refers to bdrv.o(.text.BDRV_Init) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_Set_Bridge) refers to bdrv.o(.text.BDRV_Set_Bridge) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_Clr_Sts) refers to bdrv.o(.text.BDRV_Clr_Sts) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_Set_Channel) refers to bdrv.o(.text.BDRV_Set_Channel) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_Set_Int_Channel) refers to bdrv.o(.text.BDRV_Set_Int_Channel) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_Set_DSM_Threshold) refers to bdrv.o(.text.BDRV_Set_DSM_Threshold) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_getChrgCurrent_mA) refers to bdrv.o(.text.BDRV_getChrgCurrent_mA) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_setChrgCurrent_mA) refers to bdrv.o(.text.BDRV_setChrgCurrent_mA) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_getDischrgCurrent_mA) refers to bdrv.o(.text.BDRV_getDischrgCurrent_mA) for [Anonymous Symbol]
+    bdrv.o(.ARM.exidx.text.BDRV_setDischrgCurrent_mA) refers to bdrv.o(.text.BDRV_setDischrgCurrent_mA) for [Anonymous Symbol]
+    bdrv.o(.text.BDRV_Diag_OpenLoad) refers to wdt1.o(.text.Delay_us) for Delay_us
+    bdrv.o(.ARM.exidx.text.BDRV_Diag_OpenLoad) refers to bdrv.o(.text.BDRV_Diag_OpenLoad) for [Anonymous Symbol]
+    bdrv.o(.text.BDRV_Off_Diagnosis) refers to wdt1.o(.text.Delay_us) for Delay_us
+    bdrv.o(.ARM.exidx.text.BDRV_Off_Diagnosis) refers to bdrv.o(.text.BDRV_Off_Diagnosis) for [Anonymous Symbol]
+    bootrom.o(.text.ProgramPage) refers to wdt1.o(.text.WDT1_SOW_Service) for WDT1_SOW_Service
+    bootrom.o(.text.ProgramPage) refers to wdt1.o(.text.WDT1_Service) for WDT1_Service
+    bootrom.o(.ARM.exidx.text.ProgramPage) refers to bootrom.o(.text.ProgramPage) for [Anonymous Symbol]
+    bootrom.o(.text.GetCustomerID) refers to wdt1.o(.text.WDT1_SOW_Service) for WDT1_SOW_Service
+    bootrom.o(.text.GetCustomerID) refers to wdt1.o(.text.WDT1_Service) for WDT1_Service
+    bootrom.o(.ARM.exidx.text.GetCustomerID) refers to bootrom.o(.text.GetCustomerID) for [Anonymous Symbol]
+    ccu6.o(.ARM.exidx.text.CCU6_Init) refers to ccu6.o(.text.CCU6_Init) for [Anonymous Symbol]
+    csa.o(.ARM.exidx.text.CSA_Init) refers to csa.o(.text.CSA_Init) for [Anonymous Symbol]
+    csa.o(.text.CSA_Offset_Get) refers to scu.o(.data.SystemFrequency) for SystemFrequency
+    csa.o(.ARM.exidx.text.CSA_Offset_Get) refers to csa.o(.text.CSA_Offset_Get) for [Anonymous Symbol]
+    dma.o(.ARM.exidx.text.DMA_Setup_Channel) refers to dma.o(.text.DMA_Setup_Channel) for [Anonymous Symbol]
+    dma.o(.ARM.exidx.text.DMA_Task_SctGth_Set) refers to dma.o(.text.DMA_Task_SctGth_Set) for [Anonymous Symbol]
+    dma.o(.ARM.exidx.text.DMA_Channel_MemSctGth_Set) refers to dma.o(.text.DMA_Channel_MemSctGth_Set) for [Anonymous Symbol]
+    dma.o(.ARM.exidx.text.DMA_Channel_PerSctGth_Set) refers to dma.o(.text.DMA_Channel_PerSctGth_Set) for [Anonymous Symbol]
+    dma.o(.ARM.exidx.text.DMA_Task_Set) refers to dma.o(.text.DMA_Task_Set) for [Anonymous Symbol]
+    dma.o(.ARM.exidx.text.DMA_Reset_Channel) refers to dma.o(.text.DMA_Reset_Channel) for [Anonymous Symbol]
+    dma.o(.ARM.exidx.text.DMA_Init) refers to dma.o(.text.DMA_Init) for [Anonymous Symbol]
+    gpt12e.o(.ARM.exidx.text.GPT12E_Init) refers to gpt12e.o(.text.GPT12E_Init) for [Anonymous Symbol]
+    gpt12e.o(.text.GPT12E_T3_Interval_Timer_Setup) refers to scu.o(.data.SystemFrequency) for SystemFrequency
+    gpt12e.o(.text.GPT12E_T3_Interval_Timer_Setup) refers to uldiv.o(.text) for __aeabi_uldivmod
+    gpt12e.o(.ARM.exidx.text.GPT12E_T3_Interval_Timer_Setup) refers to gpt12e.o(.text.GPT12E_T3_Interval_Timer_Setup) for [Anonymous Symbol]
+    gpt12e.o(.text.GPT12E_T6_Interval_Timer_Setup) refers to scu.o(.data.SystemFrequency) for SystemFrequency
+    gpt12e.o(.text.GPT12E_T6_Interval_Timer_Setup) refers to uldiv.o(.text) for __aeabi_uldivmod
+    gpt12e.o(.ARM.exidx.text.GPT12E_T6_Interval_Timer_Setup) refers to gpt12e.o(.text.GPT12E_T6_Interval_Timer_Setup) for [Anonymous Symbol]
+    int.o(.ARM.exidx.text.INT_Init) refers to int.o(.text.INT_Init) for [Anonymous Symbol]
+    isr.o(.text.GPT2_IRQHandler) refers to main.o(.text.Ifx_FOC_speedLoop_callback) for Ifx_FOC_speedLoop_callback
+    isr.o(.ARM.exidx.text.GPT2_IRQHandler) refers to isr.o(.text.GPT2_IRQHandler) for [Anonymous Symbol]
+    isr.o(.text.CCU6SR1_IRQHandler) refers to main.o(.text.Ifx_FOC_oneMatchCallback) for Ifx_FOC_oneMatchCallback
+    isr.o(.text.CCU6SR1_IRQHandler) refers to main.o(.text.Ifx_FOC_periodMatchCallback) for Ifx_FOC_periodMatchCallback
+    isr.o(.ARM.exidx.text.CCU6SR1_IRQHandler) refers to isr.o(.text.CCU6SR1_IRQHandler) for [Anonymous Symbol]
+    isr.o(.ARM.exidx.text.HardFault_Handler) refers to isr.o(.text.HardFault_Handler) for [Anonymous Symbol]
+    isr.o(.ARM.exidx.text.MemManage_Handler) refers to isr.o(.text.MemManage_Handler) for [Anonymous Symbol]
+    isr.o(.ARM.exidx.text.BusFault_Handler) refers to isr.o(.text.BusFault_Handler) for [Anonymous Symbol]
+    isr.o(.ARM.exidx.text.UsageFault_Handler) refers to isr.o(.text.UsageFault_Handler) for [Anonymous Symbol]
+    isr.o(.text.SysTick_Handler) refers to wdt1.o(.bss..L_MergedGlobals) for WD_Counter
+    isr.o(.ARM.exidx.text.SysTick_Handler) refers to isr.o(.text.SysTick_Handler) for [Anonymous Symbol]
+    lin.o(.ARM.exidx.text.LIN_Init) refers to lin.o(.text.LIN_Init) for [Anonymous Symbol]
+    pmu.o(.ARM.exidx.text.PMU_Init) refers to pmu.o(.text.PMU_Init) for [Anonymous Symbol]
+    pmu.o(.text.PMU_VDDEXT_On) refers to wdt1.o(.text.Delay_us) for Delay_us
+    pmu.o(.ARM.exidx.text.PMU_VDDEXT_On) refers to pmu.o(.text.PMU_VDDEXT_On) for [Anonymous Symbol]
+    port.o(.ARM.exidx.text.PORT_Init) refers to port.o(.text.PORT_Init) for [Anonymous Symbol]
+    port.o(.ARM.exidx.text.PORT_ChangePin) refers to port.o(.text.PORT_ChangePin) for [Anonymous Symbol]
+    port.o(.ARM.exidx.text.PORT_ReadPin) refers to port.o(.text.PORT_ReadPin) for [Anonymous Symbol]
+    port.o(.ARM.exidx.text.PORT_ReadPort) refers to port.o(.text.PORT_ReadPort) for [Anonymous Symbol]
+    port.o(.ARM.exidx.text.PORT_ChangePinAlt) refers to port.o(.text.PORT_ChangePinAlt) for [Anonymous Symbol]
+    scu.o(.text.SCU_ClkInit) refers to bootrom.o(.rodata.USER_CFLASH_WR_PROT_EN) for USER_CFLASH_WR_PROT_EN
+    scu.o(.ARM.exidx.text.SCU_ClkInit) refers to scu.o(.text.SCU_ClkInit) for [Anonymous Symbol]
+    scu.o(.ARM.exidx.text.SCU_Init) refers to scu.o(.text.SCU_Init) for [Anonymous Symbol]
+    scu.o(.text.SCU_EnterSlowMode) refers to wdt1.o(.text.WDT1_Stop) for WDT1_Stop
+    scu.o(.text.SCU_EnterSlowMode) refers to wdt1.o(.text.WDT1_SOW_Service) for WDT1_SOW_Service
+    scu.o(.text.SCU_EnterSlowMode) refers to wdt1.o(.text.WDT1_Init) for WDT1_Init
+    scu.o(.ARM.exidx.text.SCU_EnterSlowMode) refers to scu.o(.text.SCU_EnterSlowMode) for [Anonymous Symbol]
+    scu.o(.text.SCU_ExitSlowMode) refers to wdt1.o(.text.WDT1_Stop) for WDT1_Stop
+    scu.o(.text.SCU_ExitSlowMode) refers to wdt1.o(.text.WDT1_SOW_Service) for WDT1_SOW_Service
+    scu.o(.text.SCU_ExitSlowMode) refers to wdt1.o(.text.SysTick_Init) for SysTick_Init
+    scu.o(.text.SCU_ExitSlowMode) refers to wdt1.o(.text.WDT1_Init) for WDT1_Init
+    scu.o(.ARM.exidx.text.SCU_ExitSlowMode) refers to scu.o(.text.SCU_ExitSlowMode) for [Anonymous Symbol]
+    scu.o(.text.SCU_ChangeNVMProtection) refers to bootrom.o(.rodata.USER_DFLASH_WR_PROT_DIS) for USER_DFLASH_WR_PROT_DIS
+    scu.o(.text.SCU_ChangeNVMProtection) refers to bootrom.o(.rodata.USER_CFLASH_WR_PROT_DIS) for USER_CFLASH_WR_PROT_DIS
+    scu.o(.text.SCU_ChangeNVMProtection) refers to bootrom.o(.rodata.USER_DFLASH_RD_PROT_DIS) for USER_DFLASH_RD_PROT_DIS
+    scu.o(.text.SCU_ChangeNVMProtection) refers to bootrom.o(.rodata.USER_CFLASH_RD_PROT_DIS) for USER_CFLASH_RD_PROT_DIS
+    scu.o(.text.SCU_ChangeNVMProtection) refers to bootrom.o(.rodata.USER_DFLASH_WR_PROT_EN) for USER_DFLASH_WR_PROT_EN
+    scu.o(.text.SCU_ChangeNVMProtection) refers to bootrom.o(.rodata.USER_CFLASH_WR_PROT_EN) for USER_CFLASH_WR_PROT_EN
+    scu.o(.text.SCU_ChangeNVMProtection) refers to bootrom.o(.rodata.USER_DFLASH_RD_PROT_EN) for USER_DFLASH_RD_PROT_EN
+    scu.o(.text.SCU_ChangeNVMProtection) refers to bootrom.o(.rodata.USER_CFLASH_RD_PROT_EN) for USER_CFLASH_RD_PROT_EN
+    scu.o(.ARM.exidx.text.SCU_ChangeNVMProtection) refers to scu.o(.text.SCU_ChangeNVMProtection) for [Anonymous Symbol]
+    ssc.o(.ARM.exidx.text.SSC1_Init) refers to ssc.o(.text.SSC1_Init) for [Anonymous Symbol]
+    ssc.o(.ARM.exidx.text.SSC2_Init) refers to ssc.o(.text.SSC2_Init) for [Anonymous Symbol]
+    startup_tle987x.o(RESET) refers to startup_tle987x.o(STACK) for __initial_sp
+    startup_tle987x.o(RESET) refers to startup_tle987x.o(.text) for Reset_Handler
+    startup_tle987x.o(RESET) refers to isr.o(.text.HardFault_Handler) for HardFault_Handler
+    startup_tle987x.o(RESET) refers to isr.o(.text.MemManage_Handler) for MemManage_Handler
+    startup_tle987x.o(RESET) refers to isr.o(.text.BusFault_Handler) for BusFault_Handler
+    startup_tle987x.o(RESET) refers to isr.o(.text.UsageFault_Handler) for UsageFault_Handler
+    startup_tle987x.o(RESET) refers to main.o(.text.PendSV_Handler) for PendSV_Handler
+    startup_tle987x.o(RESET) refers to isr.o(.text.SysTick_Handler) for SysTick_Handler
+    startup_tle987x.o(RESET) refers to isr.o(.text.GPT2_IRQHandler) for GPT2_IRQHandler
+    startup_tle987x.o(RESET) refers to isr.o(.text.CCU6SR1_IRQHandler) for CCU6SR1_IRQHandler
+    startup_tle987x.o(.text) refers to system_tle987x.o(.text.SystemInit) for SystemInit
+    startup_tle987x.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_tle987x.o(.text.SystemInit) refers to scu.o(.text.SCU_ClkInit) for SCU_ClkInit
+    system_tle987x.o(.text.SystemInit) refers to wdt1.o(.text.SysTick_Init) for SysTick_Init
+    system_tle987x.o(.text.SystemInit) refers to wdt1.o(.text.WDT1_Init) for WDT1_Init
+    system_tle987x.o(.ARM.exidx.text.SystemInit) refers to system_tle987x.o(.text.SystemInit) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Init) refers to timer3.o(.text.TIMER3_Init) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Start) refers to timer3.o(.text.TIMER3_Start) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Stop) refers to timer3.o(.text.TIMER3_Stop) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Set_Cnt_Value) refers to timer3.o(.text.TIMER3_Set_Cnt_Value) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Set_Cmp_Value) refers to timer3.o(.text.TIMER3_Set_Cmp_Value) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Get_Cnt_Value) refers to timer3.o(.text.TIMER3_Get_Cnt_Value) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Value_Get) refers to timer3.o(.text.TIMER3_Value_Get) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Clk_Source_Sel) refers to timer3.o(.text.TIMER3_Clk_Source_Sel) for [Anonymous Symbol]
+    timer3.o(.ARM.exidx.text.TIMER3_Clk_Prescaler_Sel) refers to timer3.o(.text.TIMER3_Clk_Prescaler_Sel) for [Anonymous Symbol]
+    tle_device.o(.text.TLE_Init) refers to scu.o(.text.SCU_Init) for SCU_Init
+    tle_device.o(.text.TLE_Init) refers to pmu.o(.text.PMU_Init) for PMU_Init
+    tle_device.o(.text.TLE_Init) refers to adc1.o(.text.ADC1_Init) for ADC1_Init
+    tle_device.o(.text.TLE_Init) refers to adc2.o(.text.ADC2_Init) for ADC2_Init
+    tle_device.o(.text.TLE_Init) refers to bdrv.o(.text.BDRV_Init) for BDRV_Init
+    tle_device.o(.text.TLE_Init) refers to ccu6.o(.text.CCU6_Init) for CCU6_Init
+    tle_device.o(.text.TLE_Init) refers to csa.o(.text.CSA_Init) for CSA_Init
+    tle_device.o(.text.TLE_Init) refers to gpt12e.o(.text.GPT12E_Init) for GPT12E_Init
+    tle_device.o(.text.TLE_Init) refers to lin.o(.text.LIN_Init) for LIN_Init
+    tle_device.o(.text.TLE_Init) refers to port.o(.text.PORT_Init) for PORT_Init
+    tle_device.o(.text.TLE_Init) refers to ssc.o(.text.SSC1_Init) for SSC1_Init
+    tle_device.o(.text.TLE_Init) refers to ssc.o(.text.SSC2_Init) for SSC2_Init
+    tle_device.o(.text.TLE_Init) refers to timer3.o(.text.TIMER3_Init) for TIMER3_Init
+    tle_device.o(.text.TLE_Init) refers to uart.o(.text.UART1_Init) for UART1_Init
+    tle_device.o(.text.TLE_Init) refers to uart.o(.text.UART2_Init) for UART2_Init
+    tle_device.o(.text.TLE_Init) refers to dma.o(.text.DMA_Init) for DMA_Init
+    tle_device.o(.text.TLE_Init) refers to int.o(.text.INT_Init) for INT_Init
+    tle_device.o(.ARM.exidx.text.TLE_Init) refers to tle_device.o(.text.TLE_Init) for [Anonymous Symbol]
+    uart.o(.ARM.exidx.text.UART1_Init) refers to uart.o(.text.UART1_Init) for [Anonymous Symbol]
+    uart.o(.ARM.exidx.text.UART1_BaudRate_Set) refers to uart.o(.text.UART1_BaudRate_Set) for [Anonymous Symbol]
+    uart.o(.ARM.exidx.text.UART2_Init) refers to uart.o(.text.UART2_Init) for [Anonymous Symbol]
+    uart.o(.ARM.exidx.text.UART2_BaudRate_Set) refers to uart.o(.text.UART2_BaudRate_Set) for [Anonymous Symbol]
+    wdt1.o(.text.WDT1_Init) refers to wdt1.o(.bss..L_MergedGlobals) for .L_MergedGlobals
+    wdt1.o(.ARM.exidx.text.WDT1_Init) refers to wdt1.o(.text.WDT1_Init) for [Anonymous Symbol]
+    wdt1.o(.ARM.exidx.text.SysTick_Init) refers to wdt1.o(.text.SysTick_Init) for [Anonymous Symbol]
+    wdt1.o(.ARM.exidx.text.WDT1_Stop) refers to wdt1.o(.text.WDT1_Stop) for [Anonymous Symbol]
+    wdt1.o(.text.WDT1_Service) refers to wdt1.o(.bss..L_MergedGlobals) for .L_MergedGlobals
+    wdt1.o(.ARM.exidx.text.WDT1_Service) refers to wdt1.o(.text.WDT1_Service) for [Anonymous Symbol]
+    wdt1.o(.text.WDT1_SOW_Service) refers to wdt1.o(.bss..L_MergedGlobals) for .L_MergedGlobals
+    wdt1.o(.ARM.exidx.text.WDT1_SOW_Service) refers to wdt1.o(.text.WDT1_SOW_Service) for [Anonymous Symbol]
+    wdt1.o(.ARM.exidx.text.Delay_us) refers to wdt1.o(.text.Delay_us) for [Anonymous Symbol]
+    ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_getID) refers to ifx_mas_modulatorf16.o(.rodata.Ifx_MHA_ModulatorF16_componentID) for Ifx_MHA_ModulatorF16_componentID
+    ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_getID) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_getID) for [Anonymous Symbol]
+    ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_getVersion) refers to ifx_mas_modulatorf16.o(.rodata.Ifx_MHA_ModulatorF16_componentVersion) for Ifx_MHA_ModulatorF16_componentVersion
+    ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_getVersion) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_getVersion) for [Anonymous Symbol]
+    ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_init) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_init) for [Anonymous Symbol]
+    ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_execute) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16) for Ifx_MAS_ModulatorF16_updatePolar7SegQ16
+    ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_execute) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_execute) for [Anonymous Symbol]
+    ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16) refers to ifx_mas_modulatorf16_tablesin60sqrt3.o(.rodata.Ifx_MAS_ModulatorF16_lutSin60Sqrt3) for Ifx_MAS_ModulatorF16_lutSin60Sqrt3
+    ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16) for [Anonymous Symbol]
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_getID) refers to ifx_mda_fluxestimatorf16.o(.rodata.Ifx_MDA_FluxEstimator_componentID) for Ifx_MDA_FluxEstimator_componentID
+    ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_getID) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_getID) for [Anonymous Symbol]
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_getVersion) refers to ifx_mda_fluxestimatorf16.o(.rodata.Ifx_MDA_FluxEstimator_componentVersion) for Ifx_MDA_FluxEstimator_componentVersion
+    ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_getVersion) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_getVersion) for [Anonymous Symbol]
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init) refers to ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_init) for Ifx_Math_LowPass1stF16_init
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init) refers to ifx_math_lut_divshl_f32_table.o(.rodata.Ifx_Math_Lut_DivShL_F32_table) for Ifx_Math_Lut_DivShL_F32_table
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_init) for Ifx_Math_PLLF16_init
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setPropGain) for Ifx_Math_PLLF16_setPropGain
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setSamplingTime_us) for Ifx_Math_PLLF16_setSamplingTime_us
+    ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_init) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init) for [Anonymous Symbol]
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initAlphaFilter) refers to ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_init) for Ifx_Math_LowPass1stF16_init
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initAlphaFilter) refers to ifx_math_lut_divshl_f32_table.o(.rodata.Ifx_Math_Lut_DivShL_F32_table) for Ifx_Math_Lut_DivShL_F32_table
+    ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_initAlphaFilter) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initAlphaFilter) for [Anonymous Symbol]
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initBetaFilter) refers to ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_init) for Ifx_Math_LowPass1stF16_init
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initBetaFilter) refers to ifx_math_lut_divshl_f32_table.o(.rodata.Ifx_Math_Lut_DivShL_F32_table) for Ifx_Math_Lut_DivShL_F32_table
+    ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_initBetaFilter) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initBetaFilter) for [Anonymous Symbol]
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initSpeedFilter) refers to ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_init) for Ifx_Math_LowPass1stF16_init
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initSpeedFilter) refers to ifx_math_lut_divshl_f32_table.o(.rodata.Ifx_Math_Lut_DivShL_F32_table) for Ifx_Math_Lut_DivShL_F32_table
+    ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_initSpeedFilter) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initSpeedFilter) for [Anonymous Symbol]
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_setSamplingTime_us) refers to uldiv.o(.text) for __aeabi_uldivmod
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_setSamplingTime_us) refers to ifx_math_lut_divshl_f32_table.o(.rodata.Ifx_Math_Lut_DivShL_F32_table) for Ifx_Math_Lut_DivShL_F32_table
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_setSamplingTime_us) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setSamplingTime_us) for Ifx_Math_PLLF16_setSamplingTime_us
+    ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_setSamplingTime_us) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_setSamplingTime_us) for [Anonymous Symbol]
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute) refers to ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_execute) for Ifx_Math_LowPass1stF16_execute
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute) refers to ifx_math_atan2.o(.text.Ifx_Math_Atan2_F16) for Ifx_Math_Atan2_F16
+    ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_execute) for Ifx_Math_PLLF16_execute
+    ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_execute) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute) for [Anonymous Symbol]
+    ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_getID) refers to ifx_mda_foccontrollerf16.o(.rodata.Ifx_MDA_FocController_componentID) for Ifx_MDA_FocController_componentID
+    ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_getID) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_getID) for [Anonymous Symbol]
+    ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_getVersion) refers to ifx_mda_foccontrollerf16.o(.rodata.Ifx_MDA_FocController_componentVersion) for Ifx_MDA_FocController_componentVersion
+    ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_getVersion) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_getVersion) for [Anonymous Symbol]
+    ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_init) refers to ifx_math_pif16.o(.text.Ifx_Math_PiF16_init) for Ifx_Math_PiF16_init
+    ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_init) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_init) for [Anonymous Symbol]
+    ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute) refers to ifx_math_park.o(.text.Ifx_Math_Park_F16) for Ifx_Math_Park_F16
+    ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute) refers to ifx_math_pif16.o(.text.Ifx_Math_PiF16_execute) for Ifx_Math_PiF16_execute
+    ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute) refers to ifx_math_lut_carttopolar_f16_table.o(.rodata.Ifx_Math_Lut_CartToPolar_F16_table) for Ifx_Math_Lut_CartToPolar_F16_table
+    ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute) refers to ifx_math_interp1dlut.o(.text.Ifx_Math_Interp1DLut_F16) for Ifx_Math_Interp1DLut_F16
+    ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute) refers to ifx_math_carttopolar.o(.text.Ifx_Math_CartToPolar_F16) for Ifx_Math_CartToPolar_F16
+    ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_execute) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute) for [Anonymous Symbol]
+    ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_reset) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_reset) for [Anonymous Symbol]
+    ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_getID) refers to ifx_mda_itofcontrollerf16.o(.rodata.Ifx_MDA_IToFController_componentID) for Ifx_MDA_IToFController_componentID
+    ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_getID) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_getID) for [Anonymous Symbol]
+    ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_getVersion) refers to ifx_mda_itofcontrollerf16.o(.rodata.Ifx_MDA_IToFController_componentVersion) for Ifx_MDA_IToFController_componentVersion
+    ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_getVersion) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_getVersion) for [Anonymous Symbol]
+    ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_init) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_init) for [Anonymous Symbol]
+    ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle) for [Anonymous Symbol]
+    ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_execute) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_execute) for [Anonymous Symbol]
+    ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_getID) refers to ifx_mda_startangleidentf16.o(.rodata.Ifx_MDA_StartAngleIdent_componentID) for Ifx_MDA_StartAngleIdent_componentID
+    ifx_mda_startangleidentf16.o(.ARM.exidx.text.Ifx_MDA_StartAngleIdentF16_getID) refers to ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_getID) for [Anonymous Symbol]
+    ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_getVersion) refers to ifx_mda_startangleidentf16.o(.rodata.Ifx_MDA_StartAngleIdent_componentVersion) for Ifx_MDA_StartAngleIdent_componentVersion
+    ifx_mda_startangleidentf16.o(.ARM.exidx.text.Ifx_MDA_StartAngleIdentF16_getVersion) refers to ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_getVersion) for [Anonymous Symbol]
+    ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_init) refers to memseta.o(.text) for __aeabi_memclr4
+    ifx_mda_startangleidentf16.o(.ARM.exidx.text.Ifx_MDA_StartAngleIdentF16_init) refers to ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_init) for [Anonymous Symbol]
+    ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_execute) refers to memseta.o(.text) for __aeabi_memclr4
+    ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_execute) refers to ifx_math_lut_divshl_f32_table.o(.rodata.Ifx_Math_Lut_DivShL_F32_table) for Ifx_Math_Lut_DivShL_F32_table
+    ifx_mda_startangleidentf16.o(.ARM.exidx.text.Ifx_MDA_StartAngleIdentF16_execute) refers to ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_execute) for [Anonymous Symbol]
+    ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_getID) refers to ifx_mda_vtofcontrollerf16.o(.rodata.Ifx_MDA_VToFController_componentID) for Ifx_MDA_VToFController_componentID
+    ifx_mda_vtofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_VToFControllerF16_getID) refers to ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_getID) for [Anonymous Symbol]
+    ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_getVersion) refers to ifx_mda_vtofcontrollerf16.o(.rodata.Ifx_MDA_VToFController_componentVersion) for Ifx_MDA_VToFController_componentVersion
+    ifx_mda_vtofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_VToFControllerF16_getVersion) refers to ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_getVersion) for [Anonymous Symbol]
+    ifx_mda_vtofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_VToFControllerF16_init) refers to ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_init) for [Anonymous Symbol]
+    ifx_mda_vtofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_VToFControllerF16_execute) refers to ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_execute) for [Anonymous Symbol]
+    ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_getID) refers to ifx_mha_bridgedrv_tle987.o(.rodata.Ifx_MHA_BridgeDrv_TLE987_componentID) for Ifx_MHA_BridgeDrv_TLE987_componentID
+    ifx_mha_bridgedrv_tle987.o(.ARM.exidx.text.Ifx_MHA_BridgeDrv_TLE987_getID) refers to ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_getID) for [Anonymous Symbol]
+    ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_getVersion) refers to ifx_mha_bridgedrv_tle987.o(.rodata.Ifx_MHA_BridgeDrv_TLE987_componentVersion) for Ifx_MHA_BridgeDrv_TLE987_componentVersion
+    ifx_mha_bridgedrv_tle987.o(.ARM.exidx.text.Ifx_MHA_BridgeDrv_TLE987_getVersion) refers to ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_getVersion) for [Anonymous Symbol]
+    ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_execute) refers to bdrv.o(.text.BDRV_Set_Bridge) for BDRV_Set_Bridge
+    ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_execute) refers to bdrv.o(.text.BDRV_Clr_Sts) for BDRV_Clr_Sts
+    ifx_mha_bridgedrv_tle987.o(.ARM.exidx.text.Ifx_MHA_BridgeDrv_TLE987_execute) refers to ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_execute) for [Anonymous Symbol]
+    ifx_mha_bridgedrv_tle987.o(.ARM.exidx.text.Ifx_MHA_BridgeDrv_TLE987_init) refers to ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_init) for [Anonymous Symbol]
+    ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_getID) refers to ifx_mha_measurementadc_tle987.o(.rodata.Ifx_MHA_MeasurementADC_TLE987_componentID) for Ifx_MHA_MeasurementADC_TLE987_componentID
+    ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_getID) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_getID) for [Anonymous Symbol]
+    ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_getVersion) refers to ifx_mha_measurementadc_tle987.o(.rodata.Ifx_MHA_MeasurementADC_TLE987_componentVersion) for Ifx_MHA_MeasurementADC_TLE987_componentVersion
+    ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_getVersion) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_getVersion) for [Anonymous Symbol]
+    ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_init) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_init) for [Anonymous Symbol]
+    ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_periodMatch) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_periodMatch) for [Anonymous Symbol]
+    ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_oneMatch) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_oneMatch) for [Anonymous Symbol]
+    ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_execute) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_execute) for [Anonymous Symbol]
+    ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_getID) refers to ifx_mha_patterngen_tle987.o(.rodata.Ifx_MHA_PatternGen_TLE987_componentID) for Ifx_MHA_PatternGen_TLE987_componentID
+    ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_getID) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_getID) for [Anonymous Symbol]
+    ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_getVersion) refers to ifx_mha_patterngen_tle987.o(.rodata.Ifx_MHA_PatternGen_TLE987_componentVersion) for Ifx_MHA_PatternGen_TLE987_componentVersion
+    ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_getVersion) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_getVersion) for [Anonymous Symbol]
+    ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_init) refers to memseta.o(.text) for __aeabi_memclr4
+    ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_init) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_init) for [Anonymous Symbol]
+    ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_execute) refers to timer3.o(.text.TIMER3_Set_Cmp_Value) for TIMER3_Set_Cmp_Value
+    ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_execute) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_execute) for [Anonymous Symbol]
+    ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch) refers to timer3.o(.text.TIMER3_Set_Cmp_Value) for TIMER3_Set_Cmp_Value
+    ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch) for [Anonymous Symbol]
+    ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_onOneMatch) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onOneMatch) for [Anonymous Symbol]
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_getID) refers to ifx_ms_focsolutionf16.o(.rodata.Ifx_MS_FocSolution_TLE987_componentID) for Ifx_MS_FocSolution_TLE987_componentID
+    ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_getID) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_getID) for [Anonymous Symbol]
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_getVersion) refers to ifx_ms_focsolutionf16.o(.rodata.Ifx_MS_FocSolution_TLE987_componentVersion) for Ifx_MS_FocSolution_TLE987_componentVersion
+    ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_getVersion) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_getVersion) for [Anonymous Symbol]
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_init) for Ifx_MHA_MeasurementADC_TLE987_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_init) for Ifx_MHA_BridgeDrv_TLE987_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_init) for Ifx_MHA_PatternGen_TLE987_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_init) for Ifx_MAS_ModulatorF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init) for Ifx_MDA_FluxEstimatorF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_init) for Ifx_MDA_IToFControllerF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_init) for Ifx_MDA_FocControllerF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_init) for Ifx_MDA_VToFControllerF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_init) for Ifx_Math_SpeedPreControlF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) refers to ifx_math_pif16.o(.text.Ifx_Math_PiF16_init) for Ifx_Math_PiF16_init
+    ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_init) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init) for [Anonymous Symbol]
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_init) for Ifx_MHA_MeasurementADC_TLE987_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_init) for Ifx_MHA_BridgeDrv_TLE987_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_init) for Ifx_MHA_PatternGen_TLE987_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_init) for Ifx_MAS_ModulatorF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init) for Ifx_MDA_FluxEstimatorF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_init) for Ifx_MDA_IToFControllerF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_init) for Ifx_MDA_FocControllerF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_init) for Ifx_MDA_VToFControllerF16_init
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_init) for Ifx_Math_SpeedPreControlF16_init
+    ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_initModules) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules) for [Anonymous Symbol]
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl) refers to ifx_math_accellimitf16.o(.text.Ifx_Math_AccelLimitF16_execute) for Ifx_Math_AccelLimitF16_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine) for Ifx_MS_FocSolutionF16_subStateMachine
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_resetBuffer) for Ifx_Math_PLLF16_resetBuffer
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_reset) for Ifx_MDA_FocControllerF16_reset
+    ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_executeSpeedControl) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl) for [Anonymous Symbol]
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_execute) for Ifx_MHA_MeasurementADC_TLE987_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_math_currentreconstruction.o(.text.Ifx_Math_CurrentReconstruction_F16) for Ifx_Math_CurrentReconstruction_F16
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_math_clarke.o(.text.Ifx_Math_Clarke_F16) for Ifx_Math_Clarke_F16
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute) for Ifx_MDA_FluxEstimatorF16_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle) for Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_execute) for Ifx_MDA_IToFControllerF16_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute) for Ifx_MDA_FocControllerF16_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_execute) for Ifx_MDA_VToFControllerF16_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_execute) for Ifx_MAS_ModulatorF16_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_math_polartocart.o(.text.Ifx_Math_PolarToCart_F16) for Ifx_Math_PolarToCart_F16
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_execute) for Ifx_MHA_PatternGen_TLE987_execute
+    ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_executeControlMode) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode) for [Anonymous Symbol]
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine) refers to ifx_math_ratelimitf16.o(.text.Ifx_Math_RateLimitF16_execute) for Ifx_Math_RateLimitF16_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine) refers to ifx_math_pif16.o(.text.Ifx_Math_PiF16_execute) for Ifx_Math_PiF16_execute
+    ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine) refers to ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_execute) for Ifx_Math_SpeedPreControlF16_execute
+    ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_subStateMachine) refers to ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine) for [Anonymous Symbol]
+    ifx_math_accellimitf16.o(.ARM.exidx.text.Ifx_Math_AccelLimitF16_execute) refers to ifx_math_accellimitf16.o(.text.Ifx_Math_AccelLimitF16_execute) for [Anonymous Symbol]
+    ifx_math_advancedmath.o(.text.Ifx_Math_AdvancedMath_getID) refers to ifx_math_advancedmath.o(.rodata.Ifx_Math_AdvancedMath_componentID) for Ifx_Math_AdvancedMath_componentID
+    ifx_math_advancedmath.o(.ARM.exidx.text.Ifx_Math_AdvancedMath_getID) refers to ifx_math_advancedmath.o(.text.Ifx_Math_AdvancedMath_getID) for [Anonymous Symbol]
+    ifx_math_advancedmath.o(.text.Ifx_Math_AdvancedMath_getVersion) refers to ifx_math_advancedmath.o(.rodata.Ifx_Math_AdvancedMath_componentVersion) for Ifx_Math_AdvancedMath_componentVersion
+    ifx_math_advancedmath.o(.ARM.exidx.text.Ifx_Math_AdvancedMath_getVersion) refers to ifx_math_advancedmath.o(.text.Ifx_Math_AdvancedMath_getVersion) for [Anonymous Symbol]
+    ifx_math_arithmetic.o(.text.Ifx_Math_Arithmetic_getID) refers to ifx_math_arithmetic.o(.rodata.Ifx_Math_Arithmetic_componentID) for Ifx_Math_Arithmetic_componentID
+    ifx_math_arithmetic.o(.ARM.exidx.text.Ifx_Math_Arithmetic_getID) refers to ifx_math_arithmetic.o(.text.Ifx_Math_Arithmetic_getID) for [Anonymous Symbol]
+    ifx_math_arithmetic.o(.text.Ifx_Math_Arithmetic_getVersion) refers to ifx_math_arithmetic.o(.rodata.Ifx_Math_Arithmetic_componentVersion) for Ifx_Math_Arithmetic_componentVersion
+    ifx_math_arithmetic.o(.ARM.exidx.text.Ifx_Math_Arithmetic_getVersion) refers to ifx_math_arithmetic.o(.text.Ifx_Math_Arithmetic_getVersion) for [Anonymous Symbol]
+    ifx_math_atan2.o(.text.Ifx_Math_Atan2_F16) refers to ifx_math_lut_atan_f16_table.o(.rodata.Ifx_Math_Lut_Atan_F16_table) for Ifx_Math_Lut_Atan_F16_table
+    ifx_math_atan2.o(.ARM.exidx.text.Ifx_Math_Atan2_F16) refers to ifx_math_atan2.o(.text.Ifx_Math_Atan2_F16) for [Anonymous Symbol]
+    ifx_math_carttopolar.o(.text.Ifx_Math_CartToPolar_F16) refers to ifx_math_atan2.o(.text.Ifx_Math_Atan2_F16) for Ifx_Math_Atan2_F16
+    ifx_math_carttopolar.o(.text.Ifx_Math_CartToPolar_F16) refers to ifx_math_lut_carttopolar_f16_table.o(.rodata.Ifx_Math_Lut_CartToPolar_F16_table) for Ifx_Math_Lut_CartToPolar_F16_table
+    ifx_math_carttopolar.o(.text.Ifx_Math_CartToPolar_F16) refers to ifx_math_interp1dlut.o(.text.Ifx_Math_Interp1DLut_F16) for Ifx_Math_Interp1DLut_F16
+    ifx_math_carttopolar.o(.ARM.exidx.text.Ifx_Math_CartToPolar_F16) refers to ifx_math_carttopolar.o(.text.Ifx_Math_CartToPolar_F16) for [Anonymous Symbol]
+    ifx_math_clarke.o(.ARM.exidx.text.Ifx_Math_Clarke_F16) refers to ifx_math_clarke.o(.text.Ifx_Math_Clarke_F16) for [Anonymous Symbol]
+    ifx_math_currentreconstruction.o(.ARM.exidx.text.Ifx_Math_CurrentReconstruction_F16) refers to ifx_math_currentreconstruction.o(.text.Ifx_Math_CurrentReconstruction_F16) for [Anonymous Symbol]
+    ifx_math_interp1dlut.o(.ARM.exidx.text.Ifx_Math_Interp1DLut_F16) refers to ifx_math_interp1dlut.o(.text.Ifx_Math_Interp1DLut_F16) for [Anonymous Symbol]
+    ifx_math_invclarke.o(.ARM.exidx.text.Ifx_Math_InvClarke_F16) refers to ifx_math_invclarke.o(.text.Ifx_Math_InvClarke_F16) for [Anonymous Symbol]
+    ifx_math_invpark.o(.text.Ifx_Math_InvPark_F16) refers to ifx_math_lut_sincos_f16_table.o(.rodata.Ifx_Math_Lut_Sincos_F16_table) for Ifx_Math_Lut_Sincos_F16_table
+    ifx_math_invpark.o(.ARM.exidx.text.Ifx_Math_InvPark_F16) refers to ifx_math_invpark.o(.text.Ifx_Math_InvPark_F16) for [Anonymous Symbol]
+    ifx_math_lowpass1stf16.o(.ARM.exidx.text.Ifx_Math_LowPass1stF16_init) refers to ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_init) for [Anonymous Symbol]
+    ifx_math_lowpass1stf16.o(.ARM.exidx.text.Ifx_Math_LowPass1stF16_execute) refers to ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_execute) for [Anonymous Symbol]
+    ifx_math_motorcontrol.o(.text.Ifx_Math_MotorControl_getID) refers to ifx_math_motorcontrol.o(.rodata.Ifx_Math_MotorControl_componentID) for Ifx_Math_MotorControl_componentID
+    ifx_math_motorcontrol.o(.ARM.exidx.text.Ifx_Math_MotorControl_getID) refers to ifx_math_motorcontrol.o(.text.Ifx_Math_MotorControl_getID) for [Anonymous Symbol]
+    ifx_math_motorcontrol.o(.text.Ifx_Math_MotorControl_getVersion) refers to ifx_math_motorcontrol.o(.rodata.Ifx_Math_MotorControl_componentVersion) for Ifx_Math_MotorControl_componentVersion
+    ifx_math_motorcontrol.o(.ARM.exidx.text.Ifx_Math_MotorControl_getVersion) refers to ifx_math_motorcontrol.o(.text.Ifx_Math_MotorControl_getVersion) for [Anonymous Symbol]
+    ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_init) refers to memseta.o(.text) for __aeabi_memclr4
+    ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_init) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_init) for [Anonymous Symbol]
+    ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_resetBuffer) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_resetBuffer) for [Anonymous Symbol]
+    ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_execute) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_execute) for [Anonymous Symbol]
+    ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setPropGain) refers to uldiv.o(.text) for __aeabi_uldivmod
+    ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_setPropGain) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setPropGain) for [Anonymous Symbol]
+    ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setSamplingTime_us) refers to uldiv.o(.text) for __aeabi_uldivmod
+    ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_setSamplingTime_us) refers to ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setSamplingTime_us) for [Anonymous Symbol]
+    ifx_math_park.o(.text.Ifx_Math_Park_F16) refers to ifx_math_lut_sincos_f16_table.o(.rodata.Ifx_Math_Lut_Sincos_F16_table) for Ifx_Math_Lut_Sincos_F16_table
+    ifx_math_park.o(.ARM.exidx.text.Ifx_Math_Park_F16) refers to ifx_math_park.o(.text.Ifx_Math_Park_F16) for [Anonymous Symbol]
+    ifx_math_pif16.o(.ARM.exidx.text.Ifx_Math_PiF16_init) refers to ifx_math_pif16.o(.text.Ifx_Math_PiF16_init) for [Anonymous Symbol]
+    ifx_math_pif16.o(.ARM.exidx.text.Ifx_Math_PiF16_execute) refers to ifx_math_pif16.o(.text.Ifx_Math_PiF16_execute) for [Anonymous Symbol]
+    ifx_math_polartocart.o(.text.Ifx_Math_PolarToCart_F16) refers to ifx_math_lut_sincos_f16_table.o(.rodata.Ifx_Math_Lut_Sincos_F16_table) for Ifx_Math_Lut_Sincos_F16_table
+    ifx_math_polartocart.o(.ARM.exidx.text.Ifx_Math_PolarToCart_F16) refers to ifx_math_polartocart.o(.text.Ifx_Math_PolarToCart_F16) for [Anonymous Symbol]
+    ifx_math_ratelimitf16.o(.ARM.exidx.text.Ifx_Math_RateLimitF16_execute) refers to ifx_math_ratelimitf16.o(.text.Ifx_Math_RateLimitF16_execute) for [Anonymous Symbol]
+    ifx_math_speedprecontrolf16.o(.ARM.exidx.text.Ifx_Math_SpeedPreControlF16_init) refers to ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_init) for [Anonymous Symbol]
+    ifx_math_speedprecontrolf16.o(.ARM.exidx.text.Ifx_Math_SpeedPreControlF16_execute) refers to ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_execute) for [Anonymous Symbol]
+    ifx_math_trigonometric.o(.text.Ifx_Math_Trigonometric_getID) refers to ifx_math_trigonometric.o(.rodata.Ifx_Math_Trigonometric_componentID) for Ifx_Math_Trigonometric_componentID
+    ifx_math_trigonometric.o(.ARM.exidx.text.Ifx_Math_Trigonometric_getID) refers to ifx_math_trigonometric.o(.text.Ifx_Math_Trigonometric_getID) for [Anonymous Symbol]
+    ifx_math_trigonometric.o(.text.Ifx_Math_Trigonometric_getVersion) refers to ifx_math_trigonometric.o(.rodata.Ifx_Math_Trigonometric_componentVersion) for Ifx_Math_Trigonometric_componentVersion
+    ifx_math_trigonometric.o(.ARM.exidx.text.Ifx_Math_Trigonometric_getVersion) refers to ifx_math_trigonometric.o(.text.Ifx_Math_Trigonometric_getVersion) for [Anonymous Symbol]
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_tle987x.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_tle987x.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.text), (0 bytes).
+    Removing main.o(.ARM.exidx.text.PendSV_Handler), (8 bytes).
+    Removing main.o(.ARM.exidx.text.Ifx_FOC_oneMatchCallback), (8 bytes).
+    Removing main.o(.ARM.exidx.text.Ifx_FOC_periodMatchCallback), (8 bytes).
+    Removing main.o(.ARM.exidx.text.Ifx_FOC_speedLoop_callback), (8 bytes).
+    Removing main.o(.ARM.exidx.text.main), (8 bytes).
+    Removing main.o(.ARM.use_no_argv), (4 bytes).
+    Removing probe_scope.o(.text), (0 bytes).
+    Removing probe_scope.o(.text.ProbeScope_Init), (46 bytes).
+    Removing probe_scope.o(.ARM.exidx.text.ProbeScope_Init), (8 bytes).
+    Removing probe_scope.o(.text.ProbeScope_Sampling), (20 bytes).
+    Removing probe_scope.o(.ARM.exidx.text.ProbeScope_Sampling), (8 bytes).
+    Removing probe_scope.o(.bss.ProbeScope_TrigIx), (4 bytes).
+    Removing probe_scope.o(.data..L_MergedGlobals), (12 bytes).
+    Removing probe_scope.o(.bss..L_MergedGlobals.1), (28 bytes).
+    Removing adc1.o(.text), (0 bytes).
+    Removing adc1.o(.ARM.exidx.text.ADC1_Init), (8 bytes).
+    Removing adc1.o(.text.VAREF_Enable), (334 bytes).
+    Removing adc1.o(.ARM.exidx.text.VAREF_Enable), (8 bytes).
+    Removing adc1.o(.text.ADC1_GetChResult), (40 bytes).
+    Removing adc1.o(.ARM.exidx.text.ADC1_GetChResult), (8 bytes).
+    Removing adc1.o(.text.ADC1_GetChResult_mV), (118 bytes).
+    Removing adc1.o(.ARM.exidx.text.ADC1_GetChResult_mV), (8 bytes).
+    Removing adc1.o(.text.ADC1_GetEIMResult), (30 bytes).
+    Removing adc1.o(.ARM.exidx.text.ADC1_GetEIMResult), (8 bytes).
+    Removing adc1.o(.text.ADC1_GetEIMResult_mV), (116 bytes).
+    Removing adc1.o(.ARM.exidx.text.ADC1_GetEIMResult_mV), (8 bytes).
+    Removing adc2.o(.text), (0 bytes).
+    Removing adc2.o(.ARM.exidx.text.ADC2_Init), (8 bytes).
+    Removing bdrv.o(.text), (0 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_Init), (8 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_Set_Bridge), (8 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_Clr_Sts), (8 bytes).
+    Removing bdrv.o(.text.BDRV_Set_Channel), (82 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_Set_Channel), (8 bytes).
+    Removing bdrv.o(.text.BDRV_Set_Int_Channel), (96 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_Set_Int_Channel), (8 bytes).
+    Removing bdrv.o(.text.BDRV_Set_DSM_Threshold), (18 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_Set_DSM_Threshold), (8 bytes).
+    Removing bdrv.o(.text.BDRV_getChrgCurrent_mA), (26 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_getChrgCurrent_mA), (8 bytes).
+    Removing bdrv.o(.text.BDRV_setChrgCurrent_mA), (34 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_setChrgCurrent_mA), (8 bytes).
+    Removing bdrv.o(.text.BDRV_getDischrgCurrent_mA), (26 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_getDischrgCurrent_mA), (8 bytes).
+    Removing bdrv.o(.text.BDRV_setDischrgCurrent_mA), (42 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_setDischrgCurrent_mA), (8 bytes).
+    Removing bdrv.o(.text.BDRV_Diag_OpenLoad), (360 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_Diag_OpenLoad), (8 bytes).
+    Removing bdrv.o(.text.BDRV_Off_Diagnosis), (306 bytes).
+    Removing bdrv.o(.ARM.exidx.text.BDRV_Off_Diagnosis), (8 bytes).
+    Removing bootrom.o(.text), (0 bytes).
+    Removing bootrom.o(.text.ProgramPage), (276 bytes).
+    Removing bootrom.o(.ARM.exidx.text.ProgramPage), (8 bytes).
+    Removing bootrom.o(.text.GetCustomerID), (44 bytes).
+    Removing bootrom.o(.ARM.exidx.text.GetCustomerID), (8 bytes).
+    Removing bootrom.o(.rodata.USER_CFLASH_WR_PROT_DIS), (4 bytes).
+    Removing bootrom.o(.rodata.USER_CFLASH_RD_PROT_EN), (4 bytes).
+    Removing bootrom.o(.rodata.USER_CFLASH_RD_PROT_DIS), (4 bytes).
+    Removing bootrom.o(.rodata.USER_DFLASH_WR_PROT_EN), (4 bytes).
+    Removing bootrom.o(.rodata.USER_DFLASH_WR_PROT_DIS), (4 bytes).
+    Removing bootrom.o(.rodata.USER_DFLASH_RD_PROT_EN), (4 bytes).
+    Removing bootrom.o(.rodata.USER_DFLASH_RD_PROT_DIS), (4 bytes).
+    Removing bootrom.o(.rodata.USER_OPENAB), (4 bytes).
+    Removing bootrom.o(.rodata.USER_PROG), (4 bytes).
+    Removing bootrom.o(.rodata.USER_ERASEPG), (4 bytes).
+    Removing bootrom.o(.rodata.USER_ABORTPROG), (4 bytes).
+    Removing bootrom.o(.rodata.USER_NVMRDY), (4 bytes).
+    Removing bootrom.o(.rodata.USER_READ_CAL), (4 bytes).
+    Removing bootrom.o(.rodata.USER_NVM_CONFIG), (4 bytes).
+    Removing bootrom.o(.rodata.USER_NVM_ECC2ADDR), (4 bytes).
+    Removing bootrom.o(.rodata.USER_MAPRAM_INIT), (4 bytes).
+    Removing bootrom.o(.rodata.USER_READ_100TP), (4 bytes).
+    Removing bootrom.o(.rodata.USER_100TP_PROG), (4 bytes).
+    Removing bootrom.o(.rodata.USER_ERASE_SECTOR), (4 bytes).
+    Removing bootrom.o(.rodata.USER_RAM_MBIST_START), (4 bytes).
+    Removing bootrom.o(.rodata.USER_NVM_ECC_CHECK), (4 bytes).
+    Removing bootrom.o(.rodata.USER_ECC_CHECK), (4 bytes).
+    Removing bootrom.o(.rodata.USER_ERASE_SECTOR_VERIFY), (4 bytes).
+    Removing bootrom.o(.rodata.USER_ERASEPG_VERIFY), (4 bytes).
+    Removing bootrom.o(.rodata.USER_VERIFY_PAGE), (4 bytes).
+    Removing ccu6.o(.text), (0 bytes).
+    Removing ccu6.o(.ARM.exidx.text.CCU6_Init), (8 bytes).
+    Removing csa.o(.text), (0 bytes).
+    Removing csa.o(.ARM.exidx.text.CSA_Init), (8 bytes).
+    Removing csa.o(.text.CSA_Offset_Get), (234 bytes).
+    Removing csa.o(.ARM.exidx.text.CSA_Offset_Get), (8 bytes).
+    Removing dma.o(.text), (0 bytes).
+    Removing dma.o(.text.DMA_Setup_Channel), (184 bytes).
+    Removing dma.o(.ARM.exidx.text.DMA_Setup_Channel), (8 bytes).
+    Removing dma.o(.text.DMA_Task_SctGth_Set), (58 bytes).
+    Removing dma.o(.ARM.exidx.text.DMA_Task_SctGth_Set), (8 bytes).
+    Removing dma.o(.text.DMA_Channel_MemSctGth_Set), (66 bytes).
+    Removing dma.o(.ARM.exidx.text.DMA_Channel_MemSctGth_Set), (8 bytes).
+    Removing dma.o(.text.DMA_Channel_PerSctGth_Set), (66 bytes).
+    Removing dma.o(.ARM.exidx.text.DMA_Channel_PerSctGth_Set), (8 bytes).
+    Removing dma.o(.text.DMA_Task_Set), (174 bytes).
+    Removing dma.o(.ARM.exidx.text.DMA_Task_Set), (8 bytes).
+    Removing dma.o(.text.DMA_Reset_Channel), (64 bytes).
+    Removing dma.o(.ARM.exidx.text.DMA_Reset_Channel), (8 bytes).
+    Removing dma.o(.ARM.exidx.text.DMA_Init), (8 bytes).
+    Removing gpt12e.o(.text), (0 bytes).
+    Removing gpt12e.o(.ARM.exidx.text.GPT12E_Init), (8 bytes).
+    Removing gpt12e.o(.text.GPT12E_T3_Interval_Timer_Setup), (314 bytes).
+    Removing gpt12e.o(.ARM.exidx.text.GPT12E_T3_Interval_Timer_Setup), (8 bytes).
+    Removing gpt12e.o(.text.GPT12E_T6_Interval_Timer_Setup), (272 bytes).
+    Removing gpt12e.o(.ARM.exidx.text.GPT12E_T6_Interval_Timer_Setup), (8 bytes).
+    Removing int.o(.text), (0 bytes).
+    Removing int.o(.ARM.exidx.text.INT_Init), (8 bytes).
+    Removing isr.o(.text), (0 bytes).
+    Removing isr.o(.ARM.exidx.text.GPT2_IRQHandler), (8 bytes).
+    Removing isr.o(.ARM.exidx.text.CCU6SR1_IRQHandler), (8 bytes).
+    Removing isr.o(.ARM.exidx.text.HardFault_Handler), (8 bytes).
+    Removing isr.o(.ARM.exidx.text.MemManage_Handler), (8 bytes).
+    Removing isr.o(.ARM.exidx.text.BusFault_Handler), (8 bytes).
+    Removing isr.o(.ARM.exidx.text.UsageFault_Handler), (8 bytes).
+    Removing isr.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
+    Removing lin.o(.text), (0 bytes).
+    Removing lin.o(.ARM.exidx.text.LIN_Init), (8 bytes).
+    Removing pmu.o(.text), (0 bytes).
+    Removing pmu.o(.ARM.exidx.text.PMU_Init), (8 bytes).
+    Removing pmu.o(.text.PMU_VDDEXT_On), (30 bytes).
+    Removing pmu.o(.ARM.exidx.text.PMU_VDDEXT_On), (8 bytes).
+    Removing port.o(.text), (0 bytes).
+    Removing port.o(.ARM.exidx.text.PORT_Init), (8 bytes).
+    Removing port.o(.text.PORT_ChangePin), (106 bytes).
+    Removing port.o(.ARM.exidx.text.PORT_ChangePin), (8 bytes).
+    Removing port.o(.text.PORT_ReadPin), (32 bytes).
+    Removing port.o(.ARM.exidx.text.PORT_ReadPin), (8 bytes).
+    Removing port.o(.text.PORT_ReadPort), (28 bytes).
+    Removing port.o(.ARM.exidx.text.PORT_ReadPort), (8 bytes).
+    Removing port.o(.text.PORT_ChangePinAlt), (84 bytes).
+    Removing port.o(.ARM.exidx.text.PORT_ChangePinAlt), (8 bytes).
+    Removing scu.o(.text), (0 bytes).
+    Removing scu.o(.ARM.exidx.text.SCU_ClkInit), (8 bytes).
+    Removing scu.o(.ARM.exidx.text.SCU_Init), (8 bytes).
+    Removing scu.o(.text.SCU_EnterSlowMode), (180 bytes).
+    Removing scu.o(.ARM.exidx.text.SCU_EnterSlowMode), (8 bytes).
+    Removing scu.o(.text.SCU_ExitSlowMode), (82 bytes).
+    Removing scu.o(.ARM.exidx.text.SCU_ExitSlowMode), (8 bytes).
+    Removing scu.o(.text.SCU_ChangeNVMProtection), (60 bytes).
+    Removing scu.o(.ARM.exidx.text.SCU_ChangeNVMProtection), (8 bytes).
+    Removing scu.o(.data.SystemFrequency), (4 bytes).
+    Removing ssc.o(.text), (0 bytes).
+    Removing ssc.o(.ARM.exidx.text.SSC1_Init), (8 bytes).
+    Removing ssc.o(.ARM.exidx.text.SSC2_Init), (8 bytes).
+    Removing startup_tle987x.o(HEAP), (0 bytes).
+    Removing system_tle987x.o(.text), (0 bytes).
+    Removing system_tle987x.o(.ARM.exidx.text.SystemInit), (8 bytes).
+    Removing timer3.o(.text), (0 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Init), (8 bytes).
+    Removing timer3.o(.text.TIMER3_Start), (18 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Start), (8 bytes).
+    Removing timer3.o(.text.TIMER3_Stop), (18 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Stop), (8 bytes).
+    Removing timer3.o(.text.TIMER3_Set_Cnt_Value), (12 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Set_Cnt_Value), (8 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Set_Cmp_Value), (8 bytes).
+    Removing timer3.o(.text.TIMER3_Get_Cnt_Value), (32 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Get_Cnt_Value), (8 bytes).
+    Removing timer3.o(.text.TIMER3_Value_Get), (32 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Value_Get), (8 bytes).
+    Removing timer3.o(.text.TIMER3_Clk_Source_Sel), (52 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Clk_Source_Sel), (8 bytes).
+    Removing timer3.o(.text.TIMER3_Clk_Prescaler_Sel), (58 bytes).
+    Removing timer3.o(.ARM.exidx.text.TIMER3_Clk_Prescaler_Sel), (8 bytes).
+    Removing tle_device.o(.text), (0 bytes).
+    Removing tle_device.o(.ARM.exidx.text.TLE_Init), (8 bytes).
+    Removing uart.o(.text), (0 bytes).
+    Removing uart.o(.ARM.exidx.text.UART1_Init), (8 bytes).
+    Removing uart.o(.text.UART1_BaudRate_Set), (50 bytes).
+    Removing uart.o(.ARM.exidx.text.UART1_BaudRate_Set), (8 bytes).
+    Removing uart.o(.ARM.exidx.text.UART2_Init), (8 bytes).
+    Removing uart.o(.text.UART2_BaudRate_Set), (50 bytes).
+    Removing uart.o(.ARM.exidx.text.UART2_BaudRate_Set), (8 bytes).
+    Removing wdt1.o(.text), (0 bytes).
+    Removing wdt1.o(.ARM.exidx.text.WDT1_Init), (8 bytes).
+    Removing wdt1.o(.ARM.exidx.text.SysTick_Init), (8 bytes).
+    Removing wdt1.o(.text.WDT1_Stop), (18 bytes).
+    Removing wdt1.o(.ARM.exidx.text.WDT1_Stop), (8 bytes).
+    Removing wdt1.o(.ARM.exidx.text.WDT1_Service), (8 bytes).
+    Removing wdt1.o(.text.WDT1_SOW_Service), (28 bytes).
+    Removing wdt1.o(.ARM.exidx.text.WDT1_SOW_Service), (8 bytes).
+    Removing wdt1.o(.text.Delay_us), (632 bytes).
+    Removing wdt1.o(.ARM.exidx.text.Delay_us), (8 bytes).
+    Removing ifx_mas_modulatorf16.o(.text), (0 bytes).
+    Removing ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_getID), (12 bytes).
+    Removing ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_getID), (8 bytes).
+    Removing ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_getVersion), (12 bytes).
+    Removing ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_getVersion), (8 bytes).
+    Removing ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_init), (8 bytes).
+    Removing ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_execute), (8 bytes).
+    Removing ifx_mas_modulatorf16.o(.ARM.exidx.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16), (8 bytes).
+    Removing ifx_mas_modulatorf16.o(.rodata.Ifx_MHA_ModulatorF16_componentID), (4 bytes).
+    Removing ifx_mas_modulatorf16.o(.rodata.Ifx_MHA_ModulatorF16_componentVersion), (8 bytes).
+    Removing ifx_mas_modulatorf16_tablesin60sqrt3.o(.text), (0 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.text), (0 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_getID), (12 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_getID), (8 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_getVersion), (12 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_getVersion), (8 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_init), (8 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initAlphaFilter), (90 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_initAlphaFilter), (8 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initBetaFilter), (94 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_initBetaFilter), (8 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_initSpeedFilter), (88 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_initSpeedFilter), (8 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_setSamplingTime_us), (276 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_setSamplingTime_us), (8 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.ARM.exidx.text.Ifx_MDA_FluxEstimatorF16_execute), (8 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.rodata.Ifx_MDA_FluxEstimator_componentID), (4 bytes).
+    Removing ifx_mda_fluxestimatorf16.o(.rodata.Ifx_MDA_FluxEstimator_componentVersion), (8 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.text), (0 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_getID), (12 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_getID), (8 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_getVersion), (12 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_getVersion), (8 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_init), (8 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_execute), (8 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.ARM.exidx.text.Ifx_MDA_FocControllerF16_reset), (8 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.rodata.Ifx_MDA_FocController_componentID), (4 bytes).
+    Removing ifx_mda_foccontrollerf16.o(.rodata.Ifx_MDA_FocController_componentVersion), (8 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.text), (0 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_getID), (12 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_getID), (8 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_getVersion), (12 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_getVersion), (8 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_init), (8 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle), (8 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_IToFControllerF16_execute), (8 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.rodata.Ifx_MDA_IToFController_componentID), (4 bytes).
+    Removing ifx_mda_itofcontrollerf16.o(.rodata.Ifx_MDA_IToFController_componentVersion), (8 bytes).
+    Removing ifx_mda_startangleidentf16.o(.text), (0 bytes).
+    Removing ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_getID), (12 bytes).
+    Removing ifx_mda_startangleidentf16.o(.ARM.exidx.text.Ifx_MDA_StartAngleIdentF16_getID), (8 bytes).
+    Removing ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_getVersion), (12 bytes).
+    Removing ifx_mda_startangleidentf16.o(.ARM.exidx.text.Ifx_MDA_StartAngleIdentF16_getVersion), (8 bytes).
+    Removing ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_init), (68 bytes).
+    Removing ifx_mda_startangleidentf16.o(.ARM.exidx.text.Ifx_MDA_StartAngleIdentF16_init), (8 bytes).
+    Removing ifx_mda_startangleidentf16.o(.text.Ifx_MDA_StartAngleIdentF16_execute), (900 bytes).
+    Removing ifx_mda_startangleidentf16.o(.ARM.exidx.text.Ifx_MDA_StartAngleIdentF16_execute), (8 bytes).
+    Removing ifx_mda_startangleidentf16.o(.rodata.Ifx_MDA_StartAngleIdent_componentID), (4 bytes).
+    Removing ifx_mda_startangleidentf16.o(.rodata.Ifx_MDA_StartAngleIdent_componentVersion), (8 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.text), (0 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_getID), (12 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_VToFControllerF16_getID), (8 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_getVersion), (12 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_VToFControllerF16_getVersion), (8 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_VToFControllerF16_init), (8 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.ARM.exidx.text.Ifx_MDA_VToFControllerF16_execute), (8 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.rodata.Ifx_MDA_VToFController_componentID), (4 bytes).
+    Removing ifx_mda_vtofcontrollerf16.o(.rodata.Ifx_MDA_VToFController_componentVersion), (8 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.text), (0 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_getID), (12 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.ARM.exidx.text.Ifx_MHA_BridgeDrv_TLE987_getID), (8 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_getVersion), (12 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.ARM.exidx.text.Ifx_MHA_BridgeDrv_TLE987_getVersion), (8 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.ARM.exidx.text.Ifx_MHA_BridgeDrv_TLE987_execute), (8 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.ARM.exidx.text.Ifx_MHA_BridgeDrv_TLE987_init), (8 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.rodata.Ifx_MHA_BridgeDrv_TLE987_componentID), (4 bytes).
+    Removing ifx_mha_bridgedrv_tle987.o(.rodata.Ifx_MHA_BridgeDrv_TLE987_componentVersion), (8 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.text), (0 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_getID), (12 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_getID), (8 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_getVersion), (12 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_getVersion), (8 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_init), (8 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_periodMatch), (8 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_oneMatch), (8 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.ARM.exidx.text.Ifx_MHA_MeasurementADC_TLE987_execute), (8 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.rodata.Ifx_MHA_MeasurementADC_TLE987_componentID), (4 bytes).
+    Removing ifx_mha_measurementadc_tle987.o(.rodata.Ifx_MHA_MeasurementADC_TLE987_componentVersion), (8 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.text), (0 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_getID), (12 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_getID), (8 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_getVersion), (12 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_getVersion), (8 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_init), (8 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_execute), (8 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch), (8 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.ARM.exidx.text.Ifx_MHA_PatternGen_TLE987_onOneMatch), (8 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.rodata.Ifx_MHA_PatternGen_TLE987_componentID), (4 bytes).
+    Removing ifx_mha_patterngen_tle987.o(.rodata.Ifx_MHA_PatternGen_TLE987_componentVersion), (8 bytes).
+    Removing ifx_ms_focsolutionf16.o(.text), (0 bytes).
+    Removing ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_getID), (12 bytes).
+    Removing ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_getID), (8 bytes).
+    Removing ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_getVersion), (12 bytes).
+    Removing ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_getVersion), (8 bytes).
+    Removing ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_init), (8 bytes).
+    Removing ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_initModules), (102 bytes).
+    Removing ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_initModules), (8 bytes).
+    Removing ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_executeSpeedControl), (8 bytes).
+    Removing ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_executeControlMode), (8 bytes).
+    Removing ifx_ms_focsolutionf16.o(.ARM.exidx.text.Ifx_MS_FocSolutionF16_subStateMachine), (8 bytes).
+    Removing ifx_ms_focsolutionf16.o(.rodata.Ifx_MS_FocSolution_TLE987_componentID), (4 bytes).
+    Removing ifx_ms_focsolutionf16.o(.rodata.Ifx_MS_FocSolution_TLE987_componentVersion), (8 bytes).
+    Removing ifx_math_accellimitf16.o(.text), (0 bytes).
+    Removing ifx_math_accellimitf16.o(.ARM.exidx.text.Ifx_Math_AccelLimitF16_execute), (8 bytes).
+    Removing ifx_math_advancedmath.o(.text), (0 bytes).
+    Removing ifx_math_advancedmath.o(.text.Ifx_Math_AdvancedMath_getID), (12 bytes).
+    Removing ifx_math_advancedmath.o(.ARM.exidx.text.Ifx_Math_AdvancedMath_getID), (8 bytes).
+    Removing ifx_math_advancedmath.o(.text.Ifx_Math_AdvancedMath_getVersion), (12 bytes).
+    Removing ifx_math_advancedmath.o(.ARM.exidx.text.Ifx_Math_AdvancedMath_getVersion), (8 bytes).
+    Removing ifx_math_advancedmath.o(.rodata.Ifx_Math_AdvancedMath_componentID), (4 bytes).
+    Removing ifx_math_advancedmath.o(.rodata.Ifx_Math_AdvancedMath_componentVersion), (8 bytes).
+    Removing ifx_math_arithmetic.o(.text), (0 bytes).
+    Removing ifx_math_arithmetic.o(.text.Ifx_Math_Arithmetic_getID), (12 bytes).
+    Removing ifx_math_arithmetic.o(.ARM.exidx.text.Ifx_Math_Arithmetic_getID), (8 bytes).
+    Removing ifx_math_arithmetic.o(.text.Ifx_Math_Arithmetic_getVersion), (12 bytes).
+    Removing ifx_math_arithmetic.o(.ARM.exidx.text.Ifx_Math_Arithmetic_getVersion), (8 bytes).
+    Removing ifx_math_arithmetic.o(.rodata.Ifx_Math_Arithmetic_componentID), (4 bytes).
+    Removing ifx_math_arithmetic.o(.rodata.Ifx_Math_Arithmetic_componentVersion), (8 bytes).
+    Removing ifx_math_atan2.o(.text), (0 bytes).
+    Removing ifx_math_atan2.o(.ARM.exidx.text.Ifx_Math_Atan2_F16), (8 bytes).
+    Removing ifx_math_carttopolar.o(.text), (0 bytes).
+    Removing ifx_math_carttopolar.o(.ARM.exidx.text.Ifx_Math_CartToPolar_F16), (8 bytes).
+    Removing ifx_math_clarke.o(.text), (0 bytes).
+    Removing ifx_math_clarke.o(.ARM.exidx.text.Ifx_Math_Clarke_F16), (8 bytes).
+    Removing ifx_math_currentreconstruction.o(.text), (0 bytes).
+    Removing ifx_math_currentreconstruction.o(.ARM.exidx.text.Ifx_Math_CurrentReconstruction_F16), (8 bytes).
+    Removing ifx_math_interp1dlut.o(.text), (0 bytes).
+    Removing ifx_math_interp1dlut.o(.ARM.exidx.text.Ifx_Math_Interp1DLut_F16), (8 bytes).
+    Removing ifx_math_invclarke.o(.text), (0 bytes).
+    Removing ifx_math_invclarke.o(.text.Ifx_Math_InvClarke_F16), (42 bytes).
+    Removing ifx_math_invclarke.o(.ARM.exidx.text.Ifx_Math_InvClarke_F16), (8 bytes).
+    Removing ifx_math_invpark.o(.text), (0 bytes).
+    Removing ifx_math_invpark.o(.text.Ifx_Math_InvPark_F16), (114 bytes).
+    Removing ifx_math_invpark.o(.ARM.exidx.text.Ifx_Math_InvPark_F16), (8 bytes).
+    Removing ifx_math_lowpass1stf16.o(.text), (0 bytes).
+    Removing ifx_math_lowpass1stf16.o(.ARM.exidx.text.Ifx_Math_LowPass1stF16_init), (8 bytes).
+    Removing ifx_math_lowpass1stf16.o(.ARM.exidx.text.Ifx_Math_LowPass1stF16_execute), (8 bytes).
+    Removing ifx_math_lut_atan_f16_table.o(.text), (0 bytes).
+    Removing ifx_math_lut_carttopolar_f16_table.o(.text), (0 bytes).
+    Removing ifx_math_lut_divshl_f32_table.o(.text), (0 bytes).
+    Removing ifx_math_lut_sincos_f16_table.o(.text), (0 bytes).
+    Removing ifx_math_motorcontrol.o(.text), (0 bytes).
+    Removing ifx_math_motorcontrol.o(.text.Ifx_Math_MotorControl_getID), (12 bytes).
+    Removing ifx_math_motorcontrol.o(.ARM.exidx.text.Ifx_Math_MotorControl_getID), (8 bytes).
+    Removing ifx_math_motorcontrol.o(.text.Ifx_Math_MotorControl_getVersion), (12 bytes).
+    Removing ifx_math_motorcontrol.o(.ARM.exidx.text.Ifx_Math_MotorControl_getVersion), (8 bytes).
+    Removing ifx_math_motorcontrol.o(.rodata.Ifx_Math_MotorControl_componentID), (4 bytes).
+    Removing ifx_math_motorcontrol.o(.rodata.Ifx_Math_MotorControl_componentVersion), (8 bytes).
+    Removing ifx_math_pllf16.o(.text), (0 bytes).
+    Removing ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_init), (8 bytes).
+    Removing ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_resetBuffer), (8 bytes).
+    Removing ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_execute), (8 bytes).
+    Removing ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_setPropGain), (8 bytes).
+    Removing ifx_math_pllf16.o(.ARM.exidx.text.Ifx_Math_PLLF16_setSamplingTime_us), (8 bytes).
+    Removing ifx_math_park.o(.text), (0 bytes).
+    Removing ifx_math_park.o(.ARM.exidx.text.Ifx_Math_Park_F16), (8 bytes).
+    Removing ifx_math_pif16.o(.text), (0 bytes).
+    Removing ifx_math_pif16.o(.ARM.exidx.text.Ifx_Math_PiF16_init), (8 bytes).
+    Removing ifx_math_pif16.o(.ARM.exidx.text.Ifx_Math_PiF16_execute), (8 bytes).
+    Removing ifx_math_polartocart.o(.text), (0 bytes).
+    Removing ifx_math_polartocart.o(.ARM.exidx.text.Ifx_Math_PolarToCart_F16), (8 bytes).
+    Removing ifx_math_ratelimitf16.o(.text), (0 bytes).
+    Removing ifx_math_ratelimitf16.o(.ARM.exidx.text.Ifx_Math_RateLimitF16_execute), (8 bytes).
+    Removing ifx_math_speedprecontrolf16.o(.text), (0 bytes).
+    Removing ifx_math_speedprecontrolf16.o(.ARM.exidx.text.Ifx_Math_SpeedPreControlF16_init), (8 bytes).
+    Removing ifx_math_speedprecontrolf16.o(.ARM.exidx.text.Ifx_Math_SpeedPreControlF16_execute), (8 bytes).
+    Removing ifx_math_trigonometric.o(.text), (0 bytes).
+    Removing ifx_math_trigonometric.o(.text.Ifx_Math_Trigonometric_getID), (12 bytes).
+    Removing ifx_math_trigonometric.o(.ARM.exidx.text.Ifx_Math_Trigonometric_getID), (8 bytes).
+    Removing ifx_math_trigonometric.o(.text.Ifx_Math_Trigonometric_getVersion), (12 bytes).
+    Removing ifx_math_trigonometric.o(.ARM.exidx.text.Ifx_Math_Trigonometric_getVersion), (8 bytes).
+    Removing ifx_math_trigonometric.o(.rodata.Ifx_Math_Trigonometric_componentID), (4 bytes).
+    Removing ifx_math_trigonometric.o(.rodata.Ifx_Math_Trigonometric_componentVersion), (8 bytes).
+
+368 unused section(s) (total 8830 bytes) removed from the image.
+
+==============================================================================
+
+Adding Veneers to the image
+
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_MAS_ModulatorF16_updatePolar7SegQ16' from ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_execute).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_MHA_MeasurementADC_TLE987_execute' from ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_MDA_FluxEstimatorF16_execute' from ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_MDA_FocControllerF16_execute' from ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_Math_PiF16_execute' from ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_Math_LowPass1stF16_execute' from ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_Math_Atan2_F16' from ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_Math_PLLF16_execute' from ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_Math_Park_F16' from ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_Math_Interp1DLut_F16' from ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute).
+    Adding TT veneer (10 bytes, Long) for call to 'Ifx_Math_CartToPolar_F16' from ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute).
+
+11 Veneer(s) (total 110 bytes) added to the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    Ifx_MAS_ModulatorF16.c                   0x00000000   Number         0  ifx_mas_modulatorf16.o ABSOLUTE
+    Ifx_MAS_ModulatorF16_tableSin60Sqrt3.c   0x00000000   Number         0  ifx_mas_modulatorf16_tablesin60sqrt3.o ABSOLUTE
+    Ifx_MDA_FluxEstimatorF16.c               0x00000000   Number         0  ifx_mda_fluxestimatorf16.o ABSOLUTE
+    Ifx_MDA_FocControllerF16.c               0x00000000   Number         0  ifx_mda_foccontrollerf16.o ABSOLUTE
+    Ifx_MDA_IToFControllerF16.c              0x00000000   Number         0  ifx_mda_itofcontrollerf16.o ABSOLUTE
+    Ifx_MDA_StartAngleIdentF16.c             0x00000000   Number         0  ifx_mda_startangleidentf16.o ABSOLUTE
+    Ifx_MDA_VToFControllerF16.c              0x00000000   Number         0  ifx_mda_vtofcontrollerf16.o ABSOLUTE
+    Ifx_MHA_BridgeDrv_TLE987.c               0x00000000   Number         0  ifx_mha_bridgedrv_tle987.o ABSOLUTE
+    Ifx_MHA_MeasurementADC_TLE987.c          0x00000000   Number         0  ifx_mha_measurementadc_tle987.o ABSOLUTE
+    Ifx_MHA_PatternGen_TLE987.c              0x00000000   Number         0  ifx_mha_patterngen_tle987.o ABSOLUTE
+    Ifx_MS_FocSolutionF16.c                  0x00000000   Number         0  ifx_ms_focsolutionf16.o ABSOLUTE
+    Ifx_Math_AccelLimitF16.c                 0x00000000   Number         0  ifx_math_accellimitf16.o ABSOLUTE
+    Ifx_Math_AdvancedMath.c                  0x00000000   Number         0  ifx_math_advancedmath.o ABSOLUTE
+    Ifx_Math_Arithmetic.c                    0x00000000   Number         0  ifx_math_arithmetic.o ABSOLUTE
+    Ifx_Math_Atan2.c                         0x00000000   Number         0  ifx_math_atan2.o ABSOLUTE
+    Ifx_Math_CartToPolar.c                   0x00000000   Number         0  ifx_math_carttopolar.o ABSOLUTE
+    Ifx_Math_Clarke.c                        0x00000000   Number         0  ifx_math_clarke.o ABSOLUTE
+    Ifx_Math_CurrentReconstruction.c         0x00000000   Number         0  ifx_math_currentreconstruction.o ABSOLUTE
+    Ifx_Math_Interp1DLut.c                   0x00000000   Number         0  ifx_math_interp1dlut.o ABSOLUTE
+    Ifx_Math_InvClarke.c                     0x00000000   Number         0  ifx_math_invclarke.o ABSOLUTE
+    Ifx_Math_InvPark.c                       0x00000000   Number         0  ifx_math_invpark.o ABSOLUTE
+    Ifx_Math_LowPass1stF16.c                 0x00000000   Number         0  ifx_math_lowpass1stf16.o ABSOLUTE
+    Ifx_Math_Lut_Atan_F16_Table.c            0x00000000   Number         0  ifx_math_lut_atan_f16_table.o ABSOLUTE
+    Ifx_Math_Lut_CartToPolar_F16_Table.c     0x00000000   Number         0  ifx_math_lut_carttopolar_f16_table.o ABSOLUTE
+    Ifx_Math_Lut_DivShL_F32_Table.c          0x00000000   Number         0  ifx_math_lut_divshl_f32_table.o ABSOLUTE
+    Ifx_Math_Lut_SinCos_F16_Table.c          0x00000000   Number         0  ifx_math_lut_sincos_f16_table.o ABSOLUTE
+    Ifx_Math_MotorControl.c                  0x00000000   Number         0  ifx_math_motorcontrol.o ABSOLUTE
+    Ifx_Math_PLLF16.c                        0x00000000   Number         0  ifx_math_pllf16.o ABSOLUTE
+    Ifx_Math_Park.c                          0x00000000   Number         0  ifx_math_park.o ABSOLUTE
+    Ifx_Math_PiF16.c                         0x00000000   Number         0  ifx_math_pif16.o ABSOLUTE
+    Ifx_Math_PolarToCart.c                   0x00000000   Number         0  ifx_math_polartocart.o ABSOLUTE
+    Ifx_Math_RateLimitF16.c                  0x00000000   Number         0  ifx_math_ratelimitf16.o ABSOLUTE
+    Ifx_Math_SpeedPreControlF16.c            0x00000000   Number         0  ifx_math_speedprecontrolf16.o ABSOLUTE
+    Ifx_Math_Trigonometric.c                 0x00000000   Number         0  ifx_math_trigonometric.o ABSOLUTE
+    RTE/Device/TLE9879QXA40/startup_tle987x.S 0x00000000   Number         0  startup_tle987x.o ABSOLUTE
+    adc1.c                                   0x00000000   Number         0  adc1.o ABSOLUTE
+    adc2.c                                   0x00000000   Number         0  adc2.o ABSOLUTE
+    bdrv.c                                   0x00000000   Number         0  bdrv.o ABSOLUTE
+    bootrom.c                                0x00000000   Number         0  bootrom.o ABSOLUTE
+    ccu6.c                                   0x00000000   Number         0  ccu6.o ABSOLUTE
+    csa.c                                    0x00000000   Number         0  csa.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    dma.c                                    0x00000000   Number         0  dma.o ABSOLUTE
+    gpt12e.c                                 0x00000000   Number         0  gpt12e.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    int.c                                    0x00000000   Number         0  int.o ABSOLUTE
+    isr.c                                    0x00000000   Number         0  isr.o ABSOLUTE
+    lin.c                                    0x00000000   Number         0  lin.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    pmu.c                                    0x00000000   Number         0  pmu.o ABSOLUTE
+    port.c                                   0x00000000   Number         0  port.o ABSOLUTE
+    probe_scope.c                            0x00000000   Number         0  probe_scope.o ABSOLUTE
+    scu.c                                    0x00000000   Number         0  scu.o ABSOLUTE
+    ssc.c                                    0x00000000   Number         0  ssc.o ABSOLUTE
+    system_tle987x.c                         0x00000000   Number         0  system_tle987x.o ABSOLUTE
+    timer3.c                                 0x00000000   Number         0  timer3.o ABSOLUTE
+    tle_device.c                             0x00000000   Number         0  tle_device.o ABSOLUTE
+    uart.c                                   0x00000000   Number         0  uart.o ABSOLUTE
+    wdt1.c                                   0x00000000   Number         0  wdt1.o ABSOLUTE
+    RESET                                    0x11000000   Section      128  startup_tle987x.o(RESET)
+    .ARM.Collect$$$$00000000                 0x11000080   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x11000080   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x11000084   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x11000088   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x11000088   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x11000088   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    __lit__00000000                          0x11000090   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .ARM.Collect$$$$0000000D                 0x11000090   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x11000090   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x11000090   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x11000094   Section       64  startup_tle987x.o(.text)
+    SVC_Handler                              0x110000a9   Thumb Code    24  startup_tle987x.o(.text)
+    .text                                    0x110000d4   Section        0  uldiv.o(.text)
+    .text                                    0x11000136   Section        0  memseta.o(.text)
+    .text                                    0x1100015a   Section        0  llshl.o(.text)
+    .text                                    0x11000178   Section        0  llushr.o(.text)
+    .text                                    0x11000198   Section       36  init.o(.text)
+    [Anonymous Symbol]                       0x110001bc   Section        0  adc1.o(.text.ADC1_Init)
+    [Anonymous Symbol]                       0x11000244   Section        0  adc2.o(.text.ADC2_Init)
+    [Anonymous Symbol]                       0x110002ac   Section        0  bdrv.o(.text.BDRV_Clr_Sts)
+    [Anonymous Symbol]                       0x110002bc   Section        0  bdrv.o(.text.BDRV_Init)
+    [Anonymous Symbol]                       0x1100031c   Section        0  bdrv.o(.text.BDRV_Set_Bridge)
+    [Anonymous Symbol]                       0x11000374   Section        0  isr.o(.text.BusFault_Handler)
+    [Anonymous Symbol]                       0x11000378   Section        0  isr.o(.text.CCU6SR1_IRQHandler)
+    [Anonymous Symbol]                       0x110003cc   Section        0  ccu6.o(.text.CCU6_Init)
+    [Anonymous Symbol]                       0x11000444   Section        0  csa.o(.text.CSA_Init)
+    [Anonymous Symbol]                       0x1100045c   Section        0  dma.o(.text.DMA_Init)
+    [Anonymous Symbol]                       0x11000474   Section        0  gpt12e.o(.text.GPT12E_Init)
+    [Anonymous Symbol]                       0x110004ac   Section        0  isr.o(.text.GPT2_IRQHandler)
+    [Anonymous Symbol]                       0x110004d4   Section        0  isr.o(.text.HardFault_Handler)
+    [Anonymous Symbol]                       0x110004d8   Section        0  int.o(.text.INT_Init)
+    [Anonymous Symbol]                       0x11000564   Section        0  main.o(.text.Ifx_FOC_oneMatchCallback)
+    [Anonymous Symbol]                       0x110005b4   Section        0  main.o(.text.Ifx_FOC_periodMatchCallback)
+    __tagsym$$used.0                         0x110005d4   Number         0  main.o(.text.Ifx_FOC_speedLoop_callback)
+    [Anonymous Symbol]                       0x110005d4   Section        0  main.o(.text.Ifx_FOC_speedLoop_callback)
+    [Anonymous Symbol]                       0x11000654   Section        0  ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_execute)
+    [Anonymous Symbol]                       0x11000814   Section        0  ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_init)
+    [Anonymous Symbol]                       0x1100086c   Section        0  ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init)
+    [Anonymous Symbol]                       0x11000a2c   Section        0  ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_init)
+    [Anonymous Symbol]                       0x11000a90   Section        0  ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_reset)
+    [Anonymous Symbol]                       0x11000aa4   Section        0  ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle)
+    [Anonymous Symbol]                       0x11000ab0   Section        0  ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_execute)
+    [Anonymous Symbol]                       0x11000ac4   Section        0  ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_init)
+    [Anonymous Symbol]                       0x11000ad8   Section        0  ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_execute)
+    [Anonymous Symbol]                       0x11000b68   Section        0  ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_init)
+    [Anonymous Symbol]                       0x11000b90   Section        0  ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_execute)
+    [Anonymous Symbol]                       0x11000dec   Section        0  ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_init)
+    [Anonymous Symbol]                       0x11000df4   Section        0  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_init)
+    [Anonymous Symbol]                       0x11000e2c   Section        0  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_oneMatch)
+    [Anonymous Symbol]                       0x11000e54   Section        0  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_periodMatch)
+    [Anonymous Symbol]                       0x11000e70   Section        0  ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_execute)
+    [Anonymous Symbol]                       0x11000fac   Section        0  ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_init)
+    [Anonymous Symbol]                       0x11000fc8   Section        0  ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onOneMatch)
+    [Anonymous Symbol]                       0x11001000   Section        0  ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch)
+    [Anonymous Symbol]                       0x11001078   Section        0  ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode)
+    [Anonymous Symbol]                       0x110011f8   Section        0  ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl)
+    [Anonymous Symbol]                       0x11001558   Section        0  ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init)
+    Ifx_MS_FocSolutionF16_subStateMachine    0x11001685   Thumb Code   948  ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine)
+    [Anonymous Symbol]                       0x11001684   Section        0  ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine)
+    [Anonymous Symbol]                       0x11001a38   Section        0  ifx_math_accellimitf16.o(.text.Ifx_Math_AccelLimitF16_execute)
+    [Anonymous Symbol]                       0x11001aa8   Section        0  ifx_math_atan2.o(.text.Ifx_Math_Atan2_F16)
+    [Anonymous Symbol]                       0x11001b34   Section        0  ifx_math_carttopolar.o(.text.Ifx_Math_CartToPolar_F16)
+    [Anonymous Symbol]                       0x11001b7c   Section        0  ifx_math_clarke.o(.text.Ifx_Math_Clarke_F16)
+    [Anonymous Symbol]                       0x11001b98   Section        0  ifx_math_currentreconstruction.o(.text.Ifx_Math_CurrentReconstruction_F16)
+    [Anonymous Symbol]                       0x11001c2c   Section        0  ifx_math_interp1dlut.o(.text.Ifx_Math_Interp1DLut_F16)
+    [Anonymous Symbol]                       0x11001c6c   Section        0  ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_execute)
+    [Anonymous Symbol]                       0x11001c90   Section        0  ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_init)
+    [Anonymous Symbol]                       0x11001ca0   Section        0  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_execute)
+    [Anonymous Symbol]                       0x11001ce8   Section        0  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_init)
+    [Anonymous Symbol]                       0x11001d00   Section        0  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_resetBuffer)
+    [Anonymous Symbol]                       0x11001d18   Section        0  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setPropGain)
+    [Anonymous Symbol]                       0x11001d6c   Section        0  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setSamplingTime_us)
+    [Anonymous Symbol]                       0x11001db0   Section        0  ifx_math_park.o(.text.Ifx_Math_Park_F16)
+    [Anonymous Symbol]                       0x11001e24   Section        0  ifx_math_pif16.o(.text.Ifx_Math_PiF16_init)
+    [Anonymous Symbol]                       0x11001e84   Section        0  ifx_math_polartocart.o(.text.Ifx_Math_PolarToCart_F16)
+    [Anonymous Symbol]                       0x11001ec8   Section        0  ifx_math_ratelimitf16.o(.text.Ifx_Math_RateLimitF16_execute)
+    [Anonymous Symbol]                       0x11001f00   Section        0  ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_execute)
+    [Anonymous Symbol]                       0x11001f50   Section        0  ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_init)
+    [Anonymous Symbol]                       0x11001f68   Section        0  lin.o(.text.LIN_Init)
+    [Anonymous Symbol]                       0x11001f6c   Section        0  isr.o(.text.MemManage_Handler)
+    [Anonymous Symbol]                       0x11001f70   Section        0  pmu.o(.text.PMU_Init)
+    [Anonymous Symbol]                       0x11001fb8   Section        0  port.o(.text.PORT_Init)
+    [Anonymous Symbol]                       0x11002000   Section        0  main.o(.text.PendSV_Handler)
+    [Anonymous Symbol]                       0x1100200c   Section        0  scu.o(.text.SCU_ClkInit)
+    [Anonymous Symbol]                       0x110021f4   Section        0  scu.o(.text.SCU_Init)
+    [Anonymous Symbol]                       0x11002234   Section        0  ssc.o(.text.SSC1_Init)
+    [Anonymous Symbol]                       0x11002254   Section        0  ssc.o(.text.SSC2_Init)
+    [Anonymous Symbol]                       0x11002274   Section        0  isr.o(.text.SysTick_Handler)
+    [Anonymous Symbol]                       0x11002284   Section        0  wdt1.o(.text.SysTick_Init)
+    [Anonymous Symbol]                       0x110022b0   Section        0  system_tle987x.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x110022e4   Section        0  timer3.o(.text.TIMER3_Init)
+    [Anonymous Symbol]                       0x1100230c   Section        0  timer3.o(.text.TIMER3_Set_Cmp_Value)
+    [Anonymous Symbol]                       0x11002318   Section        0  tle_device.o(.text.TLE_Init)
+    [Anonymous Symbol]                       0x11002364   Section        0  uart.o(.text.UART1_Init)
+    [Anonymous Symbol]                       0x11002368   Section        0  uart.o(.text.UART2_Init)
+    [Anonymous Symbol]                       0x1100236c   Section        0  isr.o(.text.UsageFault_Handler)
+    [Anonymous Symbol]                       0x11002370   Section        0  wdt1.o(.text.WDT1_Init)
+    [Anonymous Symbol]                       0x1100238c   Section        0  wdt1.o(.text.WDT1_Service)
+    [Anonymous Symbol]                       0x110023bc   Section        0  main.o(.text.main)
+    Long Thumb to Thumb Veneer to Ifx_MAS_ModulatorF16_updatePolar7SegQ16 0x11002495   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    i.__scatterload_copy                     0x110024c6   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x110024d4   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x110024d6   Section       14  handlers.o(i.__scatterload_zeroinit)
+    __tagsym$$used.0                         0x1101effc   Number         0  system_tle987x.o(.ARM.__at_0x1101EFFC)
+    Ifx_MAS_ModulatorF16_updatePolar7SegQ16  0x18000019   Thumb Code   864  ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16)
+    __tagsym$$used.0                         0x18000018   Number         0  ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16)
+    [Anonymous Symbol]                       0x18000018   Section        0  ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16)
+    __tagsym$$used.0                         0x18000378   Number         0  ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute)
+    [Anonymous Symbol]                       0x18000378   Section        0  ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute)
+    __tagsym$$used.0                         0x18000414   Number         0  ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute)
+    [Anonymous Symbol]                       0x18000414   Section        0  ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute)
+    __tagsym$$used.0                         0x18000518   Number         0  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_execute)
+    [Anonymous Symbol]                       0x18000518   Section        0  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_execute)
+    [Anonymous Symbol]                       0x18000644   Section        0  ifx_math_pif16.o(.text.Ifx_Math_PiF16_execute)
+    __tagsym$$used.6                         0x18000758   Number         0  main.o(.data.controlMode)
+    __tagsym$$used.4                         0x18000759   Number         0  main.o(.data.enablePowerStage)
+    .L_MergedGlobals                         0x1800075c   Data           8  wdt1.o(.bss..L_MergedGlobals)
+    bSOWactive                               0x1800075c   Data           1  wdt1.o(.bss..L_MergedGlobals)
+    [Anonymous Symbol]                       0x1800075c   Section        0  wdt1.o(.bss..L_MergedGlobals)
+    __tagsym$$used.3                         0x18000764   Number         0  main.o(.bss.FocDemoClosedLoop)
+    __tagsym$$used.8                         0x180009e0   Number         0  main.o(.bss.clrFaultFoc)
+    __tagsym$$used.12                        0x180009e1   Number         0  main.o(.bss.currentControlCounter)
+    __tagsym$$used.2                         0x180009e4   Number         0  main.o(.bss.currentsDqReference)
+    __tagsym$$used.5                         0x180009e8   Number         0  main.o(.bss.enableControl)
+    __tagsym$$used.7                         0x180009e9   Number         0  main.o(.bss.enableDirectInterface)
+    __tagsym$$used.9                         0x180009ea   Number         0  main.o(.bss.enableSpeedPreControl)
+    __tagsym$$used.10                        0x180009eb   Number         0  main.o(.bss.enableStartAngleIdent)
+    __tagsym$$used.1                         0x180009ec   Number         0  main.o(.bss.referenceSpeedQ0)
+    __tagsym$$used.11                        0x180009ee   Number         0  main.o(.bss.rotorAlignCounter)
+    STACK                                    0x180009f0   Section      512  startup_tle987x.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_Size                           0x00000080   Number         0  startup_tle987x.o ABSOLUTE
+    __Vectors                                0x11000000   Data           4  startup_tle987x.o(RESET)
+    __Vectors_End                            0x11000080   Data           0  startup_tle987x.o(RESET)
+    __main                                   0x11000081   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x11000081   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x11000085   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x11000089   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x11000089   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x11000089   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x11000089   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x11000091   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x11000091   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x11000095   Thumb Code     8  startup_tle987x.o(.text)
+    SVC_Handler_main                         0x1100009d   Thumb Code     2  startup_tle987x.o(.text)
+    NMI_Handler                              0x1100009f   Thumb Code     2  startup_tle987x.o(.text)
+    DebugMon_Handler                         0x110000c1   Thumb Code     2  startup_tle987x.o(.text)
+    ADC1_IRQHandler                          0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    ADC2_IRQHandler                          0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    BDRV_IRQHandler                          0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    CCU6SR0_IRQHandler                       0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    CCU6SR2_IRQHandler                       0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    CCU6SR3_IRQHandler                       0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    DMA_IRQHandler                           0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    EXINT0_IRQHandler                        0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    EXINT1_IRQHandler                        0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    GPT1_IRQHandler                          0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    SSC1_IRQHandler                          0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    SSC2_IRQHandler                          0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    UART1_IRQHandler                         0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    UART2_IRQHandler                         0x110000c7   Thumb Code     0  startup_tle987x.o(.text)
+    __aeabi_uldivmod                         0x110000d5   Thumb Code    98  uldiv.o(.text)
+    __aeabi_memset                           0x11000137   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x11000137   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x11000137   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x11000145   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x11000145   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x11000145   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x11000149   Thumb Code    18  memseta.o(.text)
+    __aeabi_llsl                             0x1100015b   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x1100015b   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x11000179   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x11000179   Thumb Code     0  llushr.o(.text)
+    __scatterload                            0x11000199   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x11000199   Thumb Code     0  init.o(.text)
+    ADC1_Init                                0x110001bd   Thumb Code   136  adc1.o(.text.ADC1_Init)
+    ADC2_Init                                0x11000245   Thumb Code   104  adc2.o(.text.ADC2_Init)
+    BDRV_Clr_Sts                             0x110002ad   Thumb Code    14  bdrv.o(.text.BDRV_Clr_Sts)
+    BDRV_Init                                0x110002bd   Thumb Code    96  bdrv.o(.text.BDRV_Init)
+    BDRV_Set_Bridge                          0x1100031d   Thumb Code    88  bdrv.o(.text.BDRV_Set_Bridge)
+    BusFault_Handler                         0x11000375   Thumb Code     2  isr.o(.text.BusFault_Handler)
+    CCU6SR1_IRQHandler                       0x11000379   Thumb Code    82  isr.o(.text.CCU6SR1_IRQHandler)
+    CCU6_Init                                0x110003cd   Thumb Code   120  ccu6.o(.text.CCU6_Init)
+    CSA_Init                                 0x11000445   Thumb Code    22  csa.o(.text.CSA_Init)
+    DMA_Init                                 0x1100045d   Thumb Code    24  dma.o(.text.DMA_Init)
+    GPT12E_Init                              0x11000475   Thumb Code    54  gpt12e.o(.text.GPT12E_Init)
+    GPT2_IRQHandler                          0x110004ad   Thumb Code    38  isr.o(.text.GPT2_IRQHandler)
+    HardFault_Handler                        0x110004d5   Thumb Code     2  isr.o(.text.HardFault_Handler)
+    INT_Init                                 0x110004d9   Thumb Code   138  int.o(.text.INT_Init)
+    Ifx_FOC_oneMatchCallback                 0x11000565   Thumb Code    78  main.o(.text.Ifx_FOC_oneMatchCallback)
+    Ifx_FOC_periodMatchCallback              0x110005b5   Thumb Code    30  main.o(.text.Ifx_FOC_periodMatchCallback)
+    Ifx_FOC_speedLoop_callback               0x110005d5   Thumb Code   128  main.o(.text.Ifx_FOC_speedLoop_callback)
+    Ifx_MAS_ModulatorF16_execute             0x11000655   Thumb Code   446  ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_execute)
+    Ifx_MAS_ModulatorF16_init                0x11000815   Thumb Code    88  ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_init)
+    Ifx_MDA_FluxEstimatorF16_init            0x1100086d   Thumb Code   446  ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init)
+    Ifx_MDA_FocControllerF16_init            0x11000a2d   Thumb Code   100  ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_init)
+    Ifx_MDA_FocControllerF16_reset           0x11000a91   Thumb Code    18  ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_reset)
+    Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle 0x11000aa5   Thumb Code    10  ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle)
+    Ifx_MDA_IToFControllerF16_execute        0x11000ab1   Thumb Code    18  ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_execute)
+    Ifx_MDA_IToFControllerF16_init           0x11000ac5   Thumb Code    20  ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_init)
+    Ifx_MDA_VToFControllerF16_execute        0x11000ad9   Thumb Code   142  ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_execute)
+    Ifx_MDA_VToFControllerF16_init           0x11000b69   Thumb Code    38  ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_init)
+    Ifx_MHA_BridgeDrv_TLE987_execute         0x11000b91   Thumb Code   604  ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_execute)
+    Ifx_MHA_BridgeDrv_TLE987_init            0x11000ded   Thumb Code     8  ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_init)
+    Ifx_MHA_MeasurementADC_TLE987_init       0x11000df5   Thumb Code    56  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_init)
+    Ifx_MHA_MeasurementADC_TLE987_oneMatch   0x11000e2d   Thumb Code    38  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_oneMatch)
+    Ifx_MHA_MeasurementADC_TLE987_periodMatch 0x11000e55   Thumb Code    26  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_periodMatch)
+    Ifx_MHA_PatternGen_TLE987_execute        0x11000e71   Thumb Code   316  ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_execute)
+    Ifx_MHA_PatternGen_TLE987_init           0x11000fad   Thumb Code    28  ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_init)
+    Ifx_MHA_PatternGen_TLE987_onOneMatch     0x11000fc9   Thumb Code    54  ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onOneMatch)
+    Ifx_MHA_PatternGen_TLE987_onPeriodMatch  0x11001001   Thumb Code   120  ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch)
+    Ifx_MS_FocSolutionF16_executeControlMode 0x11001079   Thumb Code   384  ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode)
+    Ifx_MS_FocSolutionF16_executeSpeedControl 0x110011f9   Thumb Code   864  ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl)
+    Ifx_MS_FocSolutionF16_init               0x11001559   Thumb Code   298  ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init)
+    Ifx_Math_AccelLimitF16_execute           0x11001a39   Thumb Code   112  ifx_math_accellimitf16.o(.text.Ifx_Math_AccelLimitF16_execute)
+    Ifx_Math_Atan2_F16                       0x11001aa9   Thumb Code   140  ifx_math_atan2.o(.text.Ifx_Math_Atan2_F16)
+    Ifx_Math_CartToPolar_F16                 0x11001b35   Thumb Code    70  ifx_math_carttopolar.o(.text.Ifx_Math_CartToPolar_F16)
+    Ifx_Math_Clarke_F16                      0x11001b7d   Thumb Code    26  ifx_math_clarke.o(.text.Ifx_Math_Clarke_F16)
+    Ifx_Math_CurrentReconstruction_F16       0x11001b99   Thumb Code   148  ifx_math_currentreconstruction.o(.text.Ifx_Math_CurrentReconstruction_F16)
+    Ifx_Math_Interp1DLut_F16                 0x11001c2d   Thumb Code    64  ifx_math_interp1dlut.o(.text.Ifx_Math_Interp1DLut_F16)
+    Ifx_Math_LowPass1stF16_execute           0x11001c6d   Thumb Code    36  ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_execute)
+    Ifx_Math_LowPass1stF16_init              0x11001c91   Thumb Code    16  ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_init)
+    Ifx_Math_PLLF16_execute                  0x11001ca1   Thumb Code    70  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_execute)
+    Ifx_Math_PLLF16_init                     0x11001ce9   Thumb Code    22  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_init)
+    Ifx_Math_PLLF16_resetBuffer              0x11001d01   Thumb Code    24  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_resetBuffer)
+    Ifx_Math_PLLF16_setPropGain              0x11001d19   Thumb Code    82  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setPropGain)
+    Ifx_Math_PLLF16_setSamplingTime_us       0x11001d6d   Thumb Code    66  ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setSamplingTime_us)
+    Ifx_Math_Park_F16                        0x11001db1   Thumb Code   114  ifx_math_park.o(.text.Ifx_Math_Park_F16)
+    Ifx_Math_PiF16_init                      0x11001e25   Thumb Code    94  ifx_math_pif16.o(.text.Ifx_Math_PiF16_init)
+    Ifx_Math_PolarToCart_F16                 0x11001e85   Thumb Code    68  ifx_math_polartocart.o(.text.Ifx_Math_PolarToCart_F16)
+    Ifx_Math_RateLimitF16_execute            0x11001ec9   Thumb Code    54  ifx_math_ratelimitf16.o(.text.Ifx_Math_RateLimitF16_execute)
+    Ifx_Math_SpeedPreControlF16_execute      0x11001f01   Thumb Code    80  ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_execute)
+    Ifx_Math_SpeedPreControlF16_init         0x11001f51   Thumb Code    22  ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_init)
+    LIN_Init                                 0x11001f69   Thumb Code     2  lin.o(.text.LIN_Init)
+    MemManage_Handler                        0x11001f6d   Thumb Code     2  isr.o(.text.MemManage_Handler)
+    PMU_Init                                 0x11001f71   Thumb Code    72  pmu.o(.text.PMU_Init)
+    PORT_Init                                0x11001fb9   Thumb Code    72  port.o(.text.PORT_Init)
+    PendSV_Handler                           0x11002001   Thumb Code    12  main.o(.text.PendSV_Handler)
+    SCU_ClkInit                              0x1100200d   Thumb Code   486  scu.o(.text.SCU_ClkInit)
+    SCU_Init                                 0x110021f5   Thumb Code    64  scu.o(.text.SCU_Init)
+    SSC1_Init                                0x11002235   Thumb Code    32  ssc.o(.text.SSC1_Init)
+    SSC2_Init                                0x11002255   Thumb Code    32  ssc.o(.text.SSC2_Init)
+    SysTick_Handler                          0x11002275   Thumb Code    16  isr.o(.text.SysTick_Handler)
+    SysTick_Init                             0x11002285   Thumb Code    44  wdt1.o(.text.SysTick_Init)
+    SystemInit                               0x110022b1   Thumb Code    52  system_tle987x.o(.text.SystemInit)
+    TIMER3_Init                              0x110022e5   Thumb Code    38  timer3.o(.text.TIMER3_Init)
+    TIMER3_Set_Cmp_Value                     0x1100230d   Thumb Code    12  timer3.o(.text.TIMER3_Set_Cmp_Value)
+    TLE_Init                                 0x11002319   Thumb Code    74  tle_device.o(.text.TLE_Init)
+    UART1_Init                               0x11002365   Thumb Code     2  uart.o(.text.UART1_Init)
+    UART2_Init                               0x11002369   Thumb Code     2  uart.o(.text.UART2_Init)
+    UsageFault_Handler                       0x1100236d   Thumb Code     2  isr.o(.text.UsageFault_Handler)
+    WDT1_Init                                0x11002371   Thumb Code    28  wdt1.o(.text.WDT1_Init)
+    WDT1_Service                             0x1100238d   Thumb Code    48  wdt1.o(.text.WDT1_Service)
+    main                                     0x110023bd   Thumb Code   216  main.o(.text.main)
+    Long Thumb to Thumb Veneer to Ifx_MHA_MeasurementADC_TLE987_execute 0x1100249f   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Ifx_MDA_FluxEstimatorF16_execute 0x110024a9   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Ifx_MDA_FocControllerF16_execute 0x110024b3   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Ifx_Math_PiF16_execute 0x110024bd   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    __scatterload_copy                       0x110024c7   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x110024d5   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x110024d7   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Ifx_MAS_ModulatorF16_lutSin60Sqrt3       0x110024e4   Data        8192  ifx_mas_modulatorf16_tablesin60sqrt3.o(.rodata.Ifx_MAS_ModulatorF16_lutSin60Sqrt3)
+    Ifx_Math_Lut_Atan_F16_table              0x110044e4   Data        2050  ifx_math_lut_atan_f16_table.o(.rodata.Ifx_Math_Lut_Atan_F16_table)
+    Ifx_Math_Lut_CartToPolar_F16_table       0x11004ce6   Data        2050  ifx_math_lut_carttopolar_f16_table.o(.rodata.Ifx_Math_Lut_CartToPolar_F16_table)
+    Ifx_Math_Lut_DivShL_F32_table            0x110054e8   Data          68  ifx_math_lut_divshl_f32_table.o(.rodata.Ifx_Math_Lut_DivShL_F32_table)
+    Ifx_Math_Lut_Sincos_F16_table            0x1100552c   Data        2050  ifx_math_lut_sincos_f16_table.o(.rodata.Ifx_Math_Lut_Sincos_F16_table)
+    USER_CFLASH_WR_PROT_EN                   0x11005d30   Data           4  bootrom.o(.rodata.USER_CFLASH_WR_PROT_EN)
+    Region$$Table$$Base                      0x11005d34   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x11005d64   Number         0  anon$$obj.o(Region$$Table)
+    p_NACNAD                                 0x1101effc   Data           4  system_tle987x.o(.ARM.__at_0x1101EFFC)
+    Ifx_MDA_FluxEstimatorF16_execute         0x18000379   Thumb Code   156  ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute)
+    Ifx_MDA_FocControllerF16_execute         0x18000415   Thumb Code   258  ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute)
+    Ifx_MHA_MeasurementADC_TLE987_execute    0x18000519   Thumb Code   298  ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_execute)
+    Ifx_Math_PiF16_execute                   0x18000645   Thumb Code   214  ifx_math_pif16.o(.text.Ifx_Math_PiF16_execute)
+    Long Thumb to Thumb Veneer to Ifx_Math_LowPass1stF16_execute 0x1800071b   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Ifx_Math_Atan2_F16 0x18000725   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Ifx_Math_PLLF16_execute 0x1800072f   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Ifx_Math_Park_F16 0x18000739   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Ifx_Math_Interp1DLut_F16 0x18000743   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Ifx_Math_CartToPolar_F16 0x1800074d   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    controlMode                              0x18000758   Data           1  main.o(.data.controlMode)
+    enablePowerStage                         0x18000759   Data           1  main.o(.data.enablePowerStage)
+    WD_Counter                               0x18000760   Data           4  wdt1.o(.bss..L_MergedGlobals)
+    FocDemoClosedLoop                        0x18000764   Data         636  main.o(.bss.FocDemoClosedLoop)
+    clrFaultFoc                              0x180009e0   Data           1  main.o(.bss.clrFaultFoc)
+    currentControlCounter                    0x180009e1   Data           1  main.o(.bss.currentControlCounter)
+    currentsDqReference                      0x180009e4   Data           4  main.o(.bss.currentsDqReference)
+    enableControl                            0x180009e8   Data           1  main.o(.bss.enableControl)
+    enableDirectInterface                    0x180009e9   Data           1  main.o(.bss.enableDirectInterface)
+    enableSpeedPreControl                    0x180009ea   Data           1  main.o(.bss.enableSpeedPreControl)
+    enableStartAngleIdent                    0x180009eb   Data           1  main.o(.bss.enableStartAngleIdent)
+    referenceSpeedQ0                         0x180009ec   Data           2  main.o(.bss.referenceSpeedQ0)
+    rotorAlignCounter                        0x180009ee   Data           2  main.o(.bss.rotorAlignCounter)
+    __initial_sp                             0x18000bf0   Data           0  startup_tle987x.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x11000081
+
+  Load Region LR_IROM1 (Base: 0x11000000, Size: 0x000064ac, Max: 0x0001effc, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x11000000, Load base: 0x11000000, Size: 0x00005d64, Max: 0x0001effc, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x11000000   0x11000000   0x00000080   Data   RO          299    RESET               startup_tle987x.o
+    0x11000080   0x11000080   0x00000000   Code   RO          836  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x11000080   0x11000080   0x00000004   Code   RO          843    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x11000084   0x11000084   0x00000004   Code   RO          846    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x11000088   0x11000088   0x00000000   Code   RO          848    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x11000088   0x11000088   0x00000000   Code   RO          850    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x11000088   0x11000088   0x00000008   Code   RO          851    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x11000090   0x11000090   0x00000000   Code   RO          853    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x11000090   0x11000090   0x00000000   Code   RO          855    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x11000090   0x11000090   0x00000004   Code   RO          844    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x11000094   0x11000094   0x00000040   Code   RO          300    .text               startup_tle987x.o
+    0x110000d4   0x110000d4   0x00000062   Code   RO          839    .text               mc_w.l(uldiv.o)
+    0x11000136   0x11000136   0x00000024   Code   RO          841    .text               mc_w.l(memseta.o)
+    0x1100015a   0x1100015a   0x0000001e   Code   RO          857    .text               mc_w.l(llshl.o)
+    0x11000178   0x11000178   0x00000020   Code   RO          859    .text               mc_w.l(llushr.o)
+    0x11000198   0x11000198   0x00000024   Code   RO          861    .text               mc_w.l(init.o)
+    0x110001bc   0x110001bc   0x00000088   Code   RO           47    .text.ADC1_Init     adc1.o
+    0x11000244   0x11000244   0x00000068   Code   RO           67    .text.ADC2_Init     adc2.o
+    0x110002ac   0x110002ac   0x0000000e   Code   RO           79    .text.BDRV_Clr_Sts  bdrv.o
+    0x110002ba   0x110002ba   0x00000002   PAD
+    0x110002bc   0x110002bc   0x00000060   Code   RO           75    .text.BDRV_Init     bdrv.o
+    0x1100031c   0x1100031c   0x00000058   Code   RO           77    .text.BDRV_Set_Bridge  bdrv.o
+    0x11000374   0x11000374   0x00000002   Code   RO          217    .text.BusFault_Handler  isr.o
+    0x11000376   0x11000376   0x00000002   PAD
+    0x11000378   0x11000378   0x00000052   Code   RO          211    .text.CCU6SR1_IRQHandler  isr.o
+    0x110003ca   0x110003ca   0x00000002   PAD
+    0x110003cc   0x110003cc   0x00000078   Code   RO          145    .text.CCU6_Init     ccu6.o
+    0x11000444   0x11000444   0x00000016   Code   RO          153    .text.CSA_Init      csa.o
+    0x1100045a   0x1100045a   0x00000002   PAD
+    0x1100045c   0x1100045c   0x00000018   Code   RO          177    .text.DMA_Init      dma.o
+    0x11000474   0x11000474   0x00000036   Code   RO          187    .text.GPT12E_Init   gpt12e.o
+    0x110004aa   0x110004aa   0x00000002   PAD
+    0x110004ac   0x110004ac   0x00000026   Code   RO          209    .text.GPT2_IRQHandler  isr.o
+    0x110004d2   0x110004d2   0x00000002   PAD
+    0x110004d4   0x110004d4   0x00000002   Code   RO          213    .text.HardFault_Handler  isr.o
+    0x110004d6   0x110004d6   0x00000002   PAD
+    0x110004d8   0x110004d8   0x0000008a   Code   RO          201    .text.INT_Init      int.o
+    0x11000562   0x11000562   0x00000002   PAD
+    0x11000564   0x11000564   0x0000004e   Code   RO            4    .text.Ifx_FOC_oneMatchCallback  main.o
+    0x110005b2   0x110005b2   0x00000002   PAD
+    0x110005b4   0x110005b4   0x0000001e   Code   RO            6    .text.Ifx_FOC_periodMatchCallback  main.o
+    0x110005d2   0x110005d2   0x00000002   PAD
+    0x110005d4   0x110005d4   0x00000080   Code   RO            8    .text.Ifx_FOC_speedLoop_callback  main.o
+    0x11000654   0x11000654   0x000001be   Code   RO          393    .text.Ifx_MAS_ModulatorF16_execute  ifx_mas_modulatorf16.o
+    0x11000812   0x11000812   0x00000002   PAD
+    0x11000814   0x11000814   0x00000058   Code   RO          391    .text.Ifx_MAS_ModulatorF16_init  ifx_mas_modulatorf16.o
+    0x1100086c   0x1100086c   0x000001be   Code   RO          417    .text.Ifx_MDA_FluxEstimatorF16_init  ifx_mda_fluxestimatorf16.o
+    0x11000a2a   0x11000a2a   0x00000002   PAD
+    0x11000a2c   0x11000a2c   0x00000064   Code   RO          443    .text.Ifx_MDA_FocControllerF16_init  ifx_mda_foccontrollerf16.o
+    0x11000a90   0x11000a90   0x00000012   Code   RO          447    .text.Ifx_MDA_FocControllerF16_reset  ifx_mda_foccontrollerf16.o
+    0x11000aa2   0x11000aa2   0x00000002   PAD
+    0x11000aa4   0x11000aa4   0x0000000a   Code   RO          465    .text.Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle  ifx_mda_itofcontrollerf16.o
+    0x11000aae   0x11000aae   0x00000002   PAD
+    0x11000ab0   0x11000ab0   0x00000012   Code   RO          467    .text.Ifx_MDA_IToFControllerF16_execute  ifx_mda_itofcontrollerf16.o
+    0x11000ac2   0x11000ac2   0x00000002   PAD
+    0x11000ac4   0x11000ac4   0x00000014   Code   RO          463    .text.Ifx_MDA_IToFControllerF16_init  ifx_mda_itofcontrollerf16.o
+    0x11000ad8   0x11000ad8   0x0000008e   Code   RO          503    .text.Ifx_MDA_VToFControllerF16_execute  ifx_mda_vtofcontrollerf16.o
+    0x11000b66   0x11000b66   0x00000002   PAD
+    0x11000b68   0x11000b68   0x00000026   Code   RO          501    .text.Ifx_MDA_VToFControllerF16_init  ifx_mda_vtofcontrollerf16.o
+    0x11000b8e   0x11000b8e   0x00000002   PAD
+    0x11000b90   0x11000b90   0x0000025c   Code   RO          519    .text.Ifx_MHA_BridgeDrv_TLE987_execute  ifx_mha_bridgedrv_tle987.o
+    0x11000dec   0x11000dec   0x00000008   Code   RO          521    .text.Ifx_MHA_BridgeDrv_TLE987_init  ifx_mha_bridgedrv_tle987.o
+    0x11000df4   0x11000df4   0x00000038   Code   RO          537    .text.Ifx_MHA_MeasurementADC_TLE987_init  ifx_mha_measurementadc_tle987.o
+    0x11000e2c   0x11000e2c   0x00000026   Code   RO          541    .text.Ifx_MHA_MeasurementADC_TLE987_oneMatch  ifx_mha_measurementadc_tle987.o
+    0x11000e52   0x11000e52   0x00000002   PAD
+    0x11000e54   0x11000e54   0x0000001a   Code   RO          539    .text.Ifx_MHA_MeasurementADC_TLE987_periodMatch  ifx_mha_measurementadc_tle987.o
+    0x11000e6e   0x11000e6e   0x00000002   PAD
+    0x11000e70   0x11000e70   0x0000013c   Code   RO          561    .text.Ifx_MHA_PatternGen_TLE987_execute  ifx_mha_patterngen_tle987.o
+    0x11000fac   0x11000fac   0x0000001c   Code   RO          559    .text.Ifx_MHA_PatternGen_TLE987_init  ifx_mha_patterngen_tle987.o
+    0x11000fc8   0x11000fc8   0x00000036   Code   RO          565    .text.Ifx_MHA_PatternGen_TLE987_onOneMatch  ifx_mha_patterngen_tle987.o
+    0x11000ffe   0x11000ffe   0x00000002   PAD
+    0x11001000   0x11001000   0x00000078   Code   RO          563    .text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch  ifx_mha_patterngen_tle987.o
+    0x11001078   0x11001078   0x00000180   Code   RO          587    .text.Ifx_MS_FocSolutionF16_executeControlMode  ifx_ms_focsolutionf16.o
+    0x110011f8   0x110011f8   0x00000360   Code   RO          585    .text.Ifx_MS_FocSolutionF16_executeSpeedControl  ifx_ms_focsolutionf16.o
+    0x11001558   0x11001558   0x0000012a   Code   RO          581    .text.Ifx_MS_FocSolutionF16_init  ifx_ms_focsolutionf16.o
+    0x11001682   0x11001682   0x00000002   PAD
+    0x11001684   0x11001684   0x000003b4   Code   RO          589    .text.Ifx_MS_FocSolutionF16_subStateMachine  ifx_ms_focsolutionf16.o
+    0x11001a38   0x11001a38   0x00000070   Code   RO          601    .text.Ifx_Math_AccelLimitF16_execute  ifx_math_accellimitf16.o
+    0x11001aa8   0x11001aa8   0x0000008c   Code   RO          637    .text.Ifx_Math_Atan2_F16  ifx_math_atan2.o
+    0x11001b34   0x11001b34   0x00000046   Code   RO          647    .text.Ifx_Math_CartToPolar_F16  ifx_math_carttopolar.o
+    0x11001b7a   0x11001b7a   0x00000002   PAD
+    0x11001b7c   0x11001b7c   0x0000001a   Code   RO          656    .text.Ifx_Math_Clarke_F16  ifx_math_clarke.o
+    0x11001b96   0x11001b96   0x00000002   PAD
+    0x11001b98   0x11001b98   0x00000094   Code   RO          665    .text.Ifx_Math_CurrentReconstruction_F16  ifx_math_currentreconstruction.o
+    0x11001c2c   0x11001c2c   0x00000040   Code   RO          675    .text.Ifx_Math_Interp1DLut_F16  ifx_math_interp1dlut.o
+    0x11001c6c   0x11001c6c   0x00000024   Code   RO          706    .text.Ifx_Math_LowPass1stF16_execute  ifx_math_lowpass1stf16.o
+    0x11001c90   0x11001c90   0x00000010   Code   RO          704    .text.Ifx_Math_LowPass1stF16_init  ifx_math_lowpass1stf16.o
+    0x11001ca0   0x11001ca0   0x00000046   Code   RO          757    .text.Ifx_Math_PLLF16_execute  ifx_math_pllf16.o
+    0x11001ce6   0x11001ce6   0x00000002   PAD
+    0x11001ce8   0x11001ce8   0x00000016   Code   RO          753    .text.Ifx_Math_PLLF16_init  ifx_math_pllf16.o
+    0x11001cfe   0x11001cfe   0x00000002   PAD
+    0x11001d00   0x11001d00   0x00000018   Code   RO          755    .text.Ifx_Math_PLLF16_resetBuffer  ifx_math_pllf16.o
+    0x11001d18   0x11001d18   0x00000052   Code   RO          759    .text.Ifx_Math_PLLF16_setPropGain  ifx_math_pllf16.o
+    0x11001d6a   0x11001d6a   0x00000002   PAD
+    0x11001d6c   0x11001d6c   0x00000042   Code   RO          761    .text.Ifx_Math_PLLF16_setSamplingTime_us  ifx_math_pllf16.o
+    0x11001dae   0x11001dae   0x00000002   PAD
+    0x11001db0   0x11001db0   0x00000072   Code   RO          771    .text.Ifx_Math_Park_F16  ifx_math_park.o
+    0x11001e22   0x11001e22   0x00000002   PAD
+    0x11001e24   0x11001e24   0x0000005e   Code   RO          781    .text.Ifx_Math_PiF16_init  ifx_math_pif16.o
+    0x11001e82   0x11001e82   0x00000002   PAD
+    0x11001e84   0x11001e84   0x00000044   Code   RO          793    .text.Ifx_Math_PolarToCart_F16  ifx_math_polartocart.o
+    0x11001ec8   0x11001ec8   0x00000036   Code   RO          802    .text.Ifx_Math_RateLimitF16_execute  ifx_math_ratelimitf16.o
+    0x11001efe   0x11001efe   0x00000002   PAD
+    0x11001f00   0x11001f00   0x00000050   Code   RO          814    .text.Ifx_Math_SpeedPreControlF16_execute  ifx_math_speedprecontrolf16.o
+    0x11001f50   0x11001f50   0x00000016   Code   RO          812    .text.Ifx_Math_SpeedPreControlF16_init  ifx_math_speedprecontrolf16.o
+    0x11001f66   0x11001f66   0x00000002   PAD
+    0x11001f68   0x11001f68   0x00000002   Code   RO          230    .text.LIN_Init      lin.o
+    0x11001f6a   0x11001f6a   0x00000002   PAD
+    0x11001f6c   0x11001f6c   0x00000002   Code   RO          215    .text.MemManage_Handler  isr.o
+    0x11001f6e   0x11001f6e   0x00000002   PAD
+    0x11001f70   0x11001f70   0x00000048   Code   RO          238    .text.PMU_Init      pmu.o
+    0x11001fb8   0x11001fb8   0x00000048   Code   RO          250    .text.PORT_Init     port.o
+    0x11002000   0x11002000   0x0000000c   Code   RO            2    .text.PendSV_Handler  main.o
+    0x1100200c   0x1100200c   0x000001e6   Code   RO          268    .text.SCU_ClkInit   scu.o
+    0x110021f2   0x110021f2   0x00000002   PAD
+    0x110021f4   0x110021f4   0x00000040   Code   RO          270    .text.SCU_Init      scu.o
+    0x11002234   0x11002234   0x00000020   Code   RO          287    .text.SSC1_Init     ssc.o
+    0x11002254   0x11002254   0x00000020   Code   RO          289    .text.SSC2_Init     ssc.o
+    0x11002274   0x11002274   0x00000010   Code   RO          221    .text.SysTick_Handler  isr.o
+    0x11002284   0x11002284   0x0000002c   Code   RO          368    .text.SysTick_Init  wdt1.o
+    0x110022b0   0x110022b0   0x00000034   Code   RO          307    .text.SystemInit    system_tle987x.o
+    0x110022e4   0x110022e4   0x00000026   Code   RO          316    .text.TIMER3_Init   timer3.o
+    0x1100230a   0x1100230a   0x00000002   PAD
+    0x1100230c   0x1100230c   0x0000000c   Code   RO          324    .text.TIMER3_Set_Cmp_Value  timer3.o
+    0x11002318   0x11002318   0x0000004a   Code   RO          342    .text.TLE_Init      tle_device.o
+    0x11002362   0x11002362   0x00000002   PAD
+    0x11002364   0x11002364   0x00000002   Code   RO          350    .text.UART1_Init    uart.o
+    0x11002366   0x11002366   0x00000002   PAD
+    0x11002368   0x11002368   0x00000002   Code   RO          354    .text.UART2_Init    uart.o
+    0x1100236a   0x1100236a   0x00000002   PAD
+    0x1100236c   0x1100236c   0x00000002   Code   RO          219    .text.UsageFault_Handler  isr.o
+    0x1100236e   0x1100236e   0x00000002   PAD
+    0x11002370   0x11002370   0x0000001c   Code   RO          366    .text.WDT1_Init     wdt1.o
+    0x1100238c   0x1100238c   0x00000030   Code   RO          372    .text.WDT1_Service  wdt1.o
+    0x110023bc   0x110023bc   0x000000d8   Code   RO           10    .text.main          main.o
+    0x11002494   0x11002494   0x0000000a   Ven    RO          871    Veneer$$Code        anon$$obj.o
+    0x1100249e   0x1100249e   0x0000000a   Ven    RO          872    Veneer$$Code        anon$$obj.o
+    0x110024a8   0x110024a8   0x0000000a   Ven    RO          873    Veneer$$Code        anon$$obj.o
+    0x110024b2   0x110024b2   0x0000000a   Ven    RO          874    Veneer$$Code        anon$$obj.o
+    0x110024bc   0x110024bc   0x0000000a   Ven    RO          875    Veneer$$Code        anon$$obj.o
+    0x110024c6   0x110024c6   0x0000000e   Code   RO          865    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x110024d4   0x110024d4   0x00000002   Code   RO          866    i.__scatterload_null  mc_w.l(handlers.o)
+    0x110024d6   0x110024d6   0x0000000e   Code   RO          867    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x110024e4   0x110024e4   0x00002000   Data   RO          407    .rodata.Ifx_MAS_ModulatorF16_lutSin60Sqrt3  ifx_mas_modulatorf16_tablesin60sqrt3.o
+    0x110044e4   0x110044e4   0x00000802   Data   RO          716    .rodata.Ifx_Math_Lut_Atan_F16_table  ifx_math_lut_atan_f16_table.o
+    0x11004ce6   0x11004ce6   0x00000802   Data   RO          722    .rodata.Ifx_Math_Lut_CartToPolar_F16_table  ifx_math_lut_carttopolar_f16_table.o
+    0x110054e8   0x110054e8   0x00000044   Data   RO          728    .rodata.Ifx_Math_Lut_DivShL_F32_table  ifx_math_lut_divshl_f32_table.o
+    0x1100552c   0x1100552c   0x00000802   Data   RO          734    .rodata.Ifx_Math_Lut_Sincos_F16_table  ifx_math_lut_sincos_f16_table.o
+    0x11005d2e   0x11005d2e   0x00000002   PAD
+    0x11005d30   0x11005d30   0x00000004   Data   RO          111    .rodata.USER_CFLASH_WR_PROT_EN  bootrom.o
+    0x11005d34   0x11005d34   0x00000030   Data   RO          864    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM2 (Exec base: 0x18000000, Load base: 0x110064ac, Size: 0x00000000, Max: 0x00000010, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x18000018, Load base: 0x11005d68, Size: 0x00000bd8, Max: 0x000017e8, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x18000018   0x11005d68   0x00000360   Code   RO          395    .text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16  ifx_mas_modulatorf16.o
+    0x18000378   0x110060c8   0x0000009c   Code   RO          427    .text.Ifx_MDA_FluxEstimatorF16_execute  ifx_mda_fluxestimatorf16.o
+    0x18000414   0x11006164   0x00000102   Code   RO          445    .text.Ifx_MDA_FocControllerF16_execute  ifx_mda_foccontrollerf16.o
+    0x18000516   0x11006266   0x00000002   PAD
+    0x18000518   0x11006268   0x0000012a   Code   RO          543    .text.Ifx_MHA_MeasurementADC_TLE987_execute  ifx_mha_measurementadc_tle987.o
+    0x18000642   0x11006392   0x00000002   PAD
+    0x18000644   0x11006394   0x000000d6   Code   RO          783    .text.Ifx_Math_PiF16_execute  ifx_math_pif16.o
+    0x1800071a   0x1100646a   0x0000000a   Ven    RO          876    Veneer$$Code        anon$$obj.o
+    0x18000724   0x11006474   0x0000000a   Ven    RO          877    Veneer$$Code        anon$$obj.o
+    0x1800072e   0x1100647e   0x0000000a   Ven    RO          878    Veneer$$Code        anon$$obj.o
+    0x18000738   0x11006488   0x0000000a   Ven    RO          879    Veneer$$Code        anon$$obj.o
+    0x18000742   0x11006492   0x0000000a   Ven    RO          880    Veneer$$Code        anon$$obj.o
+    0x1800074c   0x1100649c   0x0000000a   Ven    RO          881    Veneer$$Code        anon$$obj.o
+    0x18000756   0x110064a6   0x00000002   PAD
+    0x18000758   0x110064a8   0x00000001   Data   RW           17    .data.controlMode   main.o
+    0x18000759   0x110064a9   0x00000001   Data   RW           15    .data.enablePowerStage  main.o
+    0x1800075a   0x110064aa   0x00000002   PAD
+    0x1800075c        -       0x00000008   Zero   RW          378    .bss..L_MergedGlobals  wdt1.o
+    0x18000764        -       0x0000027c   Zero   RW           14    .bss.FocDemoClosedLoop  main.o
+    0x180009e0        -       0x00000001   Zero   RW           19    .bss.clrFaultFoc    main.o
+    0x180009e1        -       0x00000001   Zero   RW           23    .bss.currentControlCounter  main.o
+    0x180009e2   0x110064aa   0x00000002   PAD
+    0x180009e4        -       0x00000004   Zero   RW           13    .bss.currentsDqReference  main.o
+    0x180009e8        -       0x00000001   Zero   RW           16    .bss.enableControl  main.o
+    0x180009e9        -       0x00000001   Zero   RW           18    .bss.enableDirectInterface  main.o
+    0x180009ea        -       0x00000001   Zero   RW           20    .bss.enableSpeedPreControl  main.o
+    0x180009eb        -       0x00000001   Zero   RW           21    .bss.enableStartAngleIdent  main.o
+    0x180009ec        -       0x00000002   Zero   RW           12    .bss.referenceSpeedQ0  main.o
+    0x180009ee        -       0x00000002   Zero   RW           22    .bss.rotorAlignCounter  main.o
+    0x180009f0        -       0x00000200   Zero   RW          297    STACK               startup_tle987x.o
+
+
+
+  Load Region LR_IROM2 (Base: 0x1101effc, Size: 0x00000004, Max: 0x00001004, ABSOLUTE)
+
+    Execution Region ER_IROM2 (Exec base: 0x1101effc, Load base: 0x1101effc, Size: 0x00000004, Max: 0x00001004, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x1101effc   0x1101effc   0x00000004   Data   RO          309    .ARM.__at_0x1101EFFC  system_tle987x.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       136          0          0          0          0      37909   adc1.o
+       104          0          0          0          0       7477   adc2.o
+       198          0          0          0          0      45483   bdrv.o
+         0          0          4          0          0       4211   bootrom.o
+       120          0          0          0          0       7997   ccu6.o
+        22          0          0          0          0       9935   csa.o
+        24          0          0          0          0       6559   dma.o
+        54          0          0          0          0       8342   gpt12e.o
+      1398         14          0          0          0      15386   ifx_mas_modulatorf16.o
+         0          0       8192          0          0        855   ifx_mas_modulatorf16_tablesin60sqrt3.o
+       112          0          0          0          0       2876   ifx_math_accellimitf16.o
+       140          0          0          0          0       2977   ifx_math_atan2.o
+        70          0          0          0          0       2148   ifx_math_carttopolar.o
+        26          0          0          0          0       1899   ifx_math_clarke.o
+       148          8          0          0          0       2452   ifx_math_currentreconstruction.o
+        64          0          0          0          0       2461   ifx_math_interp1dlut.o
+        52          0          0          0          0       2415   ifx_math_lowpass1stf16.o
+         0          0       2050          0          0        759   ifx_math_lut_atan_f16_table.o
+         0          0       2050          0          0        852   ifx_math_lut_carttopolar_f16_table.o
+         0          0         68          0          0        761   ifx_math_lut_divshl_f32_table.o
+         0          0       2050          0          0        837   ifx_math_lut_sincos_f16_table.o
+       114          0          0          0          0       3621   ifx_math_park.o
+       308          0          0          0          0       6959   ifx_math_pif16.o
+       264          0          0          0          0       6200   ifx_math_pllf16.o
+        68          0          0          0          0       2380   ifx_math_polartocart.o
+        54          0          0          0          0       2056   ifx_math_ratelimitf16.o
+       102          0          0          0          0       4529   ifx_math_speedprecontrolf16.o
+       602          0          0          0          0      16076   ifx_mda_fluxestimatorf16.o
+       376          0          0          0          0       9029   ifx_mda_foccontrollerf16.o
+        48          0          0          0          0       3276   ifx_mda_itofcontrollerf16.o
+       180          0          0          0          0       5657   ifx_mda_vtofcontrollerf16.o
+       612          6          0          0          0      14328   ifx_mha_bridgedrv_tle987.o
+       418          6          0          0          0      13191   ifx_mha_measurementadc_tle987.o
+       518          6          0          0          0      23538   ifx_mha_patterngen_tle987.o
+      2494         14          0          0          0      41294   ifx_ms_focsolutionf16.o
+       138          0          0          0          0      28248   int.o
+       144          0          0          0          0      22365   isr.o
+         2          0          0          0          0        488   lin.o
+       464          0          0          2        650      35128   main.o
+        72          0          0          0          0       7091   pmu.o
+        72          0          0          0          0       7526   port.o
+       550          0          0          0          0      28899   scu.o
+        64          0          0          0          0       2465   ssc.o
+        64         12        128          0        512        992   startup_tle987x.o
+        52          0          4          0          0       8548   system_tle987x.o
+        50          0          0          0          0      19023   timer3.o
+        74          0          0          0          0        618   tle_device.o
+         4          0          0          0          0      16401   uart.o
+       120          0          0          0          8      18053   wdt1.o
+
+    ----------------------------------------------------------------------
+     10890         66      14596          4       1172     512570   Object Totals
+       110          0         48          0          0          0   (incl. Generated)
+        84          0          2          2          2          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+        30          0          0          0          0         68   llshl.o
+        32          0          0          0          0         68   llushr.o
+        36          0          0          0          0        108   memseta.o
+        98          0          0          0          0         92   uldiv.o
+
+    ----------------------------------------------------------------------
+       282         16          0          0          0        404   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       282         16          0          0          0        404   mc_w.l
+
+    ----------------------------------------------------------------------
+       282         16          0          0          0        404   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     11172         82      14596          4       1172     512202   Grand Totals
+     11172         82      14596          4       1172     512202   ELF Image Totals
+     11172         82      14596          4          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                25768 (  25.16kB)
+    Total RW  Size (RW Data + ZI Data)              1176 (   1.15kB)
+    Total ROM Size (Code + RO Data + RW Data)      25772 (  25.17kB)
+
+==============================================================================
+

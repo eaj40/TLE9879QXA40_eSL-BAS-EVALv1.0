@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+    <checksum>2d03ca762c82984f155cd25966a9962ab20e9b552bb9123b9bfa03e3fb21ef21</checksum>
+    <version label="V1.0.8"/>
+    <header file="Ifx_MAS_ModulatorF16_Cfg.h" fullname="1"/>
+    <!--********************************************************************************-->
+    <!--                                  Modulator                                     -->
+    <!--********************************************************************************-->
+    <gridcontainer columns="3" label="Modulator" desc="Modulator Parameters">
+        <groupcontainer label="System Parameters">
+            <treecontainer headerlabels="Structure;Settings;"  columnwidths="350;150">
+                <spinbox label="Timer clock frequency" suffix=" MHz" define="IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ" svd="0" default="40">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ.min=0"/>
+                </spinbox>
+                               
+                <doublespinbox label="Base Voltage" suffix=" V" define="IFX_MAS_MODULATORF16_CFG.BASE_VOLTAGE_V" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" default="24.00000">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.BASE_VOLTAGE_V.min=0"/>
+                </doublespinbox>
+            
+                <spinbox label="PWM frequency" suffix=" kHz" define="IFX_MAS_MODULATORF16_CFG.FREQUENCY_KHZ" svd="0" default="20" range="1;40" />
+                
+                <math label="Period" unit=" ticks" formula="floor(IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ*1000/IFX_MAS_MODULATORF16_CFG.FREQUENCY_KHZ)" define="IFX_MAS_MODULATORF16_CFG.PERIOD_TICK" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" />
+
+                <spinbox label="Deadtime" suffix=" ns" define="IFX_MAS_MODULATORF16_CFG.DEADTIME_NS" svd="0" default="500" >
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.DEADTIME_NS.min=0"/>
+                </spinbox>
+                
+                <math label="Deadtime" unit="ticks" define="IFX_MAS_MODULATORF16_CFG.DEADTIME_TICK" header="Ifx_MAS_ModulatorF16_Cfg.h" formula="floor(IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ*(IFX_MAS_MODULATORF16_CFG.DEADTIME_NS/1000))"/>
+
+                <checkbox label="Enable deadtime compensation" define="IFX_MAS_MODULATORF16_CFG.ENABLE_DEADTIME_COMPENSATION" header="Ifx_MAS_ModulatorF16_Cfg.h" uielement="branch" svd="0" default="1"/>
+
+                <spinbox label="Minimum ON time" suffix=" ns" define="IFX_MAS_MODULATORF16_CFG.MIN_ON_TIME_NS" svd="0" default="0">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.MIN_ON_TIME_NS.min=0"/>
+                </spinbox>
+
+                <math label="Minimum ON time" unit=" ticks" define="IFX_MAS_MODULATORF16_CFG.MIN_ON_TIME_TICK" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" formula="floor(IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ*IFX_MAS_MODULATORF16_CFG.MIN_ON_TIME_NS/1000)"/>
+
+                <doublespinbox label="Transition from bi-directional two phase to bi-directional three phase shifting" define="IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_HIGH" svd="0" step="0.01" default="0.100" range="0.000;0.999" tooltip="Ratio of commanded voltage and DC link voltage representing the hystersis band upper limit which is used to switch between bi-directional two and three phase shifting.">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_HIGH.min=IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_LOW"/>
+                </doublespinbox>
+
+                <math define="IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_HIGH_Q15" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" visible="false" formula="floor(IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_HIGH*2^15)"/>
+
+                <doublespinbox label="Transition from bi-directional three phase to bi-directional two phase shifting" define="IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_LOW" svd="0" step="0.01" default="0.080" range="0.000;0.999" tooltip="Ratio of commanded voltage and DC link voltage representing the hystersis band lower limit which is used to switch between bi-directional two and three phase shifting.">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_LOW.max=IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_HIGH"/>
+                </doublespinbox>
+
+                <math define="IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_LOW_Q15" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" visible="false" formula="floor(IFX_MAS_MODULATORF16_CFG.BI_DIRECTIONAL_SHIFTING_THRESHOLD_LOW*2^15)"/>
+
+            </treecontainer>
+        </groupcontainer>
+        
+        <groupcontainer label="Measurement trigger">
+            <treecontainer headerlabels="Structure;Settings;"  columnwidths="350;150">
+                <spinbox label="Ringing time" suffix=" ns" define="IFX_MAS_MODULATORF16_CFG.RINGINGTIME_NS" svd="0" default="0">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.RINGINGTIME_NS.min=0"/>
+                </spinbox>
+                <math label="Ringing time" unit=" ticks" define="IFX_MAS_MODULATORF16_CFG.RINGINGTIME_TICK" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" formula="floor(IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ*IFX_MAS_MODULATORF16_CFG.RINGINGTIME_NS/1000)"/>
+                
+                <spinbox label="Driver delay" suffix=" ns" define="IFX_MAS_MODULATORF16_CFG.DRIVERDELAY_NS" svd="0" default="0">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.DRIVERDELAY_NS.min=0"/>
+                </spinbox>
+                <math label="Driver delay" unit=" ticks" define="IFX_MAS_MODULATORF16_CFG.DRIVERDELAY_TICK" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" formula="floor(IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ*IFX_MAS_MODULATORF16_CFG.DRIVERDELAY_NS/1000)"/>
+                
+                <spinbox label="Measurement time" suffix=" ns" define="IFX_MAS_MODULATORF16_CFG.MEASUREMENTTIME_NS" svd="0" default="0">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.MEASUREMENTTIME_NS.min=0"/>
+                </spinbox>
+                <math label="Measurement time" unit=" ticks" define="IFX_MAS_MODULATORF16_CFG.MEASUREMENTTIME_TICK" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" formula="floor(IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ*IFX_MAS_MODULATORF16_CFG.MEASUREMENTTIME_NS/1000)"/>
+
+                <combo label="Trigger point for current measurement" header="Ifx_MAS_ModulatorF16_Cfg.h" define="IFX_MAS_MODULATORF16_CFG.MEASUREMENTPOINT" svd="0" default="label=Beginning of the pulse">
+                    <item label="Beginning of the pulse"  value="0" />
+                    <item label="End of the pulse"        value="1" />
+                </combo>
+
+            </treecontainer>
+        </groupcontainer>
+        
+        <groupcontainer label="Fault options">
+            <treecontainer headerlabels="Structure;Settings;"  columnwidths="350;150">
+                <doublespinbox label="Maximum amplitude" suffix=" V" define="IFX_MAS_MODULATORF16_CFG.MAX_AMPLITUDE" svd="0" default="20.00000">
+                    <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.MAX_AMPLITUDE.min=0"/>
+                </doublespinbox>
+                
+                <!-- set the maximum parameter = base value and limit the Q15 to 32767 -->
+                <math define="IFX_MAS_MODULATORF16_CFG.MAX_AMPLITUDE_TEMP" formula="(32767/32768)*IFX_MAS_MODULATORF16_CFG.BASE_VOLTAGE_V" svd="0" visible="false">
+                     <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.MAX_AMPLITUDE.max=IFX_MAS_MODULATORF16_CFG.MAX_AMPLITUDE_TEMP"/>
+                </math>
+                
+                <math define="IFX_MAS_MODULATORF16_CFG.MAX_AMPLITUDE_Q15" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" visible="false" formula="floor(IFX_MAS_MODULATORF16_CFG.MAX_AMPLITUDE*2^15/IFX_MAS_MODULATORF16_CFG.BASE_VOLTAGE_V)"/>
+                
+                <combo label="Fault reaction on maximum amplitude" header="Ifx_MAS_ModulatorF16_Cfg.h" define="IFX_MAS_MODULATORF16_CFG.FAULT_REACTION_MAX_AMPLITUDE" svd="0" default="label=Report and React">
+                    <item label="Disable"           value="0" />
+                    <item label="Enable"            value="1" />
+                    <item label="Report Only"       value="2" />
+                    <item label="Report and React"  value="3" />
+                </combo>
+                
+                <combo label="Fault reaction on overmodulation" header="Ifx_MAS_ModulatorF16_Cfg.h" define="IFX_MAS_MODULATORF16_CFG.FAULT_REACTION_OVERMODULATION" svd="0" default="label=Report and React">
+                    <item label="Disable"           value="0" />
+                    <item label="Enable"            value="1" />
+                    <item label="Report Only"       value="2" />
+                    <item label="Report and React"  value="3" />
+                </combo>
+                
+                <combo label="Fault output behavior" define="IFX_MAS_MODULATORF16_CFG.FAULT_OUT_BEHAVIOR" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" default="label=Active Short Low">
+                    <item label="Active Short Low"      value="0"/>
+                    <item label="Active Short High"     value="1"/>
+                    <item label="Active Short High Low" value="2"/>
+                </combo>
+
+                <combo label="Brake output behavior" define="IFX_MAS_MODULATORF16_CFG.BRAKE_OUT_BEHAVIOR" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0" default="label=Active Short Low">
+                    <item label="Active Short Low"      value="0"/>
+                    <item label="Active Short High"     value="1"/>
+                    <item label="Active Short High Low" value="2"/>
+                </combo>
+
+                <checkbox label="Enable fault user callback" define="IFX_MAS_MODULATORF16_CFG.ENABLE_FAULT_OUT" uielement="branch" svd="0" header="Ifx_MAS_ModulatorF16_Cfg.h">
+                    <edit label="Fault user callback" define="IFX_MAS_MODULATORF16_CFG.FAULT_OUT" default="usrFaultCallback" header="Ifx_MAS_ModulatorF16_Cfg.h" svd="0"/>
+                </checkbox>
+            </treecontainer>
+        </groupcontainer>
+    </gridcontainer>
+</ifxmlcfg>

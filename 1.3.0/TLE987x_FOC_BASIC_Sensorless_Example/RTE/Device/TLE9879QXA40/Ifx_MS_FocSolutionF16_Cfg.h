@@ -1,0 +1,125 @@
+/**
+ * @cond
+ ***********************************************************************************************************************
+ *
+ * Copyright (c) 2018, Infineon Technologies AG
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the
+ * following conditions are met:
+ *
+ *   Redistributions of source code must retain the above copyright notice, this list of conditions and the  following
+ *   disclaimer.
+ *
+ *   Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+ *   following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ *   Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote
+ *   products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT  OF THE
+ * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ **********************************************************************************************************************/
+#ifndef IFX_MS_FOCSOLUTIONF16_CFG_H
+#define IFX_MS_FOCSOLUTIONF16_CFG_H
+
+/* XML Version 1.0.20 */
+#define IFX_MS_FOCSOLUTIONF16_CFG_XML_VERSION (10020)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_ANGLE_ERROR_MIN (0x71C) /*decimal 1820*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_BASE_CURRENT_A (5.00000)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_BASE_FLUX_WB (0.01)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_BASE_INDUCTANCE_MH (2.87)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_BASE_MECH_SPEED_RPM (0xFA0) /*decimal 4000*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_BASE_MECH_TORQUE_NM (0.29)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_BASE_POWER_W (0x78) /*decimal 120*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_BASE_RESISTANCE_OHM (4.8)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_BASE_VOLTAGE_V (24.00000)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_CLOSED_LOOP_RAMP_DOWN_RATE_Q30 (0x625E9) /*decimal 402921*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_CLOSED_LOOP_RAMP_UP_RATE_Q30 (0x625E9) /*decimal 402921*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_CURRENT_LOOP_FACTOR (0x3) /*decimal 3*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_FREQUENCY_KHZ (0x14) /*decimal 20*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_INCLUDE_STARTANGLE_IDENT (0x0) /*decimal 0*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_INERTIA_BY_TS_Q (0x4AC4) /*decimal 19140*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_INERTIA_BY_TS_Q_FORMAT (0xD) /*decimal 13*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_INIT_START_UP_CURRENT_Q15 (0x0) /*decimal 0*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_INVERSE_TORQUE_CONSTANT_Q15 (0xD19A) /*decimal 53658*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_MAXIMUM_SPEED_Q15 (0x4000) /*decimal 16384*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_MINIMUM_SPEED_Q15 (-16384)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_MIN_SPEED_THRESHOLD_Q15 (0x0) /*decimal 0*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_OPEN_LOOP_RAMP_DOWN_RATE_Q30 (0x625E9) /*decimal 402921*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_OPEN_LOOP_RAMP_UP_RATE_Q30 (0x625E9) /*decimal 402921*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_POLE_PAIRS (0x4) /*decimal 4*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_Q_CURRENT_AT_TRANSITION_Q15 (0x1999) /*decimal 6553*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SAMPLING_TIME_US (0x96) /*decimal 150*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_BAND_HALF_INV_Q (0x6AAA) /*decimal 27306*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_BAND_HALF_INV_Q_FORMAT (0xA) /*decimal 10*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_BAND_HALF_Q15 (0x4CD) /*decimal 1229*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_KAW_TS_Q (0x6010) /*decimal 24592*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_KAW_TS_Q_FORMAT (0xC) /*decimal 12*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_KI_TS_Q (0x27) /*decimal 39*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_KI_TS_Q_FORMAT (0xF) /*decimal 15*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_LIMIT_Q_FORMAT (0xF) /*decimal 15*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_OUT_LOW_LIMIT_Q (-13108)
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_OUT_UPP_LIMIT_Q (0x3332) /*decimal 13106*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_PROPGAIN_Q (0x4CCC) /*decimal 19660*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_SPEED_PI_PROPGAIN_Q_FORMAT (0xD) /*decimal 13*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_START_CURRENT_RAMP_UP_RATE_Q15 (0x27) /*decimal 39*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_TRANSITION_D_CURRENT_SCALING_Q14 (0x2000) /*decimal 8192*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_TRANSITION_MODE (0x1) /*decimal 1*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_TRANSITION_SPEED_DOWN_Q15 (0x1000) /*decimal 4096*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_TRANSITION_SPEED_UP_Q15 (0x1999) /*decimal 6553*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_TRANSITION_TIME_CYCLES (0x43) /*decimal 67*/
+
+#define IFX_MS_FOCSOLUTIONF16_CFG_VISCOUS_FRICTION_CONSTANT_Q15 (0x0) /*decimal 0*/
+
+#endif /* IFX_MS_FOCSOLUTIONF16_CFG_H */

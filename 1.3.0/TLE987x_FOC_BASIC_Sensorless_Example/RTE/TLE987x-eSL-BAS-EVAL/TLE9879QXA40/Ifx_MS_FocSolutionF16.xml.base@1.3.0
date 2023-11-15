@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+    <checksum>182b7ae7750f0822ca00d294f37c4061660b9b2c83fb3c09a304f3adfbb92f05</checksum>
+    <version label="V1.0.20"/>
+    <header file="Ifx_MS_FocSolutionF16_Cfg.h" fullname="1"/>
+    <usesPython/>
+    <!--********************************************************************************-->
+    <!--                                      FOC                                       -->
+    <!--********************************************************************************-->
+    <!--*******************************************************************************************************************************************************************************************************************-->
+    <timer define="INIT_TIMER" interval="10" singleShot="1" run="1" visible="false">
+        <!-- max value of the phase inductance -->
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.DIRECT_PHASE_IND_MH.max=IFX_MS_FOCSOLUTIONF16_CFG.BASE_INDUCTANCE_TEMP" />
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.QUADRATURE_PHASE_IND_MH.max=IFX_MS_FOCSOLUTIONF16_CFG.BASE_INDUCTANCE_TEMP" />
+        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_MH=IFX_MS_FOCSOLUTIONF16_CFG.BASE_INDUCTANCE_MH" />
+
+        <!-- Modulator period frequency -->
+        <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.FREQUENCY_KHZ=IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ" />
+
+        <!-- Speed loop -->
+        <action event="changed" cmd="setDef" data="GPT12E.CAPREL_TIME=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US" />
+
+        <!-- Speed PI controller -->
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_REAL.max=IFX_MS_FOCSOLUTIONF16_CFG.UPDATE_SPEED_PI_KI_TS_MAX" />
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_REAL.max=IFX_MS_FOCSOLUTIONF16_CFG.UPDATE_SPEED_PI_KAW_TS_MAX" />
+
+        <action event="changed" cmd="setDef" data="IFX_MATH_CFG_PLL_DELAY_LENGTH=IFX_MS_FOCSOLUTIONF16_CFG.UPDATE_PLL_DELAY" />
+
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_Q_FORMAT=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_UPDATE_Q_FORMAT" />
+
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_UP_RATE.max=IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_UP_RATE_TEMP" />
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_DOWN_RATE.max=IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_DOWN_RATE_TEMP" />
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_UP_RATE.max=IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_UP_RATE_TEMP" />
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_DOWN_RATE.max=IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_DOWN_RATE_TEMP" />
+        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_Q_FORMAT=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_UPDATE_Q_FORMAT" />
+
+        <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS=IFX_MS_FOCSOLUTIONF16_CFG.BASE_ELEC_SPEED_RADPS" />
+        <action event="changed" cmd="setDef" data="IFX_MDA_ITOFCONTROLLERF16_CFG.BASE_SPEED_RADPS=IFX_MS_FOCSOLUTIONF16_CFG.BASE_ELEC_SPEED_RADPS" />
+    </timer>
+
+    <!--*******************************************************************************************************************************************************************************************************************-->
+    <gridcontainer label="FOC Solution">
+        <!-- TOP LEFT CONTAINER -->
+        <gridcontainer columns="2">
+            <!--******************-->
+            <!-- Motor Parameters -->
+            <!--******************-->
+            <verticalcontainer>
+                <!-- Hidden checkbox to lock values -->
+                <groupcontainer visible="false">
+                    <checkbox label="Use Module" define="IFX_MS_FOCSOLUTIONF16_CFG.ENABLE" svd="0" default="1" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_MH=24.00;IFX_MDA_FLUXESTIMATORF16_CFG.BASE_VOLTAGE_V=24.00000;IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A=24.00000;IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS=1000;IFX_MDA_ITOFCONTROLLERF16_CFG.SAMPLING_TIME_US=50;IFX_MDA_FLUXESTIMATORF16_CFG.SAMPLING_TIME_US=50;IFX_MAS_MODULATORF16_CFG.FREQUENCY_KHZ=20;IFX_MHA_PATTERNGEN_CFG.FREQUENCY=20;IFX_MDA_ITOFCONTROLLERF16_CFG.BASE_CURRENT_A=24.00000;IFX_MAS_MODULATORF16_CFG.BASE_VOLTAGE_V=24.00000;IFX_MHA_MEASUREMENTADC_CFG.BASE_VOLTAGE_V=24.00000;IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A=24.00000;IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_RES_OHM=0.05;IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_IND_MH=0.05;IFX_MDA_ITOFCONTROLLERF16_CFG.BASE_SPEED_RADPS=2000;IFX_MDA_ITOFCONTROLLERF16_CFG.REF_CURRENT_REAL_A=0.00000;IFX_MDA_ITOFCONTROLLERF16_CFG.REF_CURRENT_IMAG_A=4.00000;GPT12E.CAPREL_TIME=100;GPT12E.T6CON.T6SR=1;GPT12E.TEMP_CAPREL_SEL=1;IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ=IFX_MS_FOCSOLUTIONF16_CFG.F_SYS_MHZ;IFX_MAS_MODULATORF16_CFG.DEADTIME_NS=500;IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V=24;IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V=24;IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A=24.0;IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US=50;IFX_MDA_FOCCONTROLLERF16_CFG.DIRECT_INDUCTANCE_MH=0.05;IFX_MDA_FOCCONTROLLERF16_CFG.QUADRATURE_INDUCTANCE_MH=0.05;IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_RPM=2000;IFX_MDA_VTOFCONTROLLERF16_CFG.SAMPLING_TIME_US=50;IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS=4;IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI=1;IFX_MHA_MEASUREMENTADC_CFG.ENABLE=1;IFX_MHA_PATTERNGEN_CFG.ENABLE=1;IFX_MHA_BRIDGEDRV_CFG.ENABLE=1;IFX_MHA_PATTERNGEN_CFG.CURRENT_LOOP_FACTOR=IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FACTOR" />
+                    <checkbox label="Use Module" define="IFX_MS_FOCSOLUTIONF16_CFG.ENABLE_STARTANGLEIDENT" svd="0" default="1" lockon="IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ=IFX_MS_FOCSOLUTIONF16_CFG.F_SYS_MHZ;IFX_MDA_STARTANGLEIDENTF16_CFG.FREQUENCY_KHZ=10;IFX_MDA_STARTANGLEIDENTF16_CFG.DEADTIME_NS=500;IFX_MDA_STARTANGLEIDENTF16_CFG.RINGINGTIME_NS=100;IFX_MDA_STARTANGLEIDENTF16_CFG.DRIVERDELAY_NS=100;IFX_MDA_STARTANGLEIDENTF16_CFG.MEASUREMENTTIME_NS=100;IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US=50" />
+                </groupcontainer>
+
+                <groupcontainer label="Base values">
+                    <treecontainer headerlabels="Structure;Settings;">
+                        <!-- Input base values -->
+                        <!-- Lock the system clock frequency of the modulator -->
+                        <math label="System clock frequency" define="IFX_MS_FOCSOLUTIONF16_CFG.F_SYS_MHZ" formula="CCU6.T12_CLK" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ=IFX_MS_FOCSOLUTIONF16_CFG.F_SYS_MHZ" />
+                            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ=IFX_MS_FOCSOLUTIONF16_CFG.F_SYS_MHZ" />
+                        </math>
+
+                        <math label="PWM frequency" define="IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ2" formula="IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.FREQUENCY_KHZ=IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ2" />
+                        </math>
+
+                        <math label="Sampling time" define="IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US2" formula="floor(1000000/IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FREQUENCY_HZ)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US2" />
+                        </math>
+
+                        <!-- Lock the deadtime of the modulator to the setting in pattern generator -->
+                        <math label="Deadtime" define="IFX_MS_FOCSOLUTIONF16_CFG.DEADTIME_NS" formula="IFX_MHA_PATTERNGEN_CFG.DEADTIME" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.DEADTIME_NS=IFX_MHA_PATTERNGEN_CFG.DEADTIME" />
+                            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.DEADTIME_TICK=CCU6.T12_CLK*(IFX_MAS_MODULATORF16_CFG.DEADTIME_NS/1000)/(1+1*CCU6.TCTR0.CTM)" />
+                        </math>
+
+                        <math label="Deadtime" define="IFX_MS_FOCSOLUTIONF16_CFG.DEADTIME_NS2" formula="IFX_MHA_PATTERNGEN_CFG.DEADTIME" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.DEADTIME_NS=IFX_MHA_PATTERNGEN_CFG.DEADTIME" />
+                        </math>
+
+                        <math label="Ringing time" define="IFX_MS_FOCSOLUTIONF16_CFG.RINGINGTIME_NS" formula="IFX_MAS_MODULATORF16_CFG.RINGINGTIME_NS" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.RINGINGTIME_NS=IFX_MAS_MODULATORF16_CFG.RINGINGTIME_NS" />
+                        </math>
+
+                        <math label="Driver delay" define="IFX_MS_FOCSOLUTIONF16_CFG.DRIVERDELAY_NS" formula="IFX_MAS_MODULATORF16_CFG.DRIVERDELAY_NS" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.DRIVERDELAY_NS=IFX_MAS_MODULATORF16_CFG.DRIVERDELAY_NS" />
+                        </math>
+
+                        <math label="Measurement time" define="IFX_MS_FOCSOLUTIONF16_CFG.MEASUREMENTTIME_NS" formula="IFX_MAS_MODULATORF16_CFG.MEASUREMENTTIME_NS" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.MEASUREMENTTIME_NS=IFX_MAS_MODULATORF16_CFG.MEASUREMENTTIME_NS" />
+                        </math>
+
+                        <doublespinbox label="System base voltage" suffix=" V" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" default="24.00000">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V.min=0.001" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+                            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+                            <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+                        </doublespinbox>
+
+                        <doublespinbox label="System base current" suffix=" A" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" default="24.00000">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A.min=0.001" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A=IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_ITOFCONTROLLERF16_CFG.BASE_CURRENT_A=IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" />
+                            <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A=IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A=IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" />
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_APS.max=IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_APS_MAX" />
+                        </doublespinbox>
+
+                        <!-- Limit max and min values of the Speed PI output -->
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MAX_CURRENT_A" formula="(32767/32768)*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_REAL.max=IFX_MS_FOCSOLUTIONF16_CFG.MAX_CURRENT_A" />
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_REAL.max=IFX_MS_FOCSOLUTIONF16_CFG.MAX_CURRENT_A" />
+                        </math>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MIN_CURRENT_A" formula="0-IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_REAL.min=IFX_MS_FOCSOLUTIONF16_CFG.MIN_CURRENT_A" />
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_REAL.min=IFX_MS_FOCSOLUTIONF16_CFG.MIN_CURRENT_A" />
+                        </math>
+
+                        <spinbox label="System base mechanical speed" suffix=" rpm" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" default="4000">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM.min=1" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_RPM=IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM" />
+                        </spinbox>
+
+                        <!-- Limit the rated speed to the base mechanical speed -->
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.RATED_MECH_SPEED_TEMP_RPM" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM-10" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_MECH_SPEED_RPM.max=IFX_MS_FOCSOLUTIONF16_CFG.RATED_MECH_SPEED_TEMP_RPM" />
+                        </math>
+
+                        <!-- Calculated base values -->
+                        <math label="System base power" unit=" W" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_POWER_W" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" visible="false" />
+
+                        <math label="System base resistance" unit=" Ohm" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_RESISTANCE_OHM" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_POWER_W*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A^-2" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" />
+
+                        <math label="System base time" unit=" ms" define="IFX_MS_FOCSOLUTIONF16_CFG.SYSTEM_BASE_TIME_MS" format="%f" formula="1/IFX_MS_FOCSOLUTIONF16_CFG.BASE_ELEC_SPEED_RADPS*1000" svd="0" visible="false" />
+
+                        <math label="System base inductance" unit=" mH" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_INDUCTANCE_MH" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_POWER_W*IFX_MS_FOCSOLUTIONF16_CFG.SYSTEM_BASE_TIME_MS*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A^-2" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0">
+                            <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                        </math>
+
+                        <!-- set the maximum parameter = base value and limit the Q15 to 32767 -->
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_RESISTANCE_TEMP" formula="(32767/32768)*IFX_MS_FOCSOLUTIONF16_CFG.BASE_RESISTANCE_OHM" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.PHASE_RES_OHM.max=IFX_MS_FOCSOLUTIONF16_CFG.BASE_RESISTANCE_TEMP" />
+                        </math>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_INDUCTANCE_TEMP" formula="(32767/32768)*IFX_MS_FOCSOLUTIONF16_CFG.BASE_INDUCTANCE_MH" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                        </math>
+
+                        <math label="System base electrical speed" unit=" rad/s" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_ELEC_SPEED_RADPS" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*IFX_MS_FOCSOLUTIONF16_CFG.POLE_PAIRS*6.283185307179586/60)" svd="0">
+                            <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                        </math>
+
+                        <math label="System base flux" unit=" Wb" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_FLUX_WB" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_POWER_W*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A^-1*(IFX_MS_FOCSOLUTIONF16_CFG.SYSTEM_BASE_TIME_MS/1000)" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" visible="false" />
+
+                        <math label="System base torque" unit=" Nm" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_TORQUE_NM" formula="IFX_MS_FOCSOLUTIONF16_CFG.POLE_PAIRS*IFX_MS_FOCSOLUTIONF16_CFG.BASE_POWER_W/IFX_MS_FOCSOLUTIONF16_CFG.BASE_ELEC_SPEED_RADPS" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" />
+
+                        <math label="Base torque constant" unit=" Nm/A" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_TORQUE_CONSTANT_NMPA" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_TORQUE_NM/IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" svd="0" visible="false" />
+
+                        <math label="Base inertia" unit=" mgm^2" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_INERTIA_MGMSQUARE" formula="IFX_MS_FOCSOLUTIONF16_CFG.POLE_PAIRS^2*IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A*(IFX_MS_FOCSOLUTIONF16_CFG.SYSTEM_BASE_TIME_MS/1000)^3*1000000" svd="0" visible="false" />
+
+                        <math label="Base friction constant" unit=" Nms" format="%f" define="IFX_MS_FOCSOLUTIONF16_CFG.BASE_FRICTION_CONSTANT_NMS" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_TORQUE_NM/IFX_MS_FOCSOLUTIONF16_CFG.BASE_ELEC_SPEED_RADPS" svd="0" visible="false" />
+                    </treecontainer>
+                </groupcontainer>
+
+                <groupcontainer label="System Parameters">
+                    <treecontainer headerlabels="Structure;Settings;">
+                        <!-- Phase resistance/inductance values -->
+                        <doublespinbox label="Phase resistance" suffix=" Ohm" define="IFX_MS_FOCSOLUTIONF16_CFG.PHASE_RES_OHM" svd="0" default="0.05000">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.PHASE_RES_OHM.min=0" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_RES_OHM=IFX_MS_FOCSOLUTIONF16_CFG.PHASE_RES_OHM" />
+                            <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                        </doublespinbox>
+
+                        <doublespinbox label="Direct phase inductance" suffix=" mH" define="IFX_MS_FOCSOLUTIONF16_CFG.DIRECT_PHASE_IND_MH" svd="0" default="2.10000">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.DIRECT_PHASE_IND_MH.min=0" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.DIRECT_INDUCTANCE_MH=IFX_MS_FOCSOLUTIONF16_CFG.DIRECT_PHASE_IND_MH" />
+                            <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                        </doublespinbox>
+
+                        <doublespinbox label="Quadrature phase inductance" suffix=" mH" define="IFX_MS_FOCSOLUTIONF16_CFG.QUADRATURE_PHASE_IND_MH" svd="0" default="2.10000">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.QUADRATURE_PHASE_IND_MH.min=0" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.QUADRATURE_INDUCTANCE_MH=IFX_MS_FOCSOLUTIONF16_CFG.QUADRATURE_PHASE_IND_MH" />
+                        </doublespinbox>
+
+                        <!-- Flux Estimator is locked to average of the d-q inductances -->
+                        <math label="Average inductance (Ls)" unit=" mH" define="IFX_MS_FOCSOLUTIONF16_CFG.AVERAGE_INDUCTANCE_MH" format="%f" formula="(IFX_MS_FOCSOLUTIONF16_CFG.DIRECT_PHASE_IND_MH + IFX_MS_FOCSOLUTIONF16_CFG.QUADRATURE_PHASE_IND_MH)/2">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_IND_MH=IFX_MS_FOCSOLUTIONF16_CFG.AVERAGE_INDUCTANCE_MH" />
+                        </math>
+
+                        <spinbox label="Pole pairs" define="IFX_MS_FOCSOLUTIONF16_CFG.POLE_PAIRS" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" default="4">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.POLE_PAIRS.min=1" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS=IFX_MS_FOCSOLUTIONF16_CFG.POLE_PAIRS" />
+                        </spinbox>
+
+                        <doublespinbox label="Rotor inertia" suffix=" mgm^2" define="IFX_MS_FOCSOLUTIONF16_CFG.ROTOR_MECH_INERTIA_MGMSQUARE" svd="0" default="2.4">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.ROTOR_MECH_INERTIA_MGMSQUARE.min=0" />
+                        </doublespinbox>
+
+                        <math label="J/Ts, normalized" define="IFX_MS_FOCSOLUTIONF16_CFG.INERTIA_BY_TS" formula="IFX_MS_FOCSOLUTIONF16_CFG.ROTOR_MECH_INERTIA_MGMSQUARE*IFX_MS_FOCSOLUTIONF16_CFG.SYSTEM_BASE_TIME_MS*1000/(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_INERTIA_MGMSQUARE)" svd="0" visible="false"></math>
+
+                        <math label="normalized J/Ts, Q format" header="Ifx_MS_FocSolutionF16_Cfg.h" define="IFX_MS_FOCSOLUTIONF16_CFG.INERTIA_BY_TS_Q_FORMAT" formula="IFX_MS_FOCSOLUTIONF16_CFG.INERTIA_BY_TS &lt; 1 ? 15 : 15-ceil(log10(IFX_MS_FOCSOLUTIONF16_CFG.INERTIA_BY_TS)/log10(2))" svd="0" visible="false"></math>
+
+                        <math label="J/Ts, Q" header="Ifx_MS_FocSolutionF16_Cfg.h" define="IFX_MS_FOCSOLUTIONF16_CFG.INERTIA_BY_TS_Q" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.INERTIA_BY_TS*2^(IFX_MS_FOCSOLUTIONF16_CFG.INERTIA_BY_TS_Q_FORMAT))" svd="0" visible="false"></math>
+
+                        <doublespinbox label="Torque constant" suffix=" Nm/A" define="IFX_MS_FOCSOLUTIONF16_CFG.TORQUE_CONSTANT_NMPA" svd="0" default="0.035">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.TORQUE_CONSTANT_NMPA.min=IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_TORQUE_CONSTANT_NMPA" />
+                        </doublespinbox>
+
+                        <math label="Inverse torque constant, normalized" define="IFX_MS_FOCSOLUTIONF16_CFG.INVERSE_TORQUE_CONSTANT" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_TORQUE_CONSTANT_NMPA/IFX_MS_FOCSOLUTIONF16_CFG.TORQUE_CONSTANT_NMPA" svd="0" visible="false"></math>
+                        <math label="Normalized inverse torque constant, Q15" define="IFX_MS_FOCSOLUTIONF16_CFG.INVERSE_TORQUE_CONSTANT_Q15" header="Ifx_MS_FocSolutionF16_Cfg.h" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.INVERSE_TORQUE_CONSTANT*2^15)" svd="0" visible="false"></math>
+
+                        <doublespinbox label="Viscous friction constant" suffix=" mNms" define="IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT_MNMS" svd="0" default="0.00000" step="0.0001"/>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT_MNMS_MAX" formula="(1000.0*IFX_MS_FOCSOLUTIONF16_CFG.BASE_FRICTION_CONSTANT_NMS)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT_MNMS.min=0" />
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT_MNMS.max=IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT_MNMS_MAX" />
+                        </math>
+
+                        <math label="Viscous friction constant, normalized" define="IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT" formula="IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT_MNMS/(1000*IFX_MS_FOCSOLUTIONF16_CFG.BASE_FRICTION_CONSTANT_NMS)" svd="0" visible="false"></math>
+
+                        <math label="Normalized viscous friction constant, Q15" header="Ifx_MS_FocSolutionF16_Cfg.h" define="IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT_Q15" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.VISCOUS_FRICTION_CONSTANT*2^15)" svd="0" visible="false"></math>
+
+                        <doublespinbox label="Start-up current" suffix=" A" define="IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT" svd="0" default="4.00000">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_ITOFCONTROLLERF16_CFG.REF_CURRENT_IMAG_A=IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT" />
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT.min=0" />
+                        </doublespinbox>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_A_MIN" formula="0-IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_A.min=IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_A_MIN" />
+                        </math>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_A_MAX" formula="IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_A.max=IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_A_MAX" />
+                        </math>
+
+                        <doublespinbox label="Initial Start-up current" suffix=" A" define="IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_A" svd="0" default="0.00000" />
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_Q15" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.INIT_START_UP_CURRENT_A/IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A*2^15)" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+
+                        <!-- Start-Up current ramp up rate -->
+                        <doublespinbox label="Start-up current ramp up rate" suffix=" A/s" define="IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_APS" range="0.00000; 48000.00000" svd="0" default="4.00000">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_APS.max=IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_APS_MAX" />
+                        </doublespinbox>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_APS_MAX" formula="(IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A*1000000)/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US" svd="0" visible="false"/>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_Q15" formula="floor((IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_APS/IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A*(2^15-1)*IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US)/1000000)" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" svd="0" />
+
+                        <math label="Effective startup current ramp up rate" unit=" A/s" formula="(IFX_MS_FOCSOLUTIONF16_CFG.START_CURRENT_RAMP_UP_RATE_Q15*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A*1000000)/(2^15*IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US)"/>
+
+                        <!-- Limit the currents to Base Current -->
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT_TEMP" formula="(IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT.max=IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT_TEMP" />
+                        </math>
+
+                        <!-- Frequency -->
+                        <spinbox label="PWM frequency" suffix=" kHz" define="IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" default="20" range="1;40">
+                            <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.FREQUENCY=IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ" />
+                        </spinbox>
+
+                        <!-- Current loop execution -->
+                        <spinbox label="Current loop factor" define="IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FACTOR" svd="0" default="1" range="1;25" header="Ifx_MS_FocSolutionF16_Cfg.h">
+                            <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.CURRENT_LOOP_FACTOR=IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FACTOR" />
+                        </spinbox>
+
+                        <math label="Current loop frequency" unit=" Hz" define="IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FREQUENCY_HZ" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ*1000/IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FACTOR)" svd="0" />
+                        <math label="Current loop period" unit=" us" define="IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_PERIOD_US" format="%f" formula="floor(1000000/IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FREQUENCY_HZ)" svd="0" />
+
+                        <!-- Speed loop execution -->
+                        <spinbox label="Speed loop factor" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FACTOR" svd="0" default="10" range="1;25"></spinbox>
+
+                        <math label="Speed loop frequency" unit=" Hz" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FREQUENCY_HZ" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FREQUENCY_HZ/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FACTOR)" svd="0"></math>
+
+                        <math label="Speed loop period" unit=" us" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US" format="%f" formula="floor(1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FREQUENCY_HZ)" svd="0">
+                            <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                        </math>
+
+                        <math label="Sampling time" unit=" us" define="IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" formula="floor(1000000/IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FREQUENCY_HZ)" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_ITOFCONTROLLERF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" />
+                            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" />
+                        </math>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.DEADTIME_TICK" formula="floor(CCU6.T12DTC.DTM)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.DEADTIME_TICK=IFX_MS_FOCSOLUTIONF16_CFG.DEADTIME_TICK" />
+                        </math>
+                    </treecontainer>
+                </groupcontainer>
+            </verticalcontainer>
+
+            <verticalcontainer>
+                <groupcontainer label="PI Controllers">
+                    <treecontainer headerlabels="Structure;Settings;">
+                        <timer define="CURR_PI_TUNNING" interval="10" singleShot="1" run="1" visible="false">
+                            <!-- Current PI Prop gain -->
+                            <action cond="IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_TUNE_ENABLE==1" event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_REAL=IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_PROPGAIN" />
+                            <action cond="IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_TUNE_ENABLE==1" event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_REAL=IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_PROPGAIN" />
+
+                            <!-- Current PI Integ gain * Ts -->
+                            <action cond="IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_TUNE_ENABLE==1" event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_REAL=IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_INTEGGAIN" />
+                            <action cond="IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_TUNE_ENABLE==1" event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_REAL=IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_INTEGGAIN" />
+                        </timer>
+
+                        <checkbox label="Tune current PIs based on motor parameters" define="IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_TUNE_ENABLE" uielement="branch" default="1" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT=1;IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_REAL=0.01;IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_REAL=0.01;IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_REAL=0.01;IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_REAL=0.01" setdef="CURR_PI_TUNNING.run=1">
+                            <!-- AdjustmCurrentControl -->
+                            <doublespinbox label="Current control adjustment factor" define="IFX_MS_FOCSOLUTIONF16_CFG.CURRCTRL_ADJUSTM_FACTOR" default="0.50" range="0.01;1.00">
+                                <action event="changed" cmd="setDef" data="CURR_PI_TUNNING.run=1" />
+                            </doublespinbox>
+
+                            <!-- Kp = (AdjustmCurrentControl * L  * Fs/ 4.0) -->
+                            <math label="Proportional gain" unit=" V/A" define="IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_PROPGAIN" format="%.5f" formula="IFX_MS_FOCSOLUTIONF16_CFG.CURRCTRL_ADJUSTM_FACTOR*IFX_MS_FOCSOLUTIONF16_CFG.AVERAGE_INDUCTANCE_MH*(IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FREQUENCY_HZ/1000)/4">
+                                <action event="changed" cmd="setDef" data="CURR_PI_TUNNING.run=1" />
+                            </math>
+
+                            <!-- Ki = (AdjustmCurrentControl * R  * Fs/ 4.0) -->
+                            <math label="Integral gain" unit=" V/As" define="IFX_MS_FOCSOLUTIONF16_CFG.CURR_PI_INTEGGAIN" format="%.5f" formula="IFX_MS_FOCSOLUTIONF16_CFG.CURRCTRL_ADJUSTM_FACTOR*IFX_MS_FOCSOLUTIONF16_CFG.PHASE_RES_OHM*IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FREQUENCY_HZ/4">
+                                <action event="changed" cmd="setDef" data="CURR_PI_TUNNING.run=1" />
+                            </math>
+                        </checkbox>
+
+                        <checkbox define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI" label="Speed PI settings" uielement="branch" expand="1">
+                            <!-- SPEED PI -->
+                            <!-- Calculate Q formats automatically and lock Q formats -->
+                            <checkbox label="Calculate best precision Q formats" define="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_Q_FORMAT" default="1" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_Q_FORMAT=15;IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_Q_FORMAT=15;IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_Q_FORMAT=15" />
+
+                            <doublespinbox label="Proportional gain" suffix=" A/rpm" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_REAL" default="0.01000000" range="0;1" />
+
+                            <math label="Proportional gain" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN" format="%.8f" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_REAL/IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM" svd="0" visible="false" />
+
+                            <!-- Calculate Q format automatically -->
+                            <math label="Auto Q format" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN &lt; 1 ? 15 : 15-ceil(log10(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN)/log10(2))" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false" />
+
+                            <!-- Handle special case where input is a power of 2 -->
+                            <math label="Auto Q format" formula="(2^(15-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN ? IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE" svd="0" visible="false" />
+
+                            <!-- Just updates the Q format if auto calculation is enabled -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_UPDATE_Q_FORMAT" formula="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_Q_FORMAT" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_Q_FORMAT=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_UPDATE_Q_FORMAT" />
+                            </math>
+
+                            <!-- Limit of the gain parameter according to Q format -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_MAX" formula="((2^(16-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_Q_FORMAT-1))-(2^(-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_Q_FORMAT)))/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" svd="0" visible="false" />
+
+                            <!-- Limit the gain depending if auto calculation is enabled -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.UPDATE_SPEED_PI_PROPGAIN_MAX" formula="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_Q_FORMAT == 1 ? 32767/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_MAX" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_REAL.max=IFX_MS_FOCSOLUTIONF16_CFG.UPDATE_SPEED_PI_PROPGAIN_MAX" />
+                            </math>
+
+                            <combo label="Proportional gain Q format" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_Q_FORMAT" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" default="label=Q0 (0 fractional bits)">
+                                <item label="Q0 (0 fractional bits)" value="0" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q1 (1 fractional bits)" value="1" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q2 (2 fractional bits)" value="2" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q3 (3 fractional bits)" value="3" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q4 (4 fractional bits)" value="4" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q5 (5 fractional bits)" value="5" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q6 (6 fractional bits)" value="6" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q7 (7 fractional bits)" value="7" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q8 (8 fractional bits)" value="8" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q9 (9 fractional bits)" value="9" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q10 (10 fractional bits)" value="10" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q11 (11 fractional bits)" value="11" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q12 (12 fractional bits)" value="12" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q13 (13 fractional bits)" value="13" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q14 (14 fractional bits)" value="14" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                                <item label="Q15 (15 fractional bits)" value="15" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT=15" />
+                            </combo>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_Q" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN*2^IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_PROPGAIN_Q_FORMAT)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+
+                            <!-- Integral gain -->
+                            <doublespinbox label="Integral gain" suffix=" A/rpms" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_REAL" default="0.01000000">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_REAL.min=0" />
+                            </doublespinbox>
+
+                            <math label="Integral gain x Speed Sampling time, Ki*Ts" format="%.8f" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_REAL/(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FREQUENCY_HZ*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A)*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS" svd="0" visible="false" />
+
+                            <!-- Calculate Q format automatically -->
+                            <math label="Auto Q format" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS &lt; 1 ? 15 : 15-ceil(log10(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS)/log10(2))" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false" />
+
+                            <!-- Handle special case where input is a power of 2 -->
+                            <math label="Auto Q format" formula="(2^(15-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS ? IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_AUTO_Q_FORMAT_VALUE" svd="0" visible="false" />
+
+                            <!-- Just updates the Q format if auto calculation is enabled -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_UPDATE_Q_FORMAT" formula="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_AUTO_Q_FORMAT_VALUE : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_Q_FORMAT" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                            </math>
+
+                            <!-- Limit of the gain parameter according to Q format -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_MAX" formula="((2^(16-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_Q_FORMAT-1))-(2^(-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_Q_FORMAT)))*(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FREQUENCY_HZ*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A)/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM" svd="0" visible="false" />
+
+                            <!-- Limit the gain depending if auto calculation is enabled -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.UPDATE_SPEED_PI_KI_TS_MAX" formula="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_Q_FORMAT == 1 ? 32767*(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FREQUENCY_HZ*IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A)/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_MAX" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                            </math>
+
+                            <combo label="Ki*Ts Q format" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_Q_FORMAT" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" default="label=Q0 (0 fractional bits)">
+                                <item label="Q0 (0 fractional bits)" value="0" />
+                                <item label="Q1 (1 fractional bits)" value="1" />
+                                <item label="Q2 (2 fractional bits)" value="2" />
+                                <item label="Q3 (3 fractional bits)" value="3" />
+                                <item label="Q4 (4 fractional bits)" value="4" />
+                                <item label="Q5 (5 fractional bits)" value="5" />
+                                <item label="Q6 (6 fractional bits)" value="6" />
+                                <item label="Q7 (7 fractional bits)" value="7" />
+                                <item label="Q8 (8 fractional bits)" value="8" />
+                                <item label="Q9 (9 fractional bits)" value="9" />
+                                <item label="Q10 (10 fractional bits)" value="10" />
+                                <item label="Q11 (11 fractional bits)" value="11" />
+                                <item label="Q12 (12 fractional bits)" value="12" />
+                                <item label="Q13 (13 fractional bits)" value="13" />
+                                <item label="Q14 (14 fractional bits)" value="14" />
+                                <item label="Q15 (15 fractional bits)" value="15" />
+                            </combo>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_Q" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS*2^IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KI_TS_Q_FORMAT)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+
+                            <!-- User enters real lower limit -->
+                            <doublespinbox label="Output lower limit" suffix=" A" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_REAL" svd="0" default="0.01000" />
+                            <!-- Calculated normalized lower limit -->
+                            <math label="Output lower limit (A)" format="%.2f" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_REAL/IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" visible="false" />
+
+                            <!-- Limit Max and min value of PI limit based on Q format -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_TEMP" formula="0 - (2^(16-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT-1))" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT.min=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_TEMP" />
+                            </math>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_TEMP1" formula="(2^(16-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT-1))-(2^(-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT))" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT.max=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_TEMP1" />
+                            </math>
+
+                            <!-- User entered normalized upper limit -->
+                            <doublespinbox label="Output upper limit" suffix=" A" default="0.01000" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_REAL" />
+                            <!-- Calculated real upper limit -->
+                            <math label="Output upper limit" format="%.5f" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_REAL/IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT" svd="0" visible="false" />
+
+                            <!-- Limit Max and min value of PI limit based on Q format -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_TEMP" formula="(2^(16-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT-1))-(2^(-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT))" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT.max=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_TEMP" />
+                            </math>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_TEMP1" formula="0 - (2^(16-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT-1))" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT.min=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_TEMP1" />
+                            </math>
+
+                            <combo label="Limits Q format" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT" header="Ifx_MS_FocSolutionF16_Cfg.h" svd="0" default="label=Q0 (0 fractional bits)">
+                                <item label="Q0 (0 fractional bits)" value="0" />
+                                <item label="Q1 (1 fractional bits)" value="1" />
+                                <item label="Q2 (2 fractional bits)" value="2" />
+                                <item label="Q3 (3 fractional bits)" value="3" />
+                                <item label="Q4 (4 fractional bits)" value="4" />
+                                <item label="Q5 (5 fractional bits)" value="5" />
+                                <item label="Q6 (6 fractional bits)" value="6" />
+                                <item label="Q7 (7 fractional bits)" value="7" />
+                                <item label="Q8 (8 fractional bits)" value="8" />
+                                <item label="Q9 (9 fractional bits)" value="9" />
+                                <item label="Q10 (10 fractional bits)" value="10" />
+                                <item label="Q11 (11 fractional bits)" value="11" />
+                                <item label="Q12 (12 fractional bits)" value="12" />
+                                <item label="Q13 (13 fractional bits)" value="13" />
+                                <item label="Q14 (14 fractional bits)" value="14" />
+                                <item label="Q15 (15 fractional bits)" value="15" />
+                            </combo>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT_Q" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_LOW_LIMIT*2^IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT_Q" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_OUT_UPP_LIMIT*2^IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_LIMIT_Q_FORMAT)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+
+                            <!-- Anti-windup gain -->
+                            <doublespinbox label="Anti-windup gain (Back Calculation)" suffix=" 1/rpms" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_REAL" default="0.01000" />
+                            <math label="Anti-windup gain x Sampling time, Kaw*Ts" format="%.5f" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_REAL*(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM)/(1000000)" visible="false" />
+
+                            <!-- Calculate Q format automatically -->
+                            <math label="Auto Q format" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS &lt; 1 ? 15 : 15-ceil(log10(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS)/log10(2))" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false" />
+
+                            <!-- Handle special case where input is a power of 2 -->
+                            <math label="Auto Q format" formula="(2^(15-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS ? IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_AUTO_Q_FORMAT_VALUE" svd="0" visible="false" />
+
+                            <!-- Just updates the Q format if auto calculation is enabled -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_UPDATE_Q_FORMAT" formula="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_AUTO_Q_FORMAT_VALUE : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_Q_FORMAT" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                            </math>
+
+                            <!-- Limit of the gain parameter according to Q format -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_MAX" formula="((2^(16-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_Q_FORMAT-1))-(2^(-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_Q_FORMAT)))*(1000000)/(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM)" svd="0" visible="false" />
+
+                            <!-- Limit the gain depending if auto calculation is enabled -->
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.UPDATE_SPEED_PI_KAW_TS_MAX" formula="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_Q_FORMAT == 1 ? 32767*(1000000)/(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM) : IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_MAX" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="INIT_TIMER_DRIVEALGO.run=1" />
+                            </math>
+
+                            <combo label="Kaw*Ts Q format" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_Q_FORMAT" header="Ifx_MS_FocSolutionF16_Cfg.h" default="label=Q0 (0 fractional bits)">
+                                <item label="Q0 (0 fractional bits)" value="0" />
+                                <item label="Q1 (1 fractional bits)" value="1" />
+                                <item label="Q2 (2 fractional bits)" value="2" />
+                                <item label="Q3 (3 fractional bits)" value="3" />
+                                <item label="Q4 (4 fractional bits)" value="4" />
+                                <item label="Q5 (5 fractional bits)" value="5" />
+                                <item label="Q6 (6 fractional bits)" value="6" />
+                                <item label="Q7 (7 fractional bits)" value="7" />
+                                <item label="Q8 (8 fractional bits)" value="8" />
+                                <item label="Q9 (9 fractional bits)" value="9" />
+                                <item label="Q10 (10 fractional bits)" value="10" />
+                                <item label="Q11 (11 fractional bits)" value="11" />
+                                <item label="Q12 (12 fractional bits)" value="12" />
+                                <item label="Q13 (13 fractional bits)" value="13" />
+                                <item label="Q14 (14 fractional bits)" value="14" />
+                                <item label="Q15 (15 fractional bits)" value="15" />
+                            </combo>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_Q" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS*2^IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_Q_FORMAT)" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+                        </checkbox>
+                    </treecontainer>
+                </groupcontainer>
+
+                <groupcontainer visible="false">
+                    <!-- Lock anti-windup gain if the configuration for the anti-windup method is "Back Calculation" -->
+                    <math define="IFX_MS_FOCSOLUTIONF16_CFG.LOCK_ANTI_CHECK" formula="IFX_MATH_CFG_PI_ANTI_WIND!=2">
+                        <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.LOCK_ANTI_WINDUP_GAIN=IFX_MS_FOCSOLUTIONF16_CFG.LOCK_ANTI_CHECK" />
+                    </math>
+
+                    <checkbox define="IFX_MS_FOCSOLUTIONF16_CFG.LOCK_ANTI_WINDUP_GAIN" lockon="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_PI_KAW_TS_REAL=1" />
+                </groupcontainer>
+
+                <groupcontainer label="General Operation Settings">
+                    <treecontainer headerlabels="Structure;Settings;" columnwidths="400;200">
+
+                        <spinbox label="Maximum speed" suffix=" rpm" define="IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED" svd="0" default="2000" />
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED_TEMP1" formula="(-IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED.min=IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED_TEMP1" />
+                        </math>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED_Q15" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^15)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+
+                        <spinbox label="Minimum speed" suffix=" rpm" define="IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED" svd="0" default="2000" />
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED_TEMP" formula="(-IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED.min=IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED_TEMP" />
+                        </math>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED_TEMP_1" formula="(IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM-1)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED.max=IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED_TEMP_1" />
+                        </math>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED_Q15" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^15)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+
+                        <!-- Minimum speed to trigger state transition from rampDown to standBy when reference speed crosses it (absolute value) -->
+                        <spinbox label="Speed threshold for transition from ramp down to standby " suffix=" rpm" define="IFX_MS_FOCSOLUTIONF16_CFG.MIN_SPEED_THRESHOLD_RPM" svd="0" default="0"/>
+                        
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MIN_SPEED_THRESHOLD_Q15" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.MIN_SPEED_THRESHOLD_RPM/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^15)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MIN_SPEED_THRESHOLD_MAX" formula="(IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM-1)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.MIN_SPEED_THRESHOLD_RPM.min=0" />
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.MIN_SPEED_THRESHOLD_RPM.max=IFX_MS_FOCSOLUTIONF16_CFG.MIN_SPEED_THRESHOLD_MAX" />
+                        </math>
+
+                        <checkbox label="Calculate PLL delay based on absolute maximum speed" define="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_PLL_DELAY" default="1" lockon="IFX_MATH_CFG_PLL_DELAY_LENGTH=IFX_MS_FOCSOLUTIONF16_CFG.PLL_DELAY_LENGTH" />
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.UPDATE_PLL_DELAY" formula="IFX_MS_FOCSOLUTIONF16_CFG.AUTO_PLL_DELAY == 1 ? IFX_MS_FOCSOLUTIONF16_CFG.PLL_DELAY_LENGTH : IFX_MATH_CFG_PLL_DELAY_LENGTH" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                        </math>
+
+                        <!-- Calculate maximum absolute speed -->
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MAX_ABS_SPEED_RPM" formula="abs(IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED) > abs(IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED) ? abs(IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED) : abs(IFX_MS_FOCSOLUTIONF16_CFG.MINIMUM_SPEED)" visible="false" />
+
+                        <!-- Speed PLL delay adjustment based on max. mech. speed
+                                60 - conversion frequency into rpm
+                                4.0 - 1/4 electrical rotation -->
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.PLL_DELAY_LENGTH" formula="2^(floor(log10(60*(1000000/IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US)/(IFX_MS_FOCSOLUTIONF16_CFG.MAX_ABS_SPEED_RPM * IFX_MS_FOCSOLUTIONF16_CFG.POLE_PAIRS*4))/log10(2)))" visible="false">
+                            <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                        </math>
+
+                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED_TEMP" formula="(IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM-1)" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED.max=IFX_MS_FOCSOLUTIONF16_CFG.MAXIMUM_SPEED_TEMP" />
+                        </math>
+
+                        <branch label="Ramp Settings">
+
+                            <spinbox label="Open loop ramp up rate" suffix=" rpm/s" define="IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_UP_RATE" svd="0" default="1000" range="1;16000" />
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_UP_RATE_TEMP" formula="round((((2^31)-1)*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM/2^30*1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                            </math>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_UP_RATE_Q30" formula="floor((IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_UP_RATE/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^30*IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US)/1000000)" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" svd="0" />
+
+                            <math label="Effective open loop ramp up rate" unit=" rpm/s" formula="round((IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_UP_RATE_Q30*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM/2^30*1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" visible="true" svd="0" />
+
+                            <spinbox label="Open loop ramp down rate" suffix=" rpm/s" define="IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_DOWN_RATE" svd="0" default="1000" range="1;16000" />
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_DOWN_RATE_TEMP" formula="round((((2^31)-1)*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM/2^30*1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                            </math>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_DOWN_RATE_Q30" formula="floor((IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_DOWN_RATE/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^30*IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US)/1000000)" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" svd="0" />
+
+                            <math label="Effective open loop ramp down rate" unit=" rpm/s" formula="round((IFX_MS_FOCSOLUTIONF16_CFG.OPEN_LOOP_RAMP_DOWN_RATE_Q30*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM/2^30*1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" visible="true" svd="0" />
+
+                            <spinbox label="Closed loop ramp up rate" suffix=" rpm/s" define="IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_UP_RATE" svd="0" default="1000" range="1;16000" />
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_UP_RATE_TEMP" formula="round((((2^31)-1)*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM/2^30*1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                            </math>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_UP_RATE_Q30" formula="floor((IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_UP_RATE/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^30*IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US)/1000000)" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" svd="0" />
+
+                            <math label="Effective closed loop ramp up rate" unit=" rpm/s" formula="round((IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_UP_RATE_Q30*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM/2^30*1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" visible="true" svd="0" />
+
+                            <spinbox label="Closed loop ramp down rate" suffix=" rpm/s" define="IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_DOWN_RATE" svd="0" default="1000" range="1;16000" />
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_DOWN_RATE_TEMP" formula="round((((2^31)-1)*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM/2^30*1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="INIT_TIMER.run=1" />
+                            </math>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_DOWN_RATE_Q30" formula="floor((IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_DOWN_RATE/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^30*IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US)/1000000)" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" svd="0" />
+
+                            <math label="Effective closed loop ramp down rate" unit=" rpm/s" formula="round((IFX_MS_FOCSOLUTIONF16_CFG.CLOSED_LOOP_RAMP_DOWN_RATE_Q30*IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM/2^30*1000000/IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" visible="true" svd="0" />
+
+                        </branch>
+
+                        <branch label="Transition Settings">
+                            <branch label="Transition Mode">
+                                <radio label="Transition mode" header="Ifx_MS_FocSolutionF16_Cfg.h" define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_MODE" svd="0" default="1">
+                                    <radiobutton label="Direct transition" value="0" uielement="branch">
+                                        <doublespinbox label="Quadrature current at transition" suffix=" A" define="IFX_MS_FOCSOLUTIONF16_CFG.Q_CURRENT_AT_TRANSITION" svd="0" default="1.00000">
+                                            <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.Q_CURRENT_AT_TRANSITION.min=0" />
+                                        </doublespinbox>
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.Q_CURRENT_AT_TRANSITION_Q15" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.Q_CURRENT_AT_TRANSITION/IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A*2^15)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+                                    </radiobutton>
+
+                                    <radiobutton label="Smooth transition" value="1" uielement="branch">
+                                        <doublespinbox label="Merge angle tolerance" suffix=" °" define="IFX_MS_FOCSOLUTIONF16_CFG.MERGE_ANGLE_TOL_DEGREE" svd="0" default="10.00" range="0;90" />
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.ANGLE_ERROR_MIN" header="Ifx_MS_FocSolutionF16_Cfg.h" formula="round(IFX_MS_FOCSOLUTIONF16_CFG.MERGE_ANGLE_TOL_DEGREE*65535/360)" svd="0" visible="false" />
+
+                                        <doublespinbox label="Maximum transition time" suffix=" ms" define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_TIME_MS" svd="0" default="100" range="0;32000" />
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_TIME_CYCLES_TEMP" formula="round(IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_TIME_MS*1000/(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US))" svd="0" visible="false"></math>
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_TIME_CYCLES" header="Ifx_MS_FocSolutionF16_Cfg.h" formula="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_TIME_CYCLES_TEMP &lt; 1 ? 1 : IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_TIME_CYCLES_TEMP" svd="0" visible="false" />
+
+                                        <math label="Effective maximum transition time" unit=" ms" formula="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_TIME_CYCLES*IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US/1000" svd="0" />
+
+										<doublespinbox label="D Current Scaling Factor" define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_D_CURRENT_SCALING" default="0.5000" range="0;1.9999" svd="0" />
+
+										<math define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_D_CURRENT_SCALING_Q14" header="Ifx_MS_FocSolutionF16_Cfg.h" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_D_CURRENT_SCALING * (2^14))" svd="0" visible="false" />
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_D_CURRENT_TARGET" formula="(IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_D_CURRENT_SCALING * IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT)" svd="0" visible="false" />
+
+                                        <math label="Effective target D current" unit=" A" formula="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_D_CURRENT_TARGET &lt; IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A ? IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_D_CURRENT_TARGET : IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" svd="0" />
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF" formula="(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_RPM * 0.5) / IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM" svd="0" visible="false" />
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF_Q15" header="Ifx_MS_FocSolutionF16_Cfg.h" formula="round(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF * (2^15))" svd="0" visible="false" />
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF_INV" formula="IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM / (IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_RPM * 0.5)" svd="0" visible="false" />
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF_INV_Q_FORMAT" header="Ifx_MS_FocSolutionF16_Cfg.h" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF_INV &lt; 1 ? 15 : 15-ceil(log10(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF_INV)/log10(2))" svd="0" visible="false" />
+
+                                        <math define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF_INV_Q" header="Ifx_MS_FocSolutionF16_Cfg.h" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF_INV*2^(IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_HALF_INV_Q_FORMAT))" svd="0" visible="false" />
+                                    </radiobutton>
+                                </radio>
+                            </branch>
+
+                            <spinbox label="Transition speed" suffix=" rpm" define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_UP_RPM" svd="0" default="200" range="1;32000" />
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_UP_TEMP" formula="(IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM-1)" svd="0" visible="false">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_UP_RPM.max=IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_UP_TEMP" />
+                            </math>
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_UP_Q15" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_UP_RPM/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^15)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+
+                            <spinbox label="Speed tolerance" suffix=" rpm" define="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_RPM" svd="0" default="100">
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_RPM.min=0" />
+                                <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_RPM.max=IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_UP_RPM" />
+                            </spinbox>
+
+                            <math label="Transition speed Down" unit=" rpm" define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_DOWN_RPM" formula="(IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_UP_RPM-IFX_MS_FOCSOLUTIONF16_CFG.SPEED_BAND_RPM)" svd="0" visible="true" />
+
+                            <math define="IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_DOWN_Q15" formula="floor(IFX_MS_FOCSOLUTIONF16_CFG.TRANSITION_SPEED_DOWN_RPM/IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM*2^15)" svd="0" header="Ifx_MS_FocSolutionF16_Cfg.h" visible="false" />
+                        </branch>
+
+                        <checkbox label="Include Start Angle Identification" header="Ifx_MS_FocSolutionF16_Cfg.h" define="IFX_MS_FOCSOLUTIONF16_CFG.INCLUDE_STARTANGLE_IDENT" default="0"/>
+
+                    </treecontainer>
+                </groupcontainer>
+            </verticalcontainer>
+        </gridcontainer>
+
+        <!--****************************************-->
+        <!-- Apply default values at initialization -->
+        <!--****************************************-->
+        <timer define="IFX_MS_FOCSOLUTIONF16_CFG.APPLY_DEFAULTS" interval="1" singleShot="1" run="1" visible="false">
+            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_POWER_W=IFX_MS_FOCSOLUTIONF16_CFG.BASE_POWER_W" />
+
+            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A=IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_ITOFCONTROLLERF16_CFG.BASE_CURRENT_A=IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" />
+            <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A=IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A=IFX_MS_FOCSOLUTIONF16_CFG.BASE_CURRENT_A" />
+
+            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+            <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_VOLTAGE_V=IFX_MS_FOCSOLUTIONF16_CFG.BASE_VOLTAGE_V" />
+
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_RPM=IFX_MS_FOCSOLUTIONF16_CFG.BASE_MECH_SPEED_RPM" />
+
+            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS=IFX_MS_FOCSOLUTIONF16_CFG.BASE_ELEC_SPEED_RADPS" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_ITOFCONTROLLERF16_CFG.BASE_SPEED_RADPS=IFX_MS_FOCSOLUTIONF16_CFG.BASE_ELEC_SPEED_RADPS" />
+
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS=IFX_MS_FOCSOLUTIONF16_CFG.POLE_PAIRS" />
+
+            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_RES_OHM=IFX_MS_FOCSOLUTIONF16_CFG.PHASE_RES_OHM" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_IND_MH=IFX_MS_FOCSOLUTIONF16_CFG.AVERAGE_INDUCTANCE_MH" />
+
+            <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.FREQUENCY=IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ" />
+
+            <action event="changed" cmd="setDef" data="GPT12E.CAPREL_TIME=IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US" />
+
+            <action event="changed" cmd="setDef" data="IFX_MDA_ITOFCONTROLLERF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" />
+
+            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.PERIOD_TICK=IFX_MS_FOCSOLUTIONF16_CFG.PERIOD_TICK" />
+            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.DEADTIME_NS=IFX_MHA_PATTERNGEN_CFG.DEADTIME" />
+            <action event="changed" cmd="setDef" data="IFX_MAS_MODULATORF16_CFG.F_SYS_MHZ=IFX_MS_FOCSOLUTIONF16_CFG.F_SYS_MHZ" />
+
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.DIRECT_INDUCTANCE_MH=IFX_MS_FOCSOLUTIONF16_CFG.DIRECT_PHASE_IND_MH" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.QUADRATURE_INDUCTANCE_MH=IFX_MS_FOCSOLUTIONF16_CFG.DIRECT_PHASE_IND_MH" />
+
+            <action event="changed" cmd="setDef" data="IFX_MDA_ITOFCONTROLLERF16_CFG.REF_CURRENT_IMAG_A=IFX_MS_FOCSOLUTIONF16_CFG.START_UP_CURRENT" />
+
+            <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.CURRENT_LOOP_FACTOR=IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FACTOR" />
+
+
+        </timer>
+
+        <timer define="IFX_MS_FOCSOLUTIONF16_CFG.APPLY_STARTANGLEIDENT_DEFAULTS" interval="1" singleShot="1" run="1" visible="false">
+            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.F_SYS_MHZ=IFX_MS_FOCSOLUTIONF16_CFG.F_SYS_MHZ" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.DEADTIME_NS=IFX_MHA_PATTERNGEN_CFG.DEADTIME" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.FREQUENCY_KHZ=IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.SAMPLING_TIME_US=IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US2" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.RINGINGTIME_NS=IFX_MAS_MODULATORF16_CFG.RINGINGTIME_NS" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.DRIVERDELAY_NS=IFX_MAS_MODULATORF16_CFG.DRIVERDELAY_NS" />
+            <action event="changed" cmd="setDef" data="IFX_MDA_STARTANGLEIDENTF16_CFG.MEASUREMENTTIME_NS=IFX_MAS_MODULATORF16_CFG.MEASUREMENTTIME_NS" />
+        </timer>
+    </gridcontainer>
+</ifxmlcfg>

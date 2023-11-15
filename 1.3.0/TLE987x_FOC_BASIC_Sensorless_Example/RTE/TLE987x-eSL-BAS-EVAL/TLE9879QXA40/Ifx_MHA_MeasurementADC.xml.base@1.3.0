@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+    <checksum>34f1ce0159e2e5a8b696145313c5c3532f8613fc9a79399854b07ec3a6ea8f03</checksum>
+    <version label="V1.0.4"/>
+    <header file="Ifx_MHA_MeasurementADC_Cfg.h" fullname="1"/>
+    <!--********************************************************************************-->
+    <!--                               Measurement ADC                                  -->
+    <!--********************************************************************************-->
+    <groupcontainer label="Measurement ADC" desc="Measurement ADC Parameters">
+        <treecontainer headerlabels="Structure;Settings;" label="Measurement ADC" desc="Measurement ADC Parameters" columnwidths="450;200">
+            <checkbox label="Use Module" define="IFX_MHA_MEASUREMENTADC_CFG.ENABLE" svd="0" expand="1" default="1" uielement="branch" lockon="MF.CSA_CTRL.EN=1;ADC1.GLOBCTR[8]=1;ADC1.SQ_FB.SQ_RUN.label=Sequencer Mode;ADC1.SQ1_4.SQ1[6]=1;MF.VMON_SEN_CTRL.VMON_SEN_PD_N=1;ADC1.CHx_ESM.TRIG_SEL.label=CCU6 COUT63;ADC1.CHx_ESM.ESM_0[1]=1;TIMER3.CTRL.T3_PD_N=1;TIMER3.MODE_CONF.T3M=1;TIMER3.MODE_CONF.T3_SUBM[0]=1;TIMER3.T3_TRIGG_CTRL.T3_TRIGG_INP_SEL=3;TIMER3.T3_TRIGG_CTRL.T3_RES_CONF=1;ADC1.CHx_EIM.TRIG_SEL=6;ADC1.CHx_EIM.CHx=1;ADC1.ESM_INT_EN=0;ADC1.EIM_INT_EN=0;ADC1.CHx_EIM.REP=0;ADC1.RES_OUT_EIM.WFR8=0;CPU.NVIC_ISER0.Int_ADC1=0">
+                <doublespinbox label="Base voltage" define="IFX_MHA_MEASUREMENTADC_CFG.BASE_VOLTAGE_V" suffix=" V" header="Ifx_MHA_MeasurementADC_Cfg.h" svd="0" default="24.00000"/>
+                <doublespinbox label="Base current" define="IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A" suffix=" A" header="Ifx_MHA_MeasurementADC_Cfg.h" svd="0" default="24.00000"/>
+                
+                <doublespinbox label="Shunt resistance" define="IFX_MHA_MEASUREMENTADC_CFG.SHUNT_RES" suffix=" Ohm" svd="0" default="0.00500" header="Ifx_MHA_MeasurementADC_Cfg.h">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.SHUNT_RES.min=0"/>
+                </doublespinbox>
+                
+                <combo label="CSA gain option" define="IFX_MHA_MEASUREMENTADC_CFG.CSA_GAIN" default="label=60" svd="0" header="Ifx_MHA_MeasurementADC_Cfg.h">
+                    <item label="10" value="0" lockon="MF.CSA_CTRL.GAIN=0"/>
+                    <item label="20" value="1" lockon="MF.CSA_CTRL.GAIN=1"/>
+                    <item label="40" value="2" lockon="MF.CSA_CTRL.GAIN=2"/>
+                    <item label="60" value="3" lockon="MF.CSA_CTRL.GAIN=3"/>                    
+                </combo>
+                
+                <spinbox label="CSA calibration cycles" define="IFX_MHA_MEASUREMENTADC_CFG.CALIBRATION_CYCLES" svd="0" default="128" range="1;256" header="Ifx_MHA_MeasurementADC_Cfg.h"/>
+                
+                <!-- Number of bits for the measured channels -->
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.VDC_BITS" svd="0" formula="(IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_Q_FORMAT_VALUE - 3)" header="Ifx_MHA_MeasurementADC_Cfg.h"/>
+
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.ATTENUATOR_RANGE" svd="0" formula="(MF.VMON_SEN_CTRL.VMON_SEN_SEL_INRANGE == 0) ? 22.3214 : 30"/>
+                
+                <!-- Normalized real VDC value -->
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_REAL" svd="0" formula="(IFX_MHA_MEASUREMENTADC_CFG.ATTENUATOR_RANGE/IFX_MHA_MEASUREMENTADC_CFG.BASE_VOLTAGE_V)"/>
+                <!-- Calculate Q format automatically -->
+                <math label="Auto Q format" formula="IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_REAL &lt; 1 ? 15 : 15-ceil(log10(IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_REAL)/log10(2))" define="IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_Q_FORMAT_TEMP" svd="0" visible="false"/>
+                <!-- Handle special case where input is a power of 2 -->
+                <math label="Auto Q format" formula="(2^(15-IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_Q_FORMAT_TEMP) == IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_REAL ? IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_Q_FORMAT_TEMP-1 : IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_Q_FORMAT_TEMP)" define="IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_Q_FORMAT_VALUE" svd="0" visible="false" />
+
+                <!-- Normalized VDC value in QX format-->
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_TO_Q15" svd="0" formula="floor(IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_REAL*2^IFX_MHA_MEASUREMENTADC_CFG.CONVERT_VDC_Q_FORMAT_VALUE)" header="Ifx_MHA_MeasurementADC_Cfg.h">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_VOLTAGE_V.min=0"/>
+                </math>                
+                
+                <!-- Current gain for each possible value of the CSA gain -->
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_10" svd="0" formula="(5)/(IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A * 10 * IFX_MHA_MEASUREMENTADC_CFG.SHUNT_RES)" />
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_20" svd="0" formula="(5)/(IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A * 20 * IFX_MHA_MEASUREMENTADC_CFG.SHUNT_RES)" />
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_40" svd="0" formula="(5)/(IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A * 40 * IFX_MHA_MEASUREMENTADC_CFG.SHUNT_RES)" />
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_60" svd="0" formula="(5)/(IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A * 60 * IFX_MHA_MEASUREMENTADC_CFG.SHUNT_RES)" />
+
+                <!-- Calculate Q format of the current gain automatically -->
+                <math label="Auto Q format" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_10" formula="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_10 &lt; 1 ? 15 : 15-ceil(log10(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_10)/log10(2))" svd="0" visible="false"/>
+                <math label="Auto Q format" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_20" formula="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_20 &lt; 1 ? 15 : 15-ceil(log10(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_20)/log10(2))" svd="0" visible="false"/>
+                <math label="Auto Q format" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_40" formula="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_40 &lt; 1 ? 15 : 15-ceil(log10(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_40)/log10(2))" svd="0" visible="false"/>
+                <math label="Auto Q format" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_60" formula="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_60 &lt; 1 ? 15 : 15-ceil(log10(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_60)/log10(2))" svd="0" visible="false"/>
+
+                <!-- Handle special case where input is a power of 2 -->
+                <math label="Auto Q format" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_10" formula="(2^(15-IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_10) == IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_10 ? IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_10-1 : IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_10)" svd="0" visible="false" />
+                <math label="Auto Q format" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_20" formula="(2^(15-IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_20) == IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_20 ? IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_20-1 : IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_20)" svd="0" visible="false" />
+                <math label="Auto Q format" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_40" formula="(2^(15-IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_40) == IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_40 ? IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_40-1 : IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_40)" svd="0" visible="false" />
+                <math label="Auto Q format" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_60" formula="(2^(15-IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_60) == IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_60 ? IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_60-1 : IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_TEMP_60)" svd="0" visible="false" />
+
+                <!-- Value to shift the product rawCurrent * currentGain to get a result in Q15 -->
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_SHIFT_10" svd="0" formula="(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_10 - 3)" header="Ifx_MHA_MeasurementADC_Cfg.h"/>
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_SHIFT_20" svd="0" formula="(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_20 - 3)" header="Ifx_MHA_MeasurementADC_Cfg.h"/>
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_SHIFT_40" svd="0" formula="(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_40 - 3)" header="Ifx_MHA_MeasurementADC_Cfg.h"/>
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_SHIFT_60" svd="0" formula="(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_60 - 3)" header="Ifx_MHA_MeasurementADC_Cfg.h"/>
+
+                <!-- Normalized current gain value in QX format-->                  
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_10" svd="0" formula="floor(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_10*2^IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_10)" header="Ifx_MHA_MeasurementADC_Cfg.h">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A.min=0"/>
+                </math>
+
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_20" svd="0" formula="floor(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_20*2^IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_20)" header="Ifx_MHA_MeasurementADC_Cfg.h">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A.min=0"/>
+                </math>
+
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_40" svd="0" formula="floor(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_40*2^IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_40)" header="Ifx_MHA_MeasurementADC_Cfg.h">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A.min=0"/>
+                </math>
+
+                <math visible="false" define="IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_60" svd="0" formula="floor(IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_60*2^IFX_MHA_MEASUREMENTADC_CFG.CURRENT_GAIN_Q_FORMAT_60)" header="Ifx_MHA_MeasurementADC_Cfg.h">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_MEASUREMENTADC_CFG.BASE_CURRENT_A.min=0"/>
+                </math>
+            </checkbox>
+        </treecontainer>
+    </groupcontainer>
+</ifxmlcfg>

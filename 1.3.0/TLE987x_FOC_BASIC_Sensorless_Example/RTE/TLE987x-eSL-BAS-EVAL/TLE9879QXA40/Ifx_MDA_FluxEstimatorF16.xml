@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+    <checksum>714301f903f4d5570834de1fa54b828c424f0988959a62c86a6b7b8f2294b24f</checksum>
+    <version label="V1.0.5"/>
+    <header file="Ifx_MDA_FluxEstimatorF16_Cfg.h" fullname="1"/>
+    <!--********************************************************************************-->
+    <!--                                  Flux Estimator                                -->
+    <!--********************************************************************************-->
+    <gridcontainer label="Flux Estimator">
+        <gridcontainer columns="2" size="-1;-1">
+            <!--******************-->
+            <!-- Motor Parameters -->
+            <!--******************-->
+            <groupcontainer label="Base values" >
+                <treecontainer headerlabels="Structure;Settings;">
+                    <!-- Input base values -->
+                    <doublespinbox label="Base voltage" suffix=" V" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_VOLTAGE_V" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" default="24.00000">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_VOLTAGE_V.min=0"/>
+                    </doublespinbox>
+            
+                    <doublespinbox label="Base current" suffix=" A" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" default="24.00000">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A.min=0"/>
+                    </doublespinbox>
+
+                    <doublespinbox label="Base electrical speed" suffix=" rad/s" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" default="2000"/>
+                    
+                    <!-- Calculated base values -->
+                    <math label="Base power" unit=" W" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_POWER_W" formula="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_VOLTAGE_V*IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" format="%f" svd="0" visible="false"/>
+
+                    <math label="Base resistance" unit=" Ohm" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_RESISTANCE_OHM" formula="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_POWER_W*IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A^-2" format="%f" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" visible="false"/>
+                    
+                    <math label="Base time" unit=" ms" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TIME_MS" format="%f" formula="1/IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS*1000" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" visible="false"/>
+                        
+                    <math label="Base inductance" unit="mH" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_INDUCTANCE_MH" formula="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_POWER_W*IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TIME_MS*IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A^-2" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0"/>
+
+                    <!-- Minimum base time considering the value needed to normalize the inductance -->
+                    <math visible="false" label="Min Base time" unit=" s" format="%f" formula="(IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_IND_MH/1000*IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A^2) / (IFX_MDA_FLUXESTIMATORF16_CFG.BASE_POWER_W)" define="IFX_MDA_FLUXESTIMATORF16_CFG.MIN_BASE_TIME_IND_S" svd="0"/>
+                    
+                    <!-- Find out the biggest value between alpha and beta time constants -->
+                    <math visible="false" label="Max alpha-beta" unit=" s" format="%f" formula="IFX_MDA_FLUXESTIMATORF16_CFG.ALPHA_TC_US/1000000 &gt; IFX_MDA_FLUXESTIMATORF16_CFG.BETA_TC_US/1000000 ? IFX_MDA_FLUXESTIMATORF16_CFG.ALPHA_TC_US/1000000 : IFX_MDA_FLUXESTIMATORF16_CFG.BETA_TC_US/1000000" define="IFX_MDA_FLUXESTIMATORF16_CFG.MAX_ALPHA_BETA_S" svd="0"/>
+                    
+                    <!-- Get the minimum value of the base time to normalize time constants and inductance -->
+                    <math label="Final base time" unit=" s" format="%f" formula="IFX_MDA_FLUXESTIMATORF16_CFG.MAX_ALPHA_BETA_S &gt; IFX_MDA_FLUXESTIMATORF16_CFG.MIN_BASE_TIME_IND_S ? IFX_MDA_FLUXESTIMATORF16_CFG.MAX_ALPHA_BETA_S : IFX_MDA_FLUXESTIMATORF16_CFG.MIN_BASE_TIME_IND_S" define="IFX_MDA_FLUXESTIMATORF16_CFG.NEW_BASE_TIME_S" svd="0" visible="false"/>
+                    
+                    <math define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TIME_US" formula="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TIME_MS*1000" visible="false"/>
+
+                    <!-- set the maximum parameter = base value and limit the Q15 to 32767 -->
+                    <math define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_RESISTANCE_TEMP" formula="(32767/32768)*IFX_MDA_FLUXESTIMATORF16_CFG.BASE_RESISTANCE_OHM" svd="0" visible="false"/>
+
+                    <math label="Base torque" unit=" Nm" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TORQUE_NM" formula="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_POWER_W/IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" visible="false"/>
+                    
+                    <math label="Base flux" unit=" Wb" define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_FLUX_WB" formula="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_POWER_W*IFX_MDA_FLUXESTIMATORF16_CFG.BASE_CURRENT_A^-1*(IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TIME_MS/1000)" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" visible="false"/>
+                    
+                    <math visible="false" label="Adjustment factor" format="%f" define="IFX_MDA_FLUXESTIMATORF16_CFG.ADJUSTMENT_FACTOR" formula="(IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TIME_MS/1000)/IFX_MDA_FLUXESTIMATORF16_CFG.NEW_BASE_TIME_S" svd="0" header="Ifx_MDA_FluxEstimatorF16_Cfg.h"/>
+                </treecontainer>
+            </groupcontainer>
+
+            <groupcontainer label="Block diagram" sizepolicy="expanding;expanding">
+                <image define="image12" file="pos_est_ab.png"/>
+            </groupcontainer>
+        </gridcontainer>
+
+        <gridcontainer columns="2" size="-1;300" sizepolicy="ignored;expanding">
+            <verticalcontainer>
+                <groupcontainer label="System Parameters">
+                    <treecontainer headerlabels="Structure;Settings;">
+                        <!-- Phase resistance/inductance values -->
+                        <doublespinbox label="Phase resistance" suffix=" Ohm" define="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_RES_OHM" svd="0" default="0.05000">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_RES_OHM.min=0"/>
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_RES_OHM.max=IFX_MDA_FLUXESTIMATORF16_CFG.BASE_RESISTANCE_TEMP"/>
+                        </doublespinbox>
+
+                        <doublespinbox label="Phase inductance" suffix=" mH"  define="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_IND_MH" svd="0" default="0.05000">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_IND_MH.min=0"/>
+                        </doublespinbox>
+
+                        <math define="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_RES_Q15" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" visible="false" formula="floor(IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_RES_OHM/IFX_MDA_FLUXESTIMATORF16_CFG.BASE_RESISTANCE_OHM*2^15)"/>
+                        
+                        <math define="IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_IND_Q15" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" visible="false" formula="floor(IFX_MDA_FLUXESTIMATORF16_CFG.PHASE_IND_MH/IFX_MDA_FLUXESTIMATORF16_CFG.BASE_INDUCTANCE_MH*2^15)"/>
+                        
+                        <!-- Sampling time -->
+                        <spinbox label="Sampling time" suffix=" us" define="IFX_MDA_FLUXESTIMATORF16_CFG.SAMPLING_TIME_US" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" default="50" range="25;10000"/>
+                        
+                        <math define="IFX_MDA_FLUXESTIMATORF16_CFG.SYSTEM_BASE_TIME_Q30" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" formula="floor(2^30*6.283185307179586/(IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS))" visible="false"/>
+                        
+                        <!-- limit the base electrical speed due to limitation of internal parameter Q7-->
+                        <math define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS_TEMP" formula="floor((6.283185307179586*1000000)/(255*IFX_MDA_FLUXESTIMATORF16_CFG.SAMPLING_TIME_US))" svd="0" visible="false"/>
+                        
+                        <math define="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS_TEMP1" formula="(IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS_TEMP &lt; 6.283185307179586)?6.283185307179586:IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS_TEMP" svd="0" visible="false">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS.min=IFX_MDA_FLUXESTIMATORF16_CFG.BASE_ELEC_SPEED_RADPS_TEMP1"/>
+                        </math>
+                        
+                        <!-- Alpha Component -->
+                        <doublespinbox label="Alpha lowpass cut-off frequency" suffix=" Hz" define="IFX_MDA_FLUXESTIMATORF16_CFG.ALPHA_CUTOFF_HZ" svd="0" default="16.00000">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.ALPHA_CUTOFF_HZ.min=0"/>
+                        </doublespinbox>
+                        
+                        <math label="Alpha lowpass time constant" unit=" us" define="IFX_MDA_FLUXESTIMATORF16_CFG.ALPHA_TC_US" formula="floor(1000000/(6.283185307179586*IFX_MDA_FLUXESTIMATORF16_CFG.ALPHA_CUTOFF_HZ))" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0"/>
+
+                        <math define="IFX_MDA_FLUXESTIMATORF16_CFG.ALPHA_GAIN_Q14" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" formula="floor(2^14 * (IFX_MDA_FLUXESTIMATORF16_CFG.ALPHA_TC_US)/IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TIME_US)" visible="false"/>
+                        
+                        <!-- Beta Component -->
+                        <doublespinbox label="Beta lowpass cut-off frequency" suffix=" Hz" define="IFX_MDA_FLUXESTIMATORF16_CFG.BETA_CUTOFF_HZ" svd="0" default="16.00000">
+                            <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.BETA_CUTOFF_HZ.min=0"/>
+                        </doublespinbox>
+                        
+                        <math label="Beta lowpass time constant" unit=" us" define="IFX_MDA_FLUXESTIMATORF16_CFG.BETA_TC_US" formula="floor(1000000/(6.283185307179586*IFX_MDA_FLUXESTIMATORF16_CFG.BETA_CUTOFF_HZ))" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0"/>
+                        
+                        <math define="IFX_MDA_FLUXESTIMATORF16_CFG.BETA_GAIN_Q14" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" visible="false" formula="floor(2^14 * (IFX_MDA_FLUXESTIMATORF16_CFG.BETA_TC_US)/IFX_MDA_FLUXESTIMATORF16_CFG.BASE_TIME_US)"/>
+                    </treecontainer>
+                </groupcontainer>
+            </verticalcontainer>
+            
+            <groupcontainer label="Speed and PLL parameters">
+                <treecontainer headerlabels="Structure;Settings;">
+                    <doublespinbox label="Speed lowpass cut-off frequency" suffix=" Hz" define="IFX_MDA_FLUXESTIMATORF16_CFG.SPEED_CUTOFF_HZ" svd="0" default="16.00000">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.SPEED_CUTOFF_HZ.min=0"/>
+                    </doublespinbox>
+                    
+                    <math label="Speed lowpass time constant" unit=" us" define="IFX_MDA_FLUXESTIMATORF16_CFG.SPEED_TC_US" formula="floor(1000000/(6.283185307179586*IFX_MDA_FLUXESTIMATORF16_CFG.SPEED_CUTOFF_HZ))" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0"/>
+                    
+                    <doublespinbox label="PLL proportional gain" define="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN" svd="0" default="200">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN.min=0"/>
+                    </doublespinbox>
+                    
+                    <!-- Limit of the Pll gain parameter according to Q format -->
+                    <math define="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_MAX" formula="(2^(16-IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_Q_FORMAT-1))-(2^(-IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_Q_FORMAT))" svd="0" visible="false"/>
+                    
+                    <!-- Calculate Q format automatically -->
+                    <math label="Auto Q format" formula="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN &lt; 1 ? 15 : 15-ceil(log10(IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN)/log10(2))" define="IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false"/>
+                    
+                    <!-- Handle special case where input is a power of 2 -->
+                    <math label="Auto Q format" formula="(2^(15-IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT_VALUE_TMP) == IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN ? IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT_VALUE" svd="0" visible="false"/>
+                    
+                    <checkbox label="Calculate best precision Q format" define="IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT" lockon="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_Q_FORMAT=IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT_VALUE" default="1"/>
+                    
+                    <!-- Just updates the Q format if auto calculation is enabled -->
+                    <math define="IFX_MDA_FLUXESTIMATORF16_CFG.UPDATE_Q_FORMAT" formula="IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT_VALUE : IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_Q_FORMAT" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_Q_FORMAT=IFX_MDA_FLUXESTIMATORF16_CFG.UPDATE_Q_FORMAT"/>
+                    </math>
+                    
+                    <!-- Limit the PLL gain depending if auto calculation is enabled -->
+                    <math define="IFX_MDA_FLUXESTIMATORF16_CFG.UPDATE_PLL_GAIN_MAX" formula="IFX_MDA_FLUXESTIMATORF16_CFG.AUTO_Q_FORMAT == 1 ? 32767 : IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_MAX" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN.max=IFX_MDA_FLUXESTIMATORF16_CFG.UPDATE_PLL_GAIN_MAX"/>
+                    </math>
+                   
+                    <combo label="PLL proportional gain Q format" define="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_Q_FORMAT" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" svd="0" default="label=Ifx_Math_FractQFormat_Q0">
+                        <item label="Ifx_Math_FractQFormat_Q0" value="0" />
+                        <item label="Ifx_Math_FractQFormat_Q1" value="1" />
+                        <item label="Ifx_Math_FractQFormat_Q2" value="2" />
+                        <item label="Ifx_Math_FractQFormat_Q3" value="3" />
+                        <item label="Ifx_Math_FractQFormat_Q4" value="4" />
+                        <item label="Ifx_Math_FractQFormat_Q5" value="5" />
+                        <item label="Ifx_Math_FractQFormat_Q6" value="6" />
+                        <item label="Ifx_Math_FractQFormat_Q7" value="7" />
+                        <item label="Ifx_Math_FractQFormat_Q8" value="8" />
+                        <item label="Ifx_Math_FractQFormat_Q9" value="9" />
+                        <item label="Ifx_Math_FractQFormat_Q10" value="10" />
+                        <item label="Ifx_Math_FractQFormat_Q11" value="11" />
+                        <item label="Ifx_Math_FractQFormat_Q12" value="12" />
+                        <item label="Ifx_Math_FractQFormat_Q13" value="13" />
+                        <item label="Ifx_Math_FractQFormat_Q14" value="14" />
+                        <item label="Ifx_Math_FractQFormat_Q15" value="15" />
+                    </combo>
+                    
+                    <math define="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_Q" formula="IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN*2^IFX_MDA_FLUXESTIMATORF16_CFG.PLL_GAIN_Q_FORMAT" svd="0" header="Ifx_MDA_FluxEstimatorF16_Cfg.h" visible="false"/>
+                </treecontainer>
+            </groupcontainer>
+        </gridcontainer>
+    </gridcontainer>
+</ifxmlcfg>

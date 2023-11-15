@@ -1,0 +1,746 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\Objects\FOC.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\Objects\FOC.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Wed Nov 15 14:20:28 2023
+<BR><P>
+<H3>Maximum Stack Usage =        144 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+PendSV_Handler &rArr; Ifx_MS_FocSolutionF16_executeControlMode &rArr; Ifx_MAS_ModulatorF16_execute &rArr; Ifx_MAS_ModulatorF16_updatePolar7SegQ16
+<P>
+<H3>
+Mutually Recursive functions
+</H3> <LI><a href="#[1d]">SVC_Handler_main</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1d]">SVC_Handler_main</a><BR>
+ <LI><a href="#[1]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1]">NMI_Handler</a><BR>
+ <LI><a href="#[7]">DebugMon_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[7]">DebugMon_Handler</a><BR>
+ <LI><a href="#[d]">ADC1_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[d]">ADC1_IRQHandler</a><BR>
+</UL>
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[d]">ADC1_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[c]">ADC2_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[18]">BDRV_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[4]">BusFault_Handler</a> from isr.o(.text.BusFault_Handler) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[e]">CCU6SR0_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[f]">CCU6SR1_IRQHandler</a> from isr.o(.text.CCU6SR1_IRQHandler) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[10]">CCU6SR2_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[11]">CCU6SR3_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[19]">DMA_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[7]">DebugMon_Handler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[16]">EXINT0_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[17]">EXINT1_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[a]">GPT1_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[b]">GPT2_IRQHandler</a> from isr.o(.text.GPT2_IRQHandler) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[2]">HardFault_Handler</a> from isr.o(.text.HardFault_Handler) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[3]">MemManage_Handler</a> from isr.o(.text.MemManage_Handler) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[1]">NMI_Handler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[8]">PendSV_Handler</a> from main.o(.text.PendSV_Handler) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[0]">Reset_Handler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[12]">SSC1_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[13]">SSC2_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[6]">SVC_Handler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[1d]">SVC_Handler_main</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(.text)
+ <LI><a href="#[9]">SysTick_Handler</a> from isr.o(.text.SysTick_Handler) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[1b]">SystemInit</a> from system_tle987x.o(.text.SystemInit) referenced from startup_tle987x.o(.text)
+ <LI><a href="#[14]">UART1_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[15]">UART2_IRQHandler</a> from startup_tle987x.o(.text) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[5]">UsageFault_Handler</a> from isr.o(.text.UsageFault_Handler) referenced from startup_tle987x.o(RESET)
+ <LI><a href="#[1c]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_tle987x.o(.text)
+ <LI><a href="#[1a]">main</a> from main.o(.text.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3>
+<P><STRONG><a name="[1c]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(.text)
+</UL>
+<P><STRONG><a name="[73]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+
+<P><STRONG><a name="[23]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+</UL>
+
+<P><STRONG><a name="[2b]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+</UL>
+
+<P><STRONG><a name="[74]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+
+<P><STRONG><a name="[75]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+
+<P><STRONG><a name="[76]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+
+<P><STRONG><a name="[77]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+
+<P><STRONG><a name="[78]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+
+<P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[1d]"></a>SVC_Handler_main</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler_main
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler_main
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(.text)
+</UL>
+<P><STRONG><a name="[1]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[7]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebugMon_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebugMon_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[d]"></a>ADC1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_IRQHandler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[c]"></a>ADC2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[18]"></a>BDRV_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[e]"></a>CCU6SR0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[10]"></a>CCU6SR2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[11]"></a>CCU6SR3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[19]"></a>DMA_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[16]"></a>EXINT0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[17]"></a>EXINT1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[a]"></a>GPT1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[12]"></a>SSC1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[13]"></a>SSC2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[14]"></a>UART1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[15]"></a>UART2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[25]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __aeabi_uldivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+</UL>
+<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PLLF16_setSamplingTime_us
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PLLF16_setPropGain
+</UL>
+
+<P><STRONG><a name="[29]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
+<LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+</UL>
+
+<P><STRONG><a name="[79]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+
+<P><STRONG><a name="[7a]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+
+<P><STRONG><a name="[28]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+</UL>
+
+<P><STRONG><a name="[41]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_PatternGen_TLE987_init
+<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PLLF16_init
+</UL>
+
+<P><STRONG><a name="[7b]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+
+<P><STRONG><a name="[2a]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+</UL>
+
+<P><STRONG><a name="[27]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+</UL>
+
+<P><STRONG><a name="[7c]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+
+<P><STRONG><a name="[26]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+</UL>
+
+<P><STRONG><a name="[7d]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+
+<P><STRONG><a name="[24]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
+</UL>
+<BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+</UL>
+
+<P><STRONG><a name="[7e]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+
+<P><STRONG><a name="[60]"></a>ADC1_Init</STRONG> (Thumb, 136 bytes, Stack size 0 bytes, adc1.o(.text.ADC1_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[61]"></a>ADC2_Init</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, adc2.o(.text.ADC2_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[3d]"></a>BDRV_Clr_Sts</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, bdrv.o(.text.BDRV_Clr_Sts))
+<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_BridgeDrv_TLE987_execute
+</UL>
+
+<P><STRONG><a name="[62]"></a>BDRV_Init</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, bdrv.o(.text.BDRV_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[3c]"></a>BDRV_Set_Bridge</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, bdrv.o(.text.BDRV_Set_Bridge))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = BDRV_Set_Bridge
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_BridgeDrv_TLE987_execute
+</UL>
+
+<P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, isr.o(.text.BusFault_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[f]"></a>CCU6SR1_IRQHandler</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, isr.o(.text.CCU6SR1_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = CCU6SR1_IRQHandler &rArr; Ifx_FOC_periodMatchCallback &rArr; Ifx_MHA_PatternGen_TLE987_onPeriodMatch
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_FOC_periodMatchCallback
+<LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_FOC_oneMatchCallback
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[63]"></a>CCU6_Init</STRONG> (Thumb, 120 bytes, Stack size 0 bytes, ccu6.o(.text.CCU6_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[64]"></a>CSA_Init</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, csa.o(.text.CSA_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[6d]"></a>DMA_Init</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, dma.o(.text.DMA_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[65]"></a>GPT12E_Init</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, gpt12e.o(.text.GPT12E_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[b]"></a>GPT2_IRQHandler</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, isr.o(.text.GPT2_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = GPT2_IRQHandler &rArr; Ifx_FOC_speedLoop_callback &rArr; Ifx_MS_FocSolutionF16_executeSpeedControl &rArr; Ifx_MS_FocSolutionF16_subStateMachine &rArr; Ifx_Math_PiF16_execute
+</UL>
+<BR>[Calls]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_FOC_speedLoop_callback
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[2]"></a>HardFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, isr.o(.text.HardFault_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[6e]"></a>INT_Init</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, int.o(.text.INT_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[2c]"></a>Ifx_FOC_oneMatchCallback</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, main.o(.text.Ifx_FOC_oneMatchCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Ifx_FOC_oneMatchCallback
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_MeasurementADC_TLE987_oneMatch
+<LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_PatternGen_TLE987_onOneMatch
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CCU6SR1_IRQHandler
+</UL>
+
+<P><STRONG><a name="[2d]"></a>Ifx_FOC_periodMatchCallback</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, main.o(.text.Ifx_FOC_periodMatchCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Ifx_FOC_periodMatchCallback &rArr; Ifx_MHA_PatternGen_TLE987_onPeriodMatch
+</UL>
+<BR>[Calls]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_PatternGen_TLE987_onPeriodMatch
+<LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_MeasurementADC_TLE987_periodMatch
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CCU6SR1_IRQHandler
+</UL>
+
+<P><STRONG><a name="[1e]"></a>Ifx_FOC_speedLoop_callback</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, main.o(.text.Ifx_FOC_speedLoop_callback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Ifx_FOC_speedLoop_callback &rArr; Ifx_MS_FocSolutionF16_executeSpeedControl &rArr; Ifx_MS_FocSolutionF16_subStateMachine &rArr; Ifx_Math_PiF16_execute
+</UL>
+<BR>[Calls]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeSpeedControl
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPT2_IRQHandler
+</UL>
+
+<P><STRONG><a name="[33]"></a>Ifx_MAS_ModulatorF16_execute</STRONG> (Thumb, 446 bytes, Stack size 24 bytes, ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Ifx_MAS_ModulatorF16_execute &rArr; Ifx_MAS_ModulatorF16_updatePolar7SegQ16
+</UL>
+<BR>[Calls]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MAS_ModulatorF16_updatePolar7SegQ16 (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+
+<P><STRONG><a name="[50]"></a>Ifx_MAS_ModulatorF16_init</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_init))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[34]"></a>Ifx_MDA_FluxEstimatorF16_init</STRONG> (Thumb, 446 bytes, Stack size 16 bytes, ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Ifx_MDA_FluxEstimatorF16_init &rArr; Ifx_Math_PLLF16_setPropGain &rArr; __aeabi_uldivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PLLF16_setSamplingTime_us
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PLLF16_setPropGain
+<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PLLF16_init
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_LowPass1stF16_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[39]"></a>Ifx_MDA_FocControllerF16_init</STRONG> (Thumb, 100 bytes, Stack size 32 bytes, ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Ifx_MDA_FocControllerF16_init &rArr; Ifx_Math_PiF16_init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PiF16_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[4c]"></a>Ifx_MDA_FocControllerF16_reset</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_reset))
+<BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeSpeedControl
+</UL>
+
+<P><STRONG><a name="[45]"></a>Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle))
+<BR><BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+
+<P><STRONG><a name="[46]"></a>Ifx_MDA_IToFControllerF16_execute</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_execute))
+<BR><BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+
+<P><STRONG><a name="[51]"></a>Ifx_MDA_IToFControllerF16_init</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, ifx_mda_itofcontrollerf16.o(.text.Ifx_MDA_IToFControllerF16_init))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[47]"></a>Ifx_MDA_VToFControllerF16_execute</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Ifx_MDA_VToFControllerF16_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+
+<P><STRONG><a name="[52]"></a>Ifx_MDA_VToFControllerF16_init</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, ifx_mda_vtofcontrollerf16.o(.text.Ifx_MDA_VToFControllerF16_init))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[3b]"></a>Ifx_MHA_BridgeDrv_TLE987_execute</STRONG> (Thumb, 604 bytes, Stack size 32 bytes, ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Ifx_MHA_BridgeDrv_TLE987_execute &rArr; BDRV_Set_Bridge
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BDRV_Clr_Sts
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BDRV_Set_Bridge
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[4f]"></a>Ifx_MHA_BridgeDrv_TLE987_init</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ifx_mha_bridgedrv_tle987.o(.text.Ifx_MHA_BridgeDrv_TLE987_init))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[4e]"></a>Ifx_MHA_MeasurementADC_TLE987_init</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_init))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[2f]"></a>Ifx_MHA_MeasurementADC_TLE987_oneMatch</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_oneMatch))
+<BR><BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_FOC_oneMatchCallback
+</UL>
+
+<P><STRONG><a name="[30]"></a>Ifx_MHA_MeasurementADC_TLE987_periodMatch</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_periodMatch))
+<BR><BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_FOC_periodMatchCallback
+</UL>
+
+<P><STRONG><a name="[3e]"></a>Ifx_MHA_PatternGen_TLE987_execute</STRONG> (Thumb, 316 bytes, Stack size 24 bytes, ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Ifx_MHA_PatternGen_TLE987_execute
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER3_Set_Cmp_Value
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+
+<P><STRONG><a name="[40]"></a>Ifx_MHA_PatternGen_TLE987_init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_MHA_PatternGen_TLE987_init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[2e]"></a>Ifx_MHA_PatternGen_TLE987_onOneMatch</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onOneMatch))
+<BR><BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_FOC_oneMatchCallback
+</UL>
+
+<P><STRONG><a name="[31]"></a>Ifx_MHA_PatternGen_TLE987_onPeriodMatch</STRONG> (Thumb, 120 bytes, Stack size 16 bytes, ifx_mha_patterngen_tle987.o(.text.Ifx_MHA_PatternGen_TLE987_onPeriodMatch))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Ifx_MHA_PatternGen_TLE987_onPeriodMatch
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER3_Set_Cmp_Value
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_FOC_periodMatchCallback
+</UL>
+
+<P><STRONG><a name="[42]"></a>Ifx_MS_FocSolutionF16_executeControlMode</STRONG> (Thumb, 384 bytes, Stack size 72 bytes, ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeControlMode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = Ifx_MS_FocSolutionF16_executeControlMode &rArr; Ifx_MAS_ModulatorF16_execute &rArr; Ifx_MAS_ModulatorF16_updatePolar7SegQ16
+</UL>
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PolarToCart_F16
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_Clarke_F16
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_CurrentReconstruction_F16
+<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_PatternGen_TLE987_execute
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_MeasurementADC_TLE987_execute (via Veneer)
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_VToFControllerF16_execute
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_IToFControllerF16_execute
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_IToFControllerF16_addOneEightyDegreeInAngle
+<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FocControllerF16_execute (via Veneer)
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_execute (via Veneer)
+<LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MAS_ModulatorF16_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
+</UL>
+
+<P><STRONG><a name="[32]"></a>Ifx_MS_FocSolutionF16_executeSpeedControl</STRONG> (Thumb, 864 bytes, Stack size 24 bytes, ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_executeSpeedControl))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Ifx_MS_FocSolutionF16_executeSpeedControl &rArr; Ifx_MS_FocSolutionF16_subStateMachine &rArr; Ifx_Math_PiF16_execute
+</UL>
+<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PLLF16_resetBuffer
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_AccelLimitF16_execute
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_subStateMachine
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FocControllerF16_reset
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_FOC_speedLoop_callback
+</UL>
+
+<P><STRONG><a name="[4d]"></a>Ifx_MS_FocSolutionF16_init</STRONG> (Thumb, 298 bytes, Stack size 8 bytes, ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Ifx_MS_FocSolutionF16_init &rArr; Ifx_MDA_FluxEstimatorF16_init &rArr; Ifx_Math_PLLF16_setPropGain &rArr; __aeabi_uldivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_SpeedPreControlF16_init
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_PatternGen_TLE987_init
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_MeasurementADC_TLE987_init
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_BridgeDrv_TLE987_init
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_VToFControllerF16_init
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_IToFControllerF16_init
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PiF16_init
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FocControllerF16_init
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_init
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MAS_ModulatorF16_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[49]"></a>Ifx_Math_AccelLimitF16_execute</STRONG> (Thumb, 112 bytes, Stack size 8 bytes, ifx_math_accellimitf16.o(.text.Ifx_Math_AccelLimitF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_AccelLimitF16_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeSpeedControl
+</UL>
+
+<P><STRONG><a name="[58]"></a>Ifx_Math_Atan2_F16</STRONG> (Thumb, 140 bytes, Stack size 0 bytes, ifx_math_atan2.o(.text.Ifx_Math_Atan2_F16))
+<BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_CartToPolar_F16
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_execute (via Veneer)
+</UL>
+
+<P><STRONG><a name="[57]"></a>Ifx_Math_CartToPolar_F16</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, ifx_math_carttopolar.o(.text.Ifx_Math_CartToPolar_F16))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Ifx_Math_CartToPolar_F16 &rArr; Ifx_Math_Interp1DLut_F16
+</UL>
+<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_Interp1DLut_F16
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_Atan2_F16
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FocControllerF16_execute (via Veneer)
+</UL>
+
+<P><STRONG><a name="[44]"></a>Ifx_Math_Clarke_F16</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, ifx_math_clarke.o(.text.Ifx_Math_Clarke_F16))
+<BR><BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+
+<P><STRONG><a name="[43]"></a>Ifx_Math_CurrentReconstruction_F16</STRONG> (Thumb, 148 bytes, Stack size 8 bytes, ifx_math_currentreconstruction.o(.text.Ifx_Math_CurrentReconstruction_F16))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_CurrentReconstruction_F16
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+
+<P><STRONG><a name="[59]"></a>Ifx_Math_Interp1DLut_F16</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, ifx_math_interp1dlut.o(.text.Ifx_Math_Interp1DLut_F16))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_Interp1DLut_F16
+</UL>
+<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_CartToPolar_F16
+<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FocControllerF16_execute (via Veneer)
+</UL>
+
+<P><STRONG><a name="[70]"></a>Ifx_Math_LowPass1stF16_execute</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_execute))
+<BR><BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_execute (via Veneer)
+</UL>
+
+<P><STRONG><a name="[35]"></a>Ifx_Math_LowPass1stF16_init</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, ifx_math_lowpass1stf16.o(.text.Ifx_Math_LowPass1stF16_init))
+<BR><BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_init
+</UL>
+
+<P><STRONG><a name="[71]"></a>Ifx_Math_PLLF16_execute</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Ifx_Math_PLLF16_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_execute (via Veneer)
+</UL>
+
+<P><STRONG><a name="[36]"></a>Ifx_Math_PLLF16_init</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_PLLF16_init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_init
+</UL>
+
+<P><STRONG><a name="[4b]"></a>Ifx_Math_PLLF16_resetBuffer</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_resetBuffer))
+<BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeSpeedControl
+</UL>
+
+<P><STRONG><a name="[37]"></a>Ifx_Math_PLLF16_setPropGain</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setPropGain))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Ifx_Math_PLLF16_setPropGain &rArr; __aeabi_uldivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_init
+</UL>
+
+<P><STRONG><a name="[38]"></a>Ifx_Math_PLLF16_setSamplingTime_us</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, ifx_math_pllf16.o(.text.Ifx_Math_PLLF16_setSamplingTime_us))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Ifx_Math_PLLF16_setSamplingTime_us &rArr; __aeabi_uldivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FluxEstimatorF16_init
+</UL>
+
+<P><STRONG><a name="[72]"></a>Ifx_Math_Park_F16</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, ifx_math_park.o(.text.Ifx_Math_Park_F16))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_Park_F16
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FocControllerF16_execute (via Veneer)
+</UL>
+
+<P><STRONG><a name="[3a]"></a>Ifx_Math_PiF16_init</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, ifx_math_pif16.o(.text.Ifx_Math_PiF16_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_PiF16_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FocControllerF16_init
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[48]"></a>Ifx_Math_PolarToCart_F16</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, ifx_math_polartocart.o(.text.Ifx_Math_PolarToCart_F16))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_PolarToCart_F16
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+
+<P><STRONG><a name="[54]"></a>Ifx_Math_RateLimitF16_execute</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, ifx_math_ratelimitf16.o(.text.Ifx_Math_RateLimitF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_RateLimitF16_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_subStateMachine
+</UL>
+
+<P><STRONG><a name="[56]"></a>Ifx_Math_SpeedPreControlF16_execute</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_Math_SpeedPreControlF16_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_subStateMachine
+</UL>
+
+<P><STRONG><a name="[53]"></a>Ifx_Math_SpeedPreControlF16_init</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, ifx_math_speedprecontrolf16.o(.text.Ifx_Math_SpeedPreControlF16_init))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+</UL>
+
+<P><STRONG><a name="[66]"></a>LIN_Init</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, lin.o(.text.LIN_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[3]"></a>MemManage_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, isr.o(.text.MemManage_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[5f]"></a>PMU_Init</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, pmu.o(.text.PMU_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[67]"></a>PORT_Init</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, port.o(.text.PORT_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[8]"></a>PendSV_Handler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, main.o(.text.PendSV_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = PendSV_Handler &rArr; Ifx_MS_FocSolutionF16_executeControlMode &rArr; Ifx_MAS_ModulatorF16_execute &rArr; Ifx_MAS_ModulatorF16_updatePolar7SegQ16
+</UL>
+<BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[5a]"></a>SCU_ClkInit</STRONG> (Thumb, 486 bytes, Stack size 24 bytes, scu.o(.text.SCU_ClkInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SCU_ClkInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+</UL>
+
+<P><STRONG><a name="[5e]"></a>SCU_Init</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, scu.o(.text.SCU_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[68]"></a>SSC1_Init</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, ssc.o(.text.SSC1_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[69]"></a>SSC2_Init</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, ssc.o(.text.SSC2_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, isr.o(.text.SysTick_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[5b]"></a>SysTick_Init</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, wdt1.o(.text.SysTick_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+</UL>
+
+<P><STRONG><a name="[1b]"></a>SystemInit</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, system_tle987x.o(.text.SystemInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SystemInit &rArr; SCU_ClkInit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Init
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WDT1_Init
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCU_ClkInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(.text)
+</UL>
+<P><STRONG><a name="[6a]"></a>TIMER3_Init</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, timer3.o(.text.TIMER3_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[3f]"></a>TIMER3_Set_Cmp_Value</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, timer3.o(.text.TIMER3_Set_Cmp_Value))
+<BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_PatternGen_TLE987_execute
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_PatternGen_TLE987_onPeriodMatch
+</UL>
+
+<P><STRONG><a name="[5d]"></a>TLE_Init</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, tle_device.o(.text.TLE_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TLE_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Init
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Init
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER3_Init
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SSC2_Init
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SSC1_Init
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCU_Init
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PMU_Init
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIN_Init
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT_Init
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPT12E_Init
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CSA_Init
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CCU6_Init
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BDRV_Init
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC2_Init
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[6b]"></a>UART1_Init</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, uart.o(.text.UART1_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[6c]"></a>UART2_Init</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, uart.o(.text.UART2_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+
+<P><STRONG><a name="[5]"></a>UsageFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, isr.o(.text.UsageFault_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[5c]"></a>WDT1_Init</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, wdt1.o(.text.WDT1_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+</UL>
+
+<P><STRONG><a name="[6f]"></a>WDT1_Service</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, wdt1.o(.text.WDT1_Service))
+<BR><BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[1a]"></a>main</STRONG> (Thumb, 216 bytes, Stack size 0 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = main &rArr; Ifx_MS_FocSolutionF16_init &rArr; Ifx_MDA_FluxEstimatorF16_init &rArr; Ifx_Math_PLLF16_setPropGain &rArr; __aeabi_uldivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MHA_BridgeDrv_TLE987_execute
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WDT1_Service
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_init
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TLE_Init
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
+</UL>
+<P><STRONG><a name="[7f]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+
+<P><STRONG><a name="[80]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+
+<P><STRONG><a name="[81]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+
+<P><STRONG><a name="[1f]"></a>Ifx_MDA_FluxEstimatorF16_execute</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, ifx_mda_fluxestimatorf16.o(.text.Ifx_MDA_FluxEstimatorF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Ifx_MDA_FluxEstimatorF16_execute &rArr; Ifx_Math_PLLF16_execute
+</UL>
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PLLF16_execute (via Veneer)
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_Atan2_F16 (via Veneer)
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_LowPass1stF16_execute (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode (via Veneer)
+</UL>
+
+<P><STRONG><a name="[22]"></a>Ifx_MDA_FocControllerF16_execute</STRONG> (Thumb, 258 bytes, Stack size 32 bytes, ifx_mda_foccontrollerf16.o(.text.Ifx_MDA_FocControllerF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Ifx_MDA_FocControllerF16_execute &rArr; Ifx_Math_CartToPolar_F16 &rArr; Ifx_Math_Interp1DLut_F16
+</UL>
+<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_CartToPolar_F16 (via Veneer)
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_Interp1DLut_F16 (via Veneer)
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PiF16_execute
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_Park_F16 (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode (via Veneer)
+</UL>
+
+<P><STRONG><a name="[20]"></a>Ifx_MHA_MeasurementADC_TLE987_execute</STRONG> (Thumb, 298 bytes, Stack size 8 bytes, ifx_mha_measurementadc_tle987.o(.text.Ifx_MHA_MeasurementADC_TLE987_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Ifx_MHA_MeasurementADC_TLE987_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeControlMode (via Veneer)
+</UL>
+
+<P><STRONG><a name="[55]"></a>Ifx_Math_PiF16_execute</STRONG> (Thumb, 214 bytes, Stack size 16 bytes, ifx_math_pif16.o(.text.Ifx_Math_PiF16_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Ifx_Math_PiF16_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_subStateMachine (via Veneer)
+<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MDA_FocControllerF16_execute
+</UL>
+<P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[6]"></a>SVC_Handler</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, startup_tle987x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_tle987x.o(RESET)
+</UL>
+<P><STRONG><a name="[21]"></a>Ifx_MAS_ModulatorF16_updatePolar7SegQ16</STRONG> (Thumb, 864 bytes, Stack size 48 bytes, ifx_mas_modulatorf16.o(.text.Ifx_MAS_ModulatorF16_updatePolar7SegQ16))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Ifx_MAS_ModulatorF16_updatePolar7SegQ16
+</UL>
+<BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MAS_ModulatorF16_execute (via Veneer)
+</UL>
+
+<P><STRONG><a name="[4a]"></a>Ifx_MS_FocSolutionF16_subStateMachine</STRONG> (Thumb, 948 bytes, Stack size 24 bytes, ifx_ms_focsolutionf16.o(.text.Ifx_MS_FocSolutionF16_subStateMachine))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Ifx_MS_FocSolutionF16_subStateMachine &rArr; Ifx_Math_PiF16_execute
+</UL>
+<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_SpeedPreControlF16_execute
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_RateLimitF16_execute
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_Math_PiF16_execute (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ifx_MS_FocSolutionF16_executeSpeedControl
+</UL>
+<P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>

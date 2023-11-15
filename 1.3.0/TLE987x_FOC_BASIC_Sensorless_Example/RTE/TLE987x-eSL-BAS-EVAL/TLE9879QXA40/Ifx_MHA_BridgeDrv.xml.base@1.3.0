@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+    <checksum>fee8efe1f2817141c86b51c57f06f4e870b6eeaa36c97446327b037fad39f90a</checksum>
+    <version label="V1.0.5"/>
+    <header file="Ifx_MHA_BridgeDrv_Cfg.h" fullname="1"/>
+    <!--********************************************************************************-->
+    <!--                        Bridge Driver                                           -->
+    <!--********************************************************************************-->
+    <groupcontainer label="Bridge Driver" desc="Bridge Driver Parameters">
+        <treecontainer headerlabels="Structure;Settings;" columnwidths="450;150">
+            <checkbox label="Use module" define="IFX_MHA_BRIDGEDRV_CFG.ENABLE" svd="0" expand="1" default="1" uielement="branch" lockon="BDRV.CP_CTRL_STS.CP_EN=1;BDRV.CP_CLK_CTRL.CPCLK_EN=1;BDRV.HSx_LSx_OC_DIS=0">
+                <combo label="Fault reaction on overcurrent" header="Ifx_MHA_BridgeDrv_Cfg.h" define="IFX_MHA_BRIDGEDRV_CFG.FAULT_REACTION_OVERCURRENT" svd="0" default="label=Report and react" tooltip="faultReactionOvercurrent">
+                    <item label="Disable"           value="0" lockon="BDRV.TRIM_DRVx.LS1DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.LS2DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.LS3DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS1DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS2DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS3DRV_OCSDN_DIS=1"/>
+                    <item label="Enable"            value="1" lockon="BDRV.TRIM_DRVx.LS1DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.LS2DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.LS3DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS1DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS2DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS3DRV_OCSDN_DIS=1"/>
+                    <item label="Report only"       value="2" lockon="BDRV.TRIM_DRVx.LS1DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.LS2DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.LS3DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS1DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS2DRV_OCSDN_DIS=1;BDRV.TRIM_DRVx.HS3DRV_OCSDN_DIS=1"/>
+                    <item label="Report and react"  value="3" lockon="BDRV.TRIM_DRVx.LS1DRV_OCSDN_DIS=0;BDRV.TRIM_DRVx.LS2DRV_OCSDN_DIS=0;BDRV.TRIM_DRVx.LS3DRV_OCSDN_DIS=0;BDRV.TRIM_DRVx.HS1DRV_OCSDN_DIS=0;BDRV.TRIM_DRVx.HS2DRV_OCSDN_DIS=0;BDRV.TRIM_DRVx.HS3DRV_OCSDN_DIS=0"/>
+                </combo>
+                <combo label="Fault reaction on overvoltage" header="Ifx_MHA_BridgeDrv_Cfg.h" define="IFX_MHA_BRIDGEDRV_CFG.FAULT_REACTION_OVERVOLT" svd="0" default="label=Report and react" tooltip="faultReactionOvervoltage">
+                    <item label="Disable"           value="0" lockon="BDRV.CP_CTRL_STS.DRVx_VSDUP_DIS=1;BDRV.CP_CTRL_STS.DRVx_VCPUP_DIS=1" />
+                    <item label="Enable"            value="1" lockon="BDRV.CP_CTRL_STS.DRVx_VSDUP_DIS=1;BDRV.CP_CTRL_STS.DRVx_VCPUP_DIS=1" />
+                    <item label="Report only"       value="2" lockon="BDRV.CP_CTRL_STS.DRVx_VSDUP_DIS=1;BDRV.CP_CTRL_STS.DRVx_VCPUP_DIS=1" />
+                    <item label="Report and react"  value="3" lockon="BDRV.CP_CTRL_STS.DRVx_VSDUP_DIS=0;BDRV.CP_CTRL_STS.DRVx_VCPUP_DIS=0" />
+                </combo>
+                <combo label="Fault reaction on undervoltage" header="Ifx_MHA_BridgeDrv_Cfg.h" define="IFX_MHA_BRIDGEDRV_CFG.FAULT_REACTION_UNDERVOLT" svd="0" default="label=Report and react" tooltip="faultReactionUndervoltage">
+                    <item label="Disable"           value="0" lockon="BDRV.CP_CTRL_STS.DRVx_VSDLO_DIS=1;BDRV.CP_CTRL_STS.DRVx_VCPLO_DIS=1" />
+                    <item label="Enable"            value="1" lockon="BDRV.CP_CTRL_STS.DRVx_VSDLO_DIS=1;BDRV.CP_CTRL_STS.DRVx_VCPLO_DIS=1" />
+                    <item label="Report only"       value="2" lockon="BDRV.CP_CTRL_STS.DRVx_VSDLO_DIS=1;BDRV.CP_CTRL_STS.DRVx_VCPLO_DIS=1" />
+                    <item label="Report and react"  value="3" lockon="BDRV.CP_CTRL_STS.DRVx_VSDLO_DIS=0;BDRV.CP_CTRL_STS.DRVx_VCPLO_DIS=0" />
+                </combo>
+                <combo label="Fault output behavior" define="IFX_MHA_BRIDGEDRV_CFG.FAULT_OUT_BEHAVIOR" header="Ifx_MHA_BridgeDrv_Cfg.h" svd="0" default="label=Uncontrolled freewheeling OFF" tooltip="faultOutBehavior">
+                    <item label="Uncontrolled freewheeling OFF" value="0"/>
+                </combo>
+                <checkbox label="Enable fault user callback" define="IFX_MHA_BRIDGEDRV_CFG.ENABLE_FAULT_OUT" uielement="branch" svd="0" header="Ifx_MHA_BridgeDrv_Cfg.h">
+                    <edit label="Fault user callback" define="IFX_MHA_BRIDGEDRV_CFG.FAULT_OUT" default="usrFaultCallback" header="Ifx_MHA_BridgeDrv_Cfg.h" svd="0" tooltip="faultUserCallback"/>
+                </checkbox>
+            </checkbox>
+        </treecontainer>
+    </groupcontainer>
+</ifxmlcfg>

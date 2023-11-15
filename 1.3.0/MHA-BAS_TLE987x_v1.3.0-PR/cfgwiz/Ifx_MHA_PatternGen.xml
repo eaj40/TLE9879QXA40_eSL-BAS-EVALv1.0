@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+    <checksum>c7e54e179f47df66554ad403b3ddccbf8c31b0af32ab4cfc40b39824e4514058</checksum>
+    <version label="V1.0.6"/>
+    <header file="Ifx_MHA_PatternGen_Cfg.h" fullname="1"/>
+    <!--********************************************************************************-->
+    <!--                        Pattern Generator                                       -->
+    <!--********************************************************************************-->
+    <groupcontainer label="Pattern Generator" desc="Pattern Generator Parameters">
+        <treecontainer headerlabels="Structure;Settings;" columnwidths="450;150">
+            <timer define="IFX_MHA_PATTERNGEN_CFG.INIT_TIMER" interval="10" singleShot="1" run="1" visible="false">
+                <action event="changed" cmd="setDef" data="CCU6.DEADTIME=IFX_MHA_PATTERNGEN_CFG.DEADTIME_FINAL_US"/>
+            </timer>
+
+            <checkbox label="Use module" define="IFX_MHA_PATTERNGEN_CFG.ENABLE" svd="0" expand="1" uielement="branch" default="1" lockon="CCU6.DEADTIME=1.5;CCU6.T12DTC.DTE0=1;CCU6.T12DTC.DTE1=1;CCU6.T12DTC.DTE2=1;CCU6.T12_PERIOD_SEL=2;CCU6.T12_FREQ=20000;CCU6.TCTR0.CTM.label=Center-aligned;CCU6.TCTR2.T12SSC.label=disabled;CCU6.T12MSEL[3:0].label=(0b0011) Compare output on CC60/COUT60;CCU6.MODCTR.T12MODEN[0]=1;CCU6.MODCTR.T12MODEN[1]=1;CCU6.MODCTR.T13MODEN[0]=0;CCU6.MODCTR.T13MODEN[1]=0;CCU6.T12MSEL[7:4].label=(0b0011) Compare output on CC61/COUT61;CCU6.MODCTR.T12MODEN[2]=1;CCU6.MODCTR.T12MODEN[3]=1;CCU6.MODCTR.T13MODEN[2]=0;CCU6.MODCTR.T13MODEN[3]=0;CCU6.T12MSEL[11:8].label=(0b0011) Compare output on CC62/COUT62;CCU6.MODCTR.T12MODEN[4]=1;CCU6.MODCTR.T12MODEN[5]=1;CCU6.MODCTR.T13MODEN[4]=0;CCU6.MODCTR.T13MODEN[5]=0;CCU6.MODCTR.MCMEN=1;CCU6.INP.INPT12.label=SR1;CCU6.NVIC[1]=1;CCU6.T13_PERIOD_SEL.label=...as clock ticks;CCU6.T13_TICK[15:0]=1;CCU6.TCTR2.T13SSC.label=enabled;CCU6.TCTR2.T13TED.label=T12 any counting direction;CCU6.TCTR2.T13TEC.label=T12 Zero Match;CCU6.TCTR2.T13RSEL.label=disabled;CCU6.TCTR0.T13CLK.label=div 1;CCU6.TCTR0.T13PRE=0">
+
+                <spinbox label="Minimum dead time" suffix=" ns" define="IFX_MHA_PATTERNGEN_CFG.MIN_DEADTIME" header="Ifx_MHA_PatternGen_Cfg.h" svd="0" default="0" tooltip="deadTimeMinimum">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.DEADTIME.min=IFX_MHA_PATTERNGEN_CFG.MIN_DEADTIME"/>
+                </spinbox>
+                
+                <math define="IFX_MHA_PATTERNGEN_CFG.MIN_DEADTIME_US" svd="0" formula="IFX_MHA_PATTERNGEN_CFG.MIN_DEADTIME/1000" visible="false"/>
+                <spinbox label="Dead time" suffix=" ns" define="IFX_MHA_PATTERNGEN_CFG.DEADTIME" header="Ifx_MHA_PatternGen_Cfg.h" svd="0" default="1500"/> 
+                <math define="IFX_MHA_PATTERNGEN_CFG.DEADTIME_US" svd="0" formula="IFX_MHA_PATTERNGEN_CFG.DEADTIME/1000" visible="false"/>
+                
+                <math define="IFX_MHA_PATTERNGEN_CFG.DEADTIME_FINAL_US" svd="0" formula="IFX_MHA_PATTERNGEN_CFG.DEADTIME_US &gt; IFX_MHA_PATTERNGEN_CFG.MIN_DEADTIME_US ? IFX_MHA_PATTERNGEN_CFG.DEADTIME_US : IFX_MHA_PATTERNGEN_CFG.MIN_DEADTIME_US" visible="false">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.INIT_TIMER.run=1"/>
+                </math>
+                
+                <!-- set the maximum deadtime -->
+                <math define="IFX_MHA_PATTERNGEN_CFG.DEADTIME_TEMP" formula="floor((255*2*1000)/IFX_MHA_PATTERNGEN_CFG.FREQUENCY)" svd="0" visible="false">
+                    <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.DEADTIME.max=IFX_MHA_PATTERNGEN_CFG.DEADTIME_TEMP"/>
+                    <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.DEADTIME.min=0"/>
+                </math>
+
+                <spinbox label="PWM frequency" suffix=" kHz" define="IFX_MHA_PATTERNGEN_CFG.FREQUENCY" header="Ifx_MHA_PatternGen_Cfg.h" svd="0" default="20" range="0;40"/>
+                <math define="IFX_MHA_PATTERNGEN_CFG.FREQ_HZ" svd="0" formula="IFX_MHA_PATTERNGEN_CFG.FREQUENCY*1000" visible="false">
+                    <action event="changed" cmd="setDef" data="CCU6.T12_FREQ=IFX_MHA_PATTERNGEN_CFG.FREQ_HZ"/>
+                </math>
+                
+                <!-- Current loop execution -->
+                <spinbox label="Current loop factor" define="IFX_MHA_PATTERNGEN_CFG.CURRENT_LOOP_FACTOR"  svd="0" default="1" range="1;25" header="Ifx_MHA_PatternGen_Cfg.h" tooltip="currentLoopFactor"/>
+
+                <math label="Current loop frequency"  unit=" Hz" define="IFX_MHA_PATTERNGEN_CFG.CURRENT_LOOP_FREQUENCY_HZ" formula="floor(IFX_MHA_PATTERNGEN_CFG.FREQUENCY*1000/IFX_MHA_PATTERNGEN_CFG.CURRENT_LOOP_FACTOR)" svd="0" />
+
+                <math label="Current loop period" unit=" us" define="IFX_MHA_PATTERNGEN_CFG.CURRENT_LOOP_PERIOD_US" format="%f" formula="floor(1000000/IFX_MHA_PATTERNGEN_CFG.CURRENT_LOOP_FREQUENCY_HZ)" svd="0" />
+
+                <combo label="Fault reaction on trap condition" header="Ifx_MHA_PatternGen_Cfg.h" define="IFX_MHA_PATTERNGEN_CFG.FAULT_REACTION_TRAP" svd="0" default="label=Report and react" tooltip="faultReactionTrap">
+                    <item label="Disable"           value="0" lockon="CCU6.TRPCTR.TRPEN[0]=0;CCU6.TRPCTR.TRPEN[1]=0;CCU6.TRPCTR.TRPEN[2]=0;CCU6.TRPCTR.TRPEN[3]=0;CCU6.TRPCTR.TRPEN[4]=0;CCU6.TRPCTR.TRPEN[5]=0;CCU6.TRPCTR.TRPM2=0;CCU6.TRPCTR.TRPPEN=0" />
+                    <item label="Enable"            value="1" lockon="CCU6.TRPCTR.TRPEN[0]=0;CCU6.TRPCTR.TRPEN[1]=0;CCU6.TRPCTR.TRPEN[2]=0;CCU6.TRPCTR.TRPEN[3]=0;CCU6.TRPCTR.TRPEN[4]=0;CCU6.TRPCTR.TRPEN[5]=0;CCU6.TRPCTR.TRPM2=0;CCU6.TRPCTR.TRPPEN=1" />
+                    <item label="Report only"       value="2" lockon="CCU6.TRPCTR.TRPEN[0]=0;CCU6.TRPCTR.TRPEN[1]=0;CCU6.TRPCTR.TRPEN[2]=0;CCU6.TRPCTR.TRPEN[3]=0;CCU6.TRPCTR.TRPEN[4]=0;CCU6.TRPCTR.TRPEN[5]=0;CCU6.TRPCTR.TRPM2=0;CCU6.TRPCTR.TRPPEN=1" />
+                    <item label="Report and react"  value="3" lockon="CCU6.TRPCTR.TRPEN[0]=1;CCU6.TRPCTR.TRPEN[1]=1;CCU6.TRPCTR.TRPEN[2]=1;CCU6.TRPCTR.TRPEN[3]=1;CCU6.TRPCTR.TRPEN[4]=1;CCU6.TRPCTR.TRPEN[5]=1;CCU6.TRPCTR.TRPM2=1;CCU6.TRPCTR.TRPPEN=1" />
+                </combo>
+
+                <combo label="Type" define="IFX_MHA_PATTERNGEN_CFG.FAULT_OUT_BEHAVIOR" header="Ifx_MHA_PatternGen_Cfg.h" svd="0" default="label=Uncontrolled freewheeling OFF">
+                    <item label="Uncontrolled freewheeling OFF" value="0"/>
+                </combo>
+
+                <checkbox label="Enable fault user callback" define="IFX_MHA_PATTERNGEN_CFG.ENABLE_FAULT_OUT" uielement="branch" svd="0" header="Ifx_MHA_PatternGen_Cfg.h">
+                    <edit label="Fault user callback" define="IFX_MHA_PATTERNGEN_CFG.FAULT_OUT" default="usrFaultCallback" header="Ifx_MHA_PatternGen_Cfg.h" svd="0" tooltip="faultUserCallBack"/>
+                </checkbox>
+            </checkbox>
+            
+            <!-- The period of T13 should be half of the period of T12 -1. The -1 is to allow the timer to start again (there is a period match on T13 1 cycle before a period match in T12, and T13 start is trigerred again by T12 period match -->
+            <math define="IFX_MHA_PATTERNGEN_CFG.TRIGGER_PERIOD" svd="0" formula="CCU6.T12PR.T12PV &gt; 0 ? floor(CCU6.T12PR.T12PV)-1 : 1" visible="false">
+                <action event="changed" cmd="setDef" data="CCU6.T13_TICK[15:0]=IFX_MHA_PATTERNGEN_CFG.TRIGGER_PERIOD"/>
+            </math>
+        </treecontainer>
+
+    </groupcontainer>
+</ifxmlcfg>

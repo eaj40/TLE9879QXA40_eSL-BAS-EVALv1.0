@@ -1,0 +1,60 @@
+2023/11/13 11:08:14 Started Launch Tool 
+2023/11/13 11:08:14 Started as PID 6748
+2023/11/13 11:08:14 Started with arguments []string{"C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\resources\\launch-tool.exe", "I:\\My Drive\\PRJ\\motor docs\\hvac\\software\\motor-control\\3phase-bldc-foc-sensorless-ifn\\TLE9879QXA40_eSL-BAS-EVAL\\1.3.0\\TLE987x_FOC_BASIC_Sensorless_Example\\RTE\\Device\\TLE9879QXA40\\config.icwp", "-ddevice=TLE9879QXA40"}
+2023/11/13 11:08:14 Started in directory I:\My Drive\PRJ\motor docs\hvac\software\motor-control\3phase-bldc-foc-sensorless-ifn\TLE9879QXA40_eSL-BAS-EVAL\1.3.0\TLE987x_FOC_BASIC_Sensorless_Example
+2023/11/13 11:08:14 Reading tool data
+2023/11/13 11:08:14 Reading "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\resources\\tool-details.json"
+2023/11/13 11:08:14 Validating tool data
+2023/11/13 11:08:14 Starting tool &main.Tool{FeatureID:"com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics", Title:"Config Wizard for MOTIX� MCU", Version:"2.7.3.202306221148", Path:"C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe"}
+2023/11/13 11:08:14 Starting "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" with arguments []string{"I:\\My Drive\\PRJ\\motor docs\\hvac\\software\\motor-control\\3phase-bldc-foc-sensorless-ifn\\TLE9879QXA40_eSL-BAS-EVAL\\1.3.0\\TLE987x_FOC_BASIC_Sensorless_Example\\RTE\\Device\\TLE9879QXA40\\config.icwp", "-ddevice=TLE9879QXA40"}
+2023/11/13 11:08:14 Starting "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" in directory "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148"
+2023/11/13 11:08:14 Started "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" as PID 11052
+2023/11/13 11:08:14 Starting Launcher Service
+2023/11/13 11:08:14 Starting "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" with arguments []string{"-featureid", "com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics:2.7.3.202306221148", "-notification", "-toolbox.service", "checkUpdate com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics"}
+2023/11/13 11:08:14 Starting "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" in directory "C:\\Users\\joe"
+2023/11/13 11:08:14 Started "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" as PID 10552
+2023/11/14 09:32:56 Started Launch Tool 
+2023/11/14 09:32:56 Started as PID 2068
+2023/11/14 09:32:56 Started with arguments []string{"C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\resources\\launch-tool.exe", "I:\\My Drive\\PRJ\\motor docs\\hvac\\software\\motor-control\\3phase-bldc-foc-sensorless-ifn\\TLE9879QXA40_eSL-BAS-EVAL\\1.3.0\\TLE987x_FOC_BASIC_Sensorless_Example\\RTE\\Device\\TLE9879QXA40\\config.icwp", "-ddevice=TLE9879QXA40"}
+2023/11/14 09:32:56 Started in directory I:\My Drive\PRJ\motor docs\hvac\software\motor-control\3phase-bldc-foc-sensorless-ifn\TLE9879QXA40_eSL-BAS-EVAL\1.3.0\TLE987x_FOC_BASIC_Sensorless_Example
+2023/11/14 09:32:56 Reading tool data
+2023/11/14 09:32:56 Reading "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\resources\\tool-details.json"
+2023/11/14 09:32:56 Validating tool data
+2023/11/14 09:32:56 Starting tool &main.Tool{FeatureID:"com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics", Title:"Config Wizard for MOTIX� MCU", Version:"2.7.3.202306221148", Path:"C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe"}
+2023/11/14 09:32:56 Starting "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" with arguments []string{"I:\\My Drive\\PRJ\\motor docs\\hvac\\software\\motor-control\\3phase-bldc-foc-sensorless-ifn\\TLE9879QXA40_eSL-BAS-EVAL\\1.3.0\\TLE987x_FOC_BASIC_Sensorless_Example\\RTE\\Device\\TLE9879QXA40\\config.icwp", "-ddevice=TLE9879QXA40"}
+2023/11/14 09:32:56 Starting "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" in directory "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148"
+2023/11/14 09:32:56 Started "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" as PID 4964
+2023/11/14 09:32:56 Starting Launcher Service
+2023/11/14 09:32:56 Starting "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" with arguments []string{"-featureid", "com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics:2.7.3.202306221148", "-notification", "-toolbox.service", "checkUpdate com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics"}
+2023/11/14 09:32:56 Starting "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" in directory "C:\\Users\\joe"
+2023/11/14 09:32:57 Started "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" as PID 6548
+2023/11/15 08:43:32 Started Launch Tool 
+2023/11/15 08:43:32 Started as PID 14900
+2023/11/15 08:43:32 Started with arguments []string{"C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\resources\\launch-tool.exe", "I:\\My Drive\\PRJ\\motor docs\\hvac\\software\\motor-control\\3phase-bldc-foc-sensorless-ifn\\TLE9879QXA40_eSL-BAS-EVAL - ason14112024\\1.3.0\\TLE987x_FOC_BASIC_Sensorless_Example\\RTE\\Device\\TLE9879QXA40\\config.icwp", "-ddevice=TLE9879QXA40"}
+2023/11/15 08:43:32 Started in directory I:\My Drive\PRJ\motor docs\hvac\software\motor-control\3phase-bldc-foc-sensorless-ifn\TLE9879QXA40_eSL-BAS-EVAL - ason14112024\1.3.0\TLE987x_FOC_BASIC_Sensorless_Example
+2023/11/15 08:43:32 Reading tool data
+2023/11/15 08:43:32 Reading "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\resources\\tool-details.json"
+2023/11/15 08:43:32 Validating tool data
+2023/11/15 08:43:32 Starting tool &main.Tool{FeatureID:"com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics", Title:"Config Wizard for MOTIX� MCU", Version:"2.7.3.202306221148", Path:"C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe"}
+2023/11/15 08:43:32 Starting "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" with arguments []string{"I:\\My Drive\\PRJ\\motor docs\\hvac\\software\\motor-control\\3phase-bldc-foc-sensorless-ifn\\TLE9879QXA40_eSL-BAS-EVAL - ason14112024\\1.3.0\\TLE987x_FOC_BASIC_Sensorless_Example\\RTE\\Device\\TLE9879QXA40\\config.icwp", "-ddevice=TLE9879QXA40"}
+2023/11/15 08:43:32 Starting "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" in directory "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148"
+2023/11/15 08:43:32 Started "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" as PID 4236
+2023/11/15 08:43:32 Starting Launcher Service
+2023/11/15 08:43:32 Starting "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" with arguments []string{"-featureid", "com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics:2.7.3.202306221148", "-notification", "-toolbox.service", "checkUpdate com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics"}
+2023/11/15 08:43:32 Starting "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" in directory "C:\\Users\\joe"
+2023/11/15 08:43:33 Started "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" as PID 15252
+2023/11/15 08:49:33 Started Launch Tool 
+2023/11/15 08:49:33 Started as PID 13592
+2023/11/15 08:49:33 Started with arguments []string{"C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\resources\\launch-tool.exe", "I:\\My Drive\\PRJ\\motor docs\\hvac\\software\\motor-control\\3phase-bldc-foc-sensorless-ifn\\TLE9879QXA40_eSL-BAS-EVAL - PRJ\\1.3.0\\TLE987x_FOC_BASIC_Sensorless_Example\\RTE\\Device\\TLE9879QXA40\\config.icwp", "-ddevice=TLE9879QXA40"}
+2023/11/15 08:49:33 Started in directory I:\My Drive\PRJ\motor docs\hvac\software\motor-control\3phase-bldc-foc-sensorless-ifn\TLE9879QXA40_eSL-BAS-EVAL - PRJ\1.3.0\TLE987x_FOC_BASIC_Sensorless_Example
+2023/11/15 08:49:33 Reading tool data
+2023/11/15 08:49:33 Reading "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\resources\\tool-details.json"
+2023/11/15 08:49:33 Validating tool data
+2023/11/15 08:49:33 Starting tool &main.Tool{FeatureID:"com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics", Title:"Config Wizard for MOTIX� MCU", Version:"2.7.3.202306221148", Path:"C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe"}
+2023/11/15 08:49:33 Starting "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" with arguments []string{"I:\\My Drive\\PRJ\\motor docs\\hvac\\software\\motor-control\\3phase-bldc-foc-sensorless-ifn\\TLE9879QXA40_eSL-BAS-EVAL - PRJ\\1.3.0\\TLE987x_FOC_BASIC_Sensorless_Example\\RTE\\Device\\TLE9879QXA40\\config.icwp", "-ddevice=TLE9879QXA40"}
+2023/11/15 08:49:33 Starting "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" in directory "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148"
+2023/11/15 08:49:33 Started "C:\\Users\\joe\\Infineon\\Tools\\Config-Wizard-for-MOTIX-MCU\\2.7.3.202306221148\\/ConfigWizard.exe" as PID 15572
+2023/11/15 08:49:33 Starting Launcher Service
+2023/11/15 08:49:33 Starting "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" with arguments []string{"-featureid", "com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics:2.7.3.202306221148", "-notification", "-toolbox.service", "checkUpdate com.ifx.tb.tool.ifxconfigwizardforembeddedpowerics"}
+2023/11/15 08:49:33 Starting "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" in directory "C:\\Users\\joe"
+2023/11/15 08:49:33 Started "C:\\Users\\joe\\Infineon\\LauncherService\\idc-launcher-service.exe" as PID 13092

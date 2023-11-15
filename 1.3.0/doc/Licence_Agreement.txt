@@ -1,0 +1,73 @@
+Infineon Technologies AG
+EVALUATION SOFTWARE LICENSE AGREEMENT
+
+BY INSTALLING OR HAVING INSTALLED THE SOFTWARE, LICENSEE AGREES TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF LICENSEE DOES NOT AGREE TO ALL TERMS AND CONDITIONS OF THIS AGREEMENT, LICENSEE (INCLUDING YOU) SHALL NOT USE THE SOFTWARE BUT IMMEDIATELY DELETE IT (TO THE EXTENT THAT IT WAS DOWNLOADED ALREADY).
+
+1.	DEFINITIONS
+1.1	"Agreement" means this Driver Evaluation Software License Agreement.
+1.2	"Documentation" means the technical information provided along with the Software.
+1.3	"Licensee" means the company in the ordinary course of business of which You are acting.
+1.4	"Licensor" means Infineon Technologies AG, having its offices at Am Campeon 1-15, 85579 Neubiberg, Germany.
+1.5	"Licensor Device" means a microcontroller manufactured by or for Licensor.
+1.6	"Open Source Software" means software governed by licensing terms which have been approved by the Open Source Initiative (www.opensource.org) as open source licenses.
+1.7	"Software" means the source code and/or object code version of the software package of which this Agreement forms part.
+1.8	"You" means you as individual.
+
+2.	IMPORTANT NOTICE
+Software delivered by Licensor under this Agreement shall not be used in any applications where a failure or any consequences of the use of the Software can reasonably be expected to result in personal injury, which might include without limitation medical, aviation or aerospace applications. However, the foregoing shall not prevent Licensee from using Software in such fields of application (e.g. automotive applications) if the Software is explicitly designed and licensed for by Licensor, provided that the overall responsibility for the system in which Licensee integrates the Software as well as the system integration lies with Licensee. 
+
+3.	LICENSE GRANT
+3.1	For the term and subject to the terms and conditions of this Agreement, Licensor hereby grants Licensee the limited, temporary, non-exclusive, non-sublicensable, non-transferable, non-assignable, royalty-free right to: 
+(i)	use and reproduce the Software to create object code thereof and to install and run such object code on and/or in connection with Licensor’s Embedded Power devices;
+(ii)	modify the source code of the Software as required in order to exercise the rights pursuant to (i);
+(iii)	use the Documentation as required in order to exercise the rights pursuant to this Section 3.1;
+always provided that the Software and the Documentation are used by Licensee in the field of automotive applications and for evaluation purposes only.
+3.2	All licenses granted in Section 3.1 will cease 6 (six) months after the date of first download by Licensee.
+3.3	Except for the limited rights granted in Section 3.1, Licensor retains all right, title and interest in and to the Software and the Documentation and all intellectual property rights therein. Licensee acknowledges that the license rights granted pursuant to this Agreement do not transfer to Licensee title or ownership in the Software or any copies thereof, but only a limited right of use.
+3.4	The Software may contain Open Source Software. For copyright information, licensing terms and additional information (e.g. on how to obtain the source code of such Open Source Software), please check folder "Licenses". 
+3.5	This Agreement does not limit Licensee's rights under, or grant Licensee rights that supersede, the license of any Open Source Software delivered to Licensee by Licensor. In case of conflict, the license terms of such Open Source Software shall supersede the terms and conditions of this Agreement.
+3.6	Licensee hereby grants to Licensor the non-exclusive, non-transferable, non-assignable, irrevocable, royalty-free license to use, have used, modify, have modified, integrate, have integrated the Modified Software in Licensor´s own products and sell those products to the market, including the right to sublicense the Modified Software to third parties.
+
+4.	RESTRICTIONS
+Licensee shall not itself or through any third party:
+(i)	reproduce the Software (including printouts thereof) unless otherwise permitted under this Agreement or by mandatory statutory law;
+(ii)	use the Software in and for the purpose of series production;
+(iii)	remove any copyright notices contained in the Software and/or the Documentation;
+(iv)	publicly display, publicly perform, publish or broadcast the Software and/or the Documentation without Licensor's prior written approval;
+(v)	sell, lease, license or sublicense the Software and/or the Documentation to any third party without Licensor’s prior written approval;
+(vi)	make available the Software and/or the Documentation or assign or otherwise transfer any right in the Software and/or the Documentation to third parties;
+(vii)	use the Software and/or the Documentation for the purposes of determining whether it is covered by any intellectual property rights (including without limitation patents and copyrights) of Licensee or any other third party;
+(viii)	directly or indirectly bring any suit before any court or administrative agency or otherwise assert any claim against Licensor, its Affiliates, and/or their respective suppliers or customers due to their development, use, reproduction, manufacturing, marketing, sale, distribution, licensing, sublicensing or other disposal of the Software and/or the Documentation based on infringement of any of Licensee's intellectual property rights (including without limitation patents and copyrights).
+
+5.	CONFIDENTIAL INFORMATION
+5.1	Licensee shall treat ideas, concepts and information incorporated in the Software, source code of the Software, the Documentation and the content of this Agreement (together hereinafter "Confidential Information") confidential, not disclose it to any third party unless otherwise agreed in writing between Licensee and Licensor, not use it for any other purposes than for evaluation of the Software in accordance with this Agreement, and protect the confidentiality of such information with the same degree of care which it uses to protect its own confidential information but at least with reasonable care. 
+5.2	Licensee shall designate the right to use the Software and/or the Documentation only to such employees who are bound to confidentiality obligations similar to those under this Agreement.
+5.3	The obligations pursuant to Section 5.1 shall not apply with respect to information that: (i) was publicly known or made generally available in the public domain prior to the time of disclosure to Licensee by Licensor; (ii) becomes publicly known or made generally available after disclosure to Licensee by Licensor through no action or inaction of Licensee; or (iii) is in the rightful possession of Licensee, without confidentiality restrictions, at the time of disclosure by Licensor as shown by Licensee’s records immediately prior to the time of disclosure.
+
+6.	TERM AND TERMINATION
+6.1	This Agreement will become effective upon Licensee's acceptance of this Agreement and shall remain in effect for the period set forth in Section 3.2 of this Agreement.
+6.2	This Agreement shall automatically terminate if Licensee is in breach of any provision of this Agreement.
+6.3	Licensee may terminate this Agreement at any time by stop using the Software and deleting all copies of the Software in Licensee's control.
+6.4	Licensor may terminate this Agreement by giving 2 weeks written notice to Licensee's address as available to Licensor (i) if a third party claims to have intellectual property rights in the Software; (ii) if Licensee itself or through any third party directly or indirectly brings any suit before any court or administrative agency or otherwise asserts any claim against Licensor and/or any of its Affiliates, suppliers or customers due to their development, use, reproduction, manufacturing, marketing, sale, distribution, licensing, sublicensing or other disposal of the Software and/or the Documentation based on infringement of any of Licensee's intellectual property rights (including without limitation patents and copyrights); and/or (iii) in case of a change of control of Licensee.
+6.5	Upon expiration or termination of this Agreement for any reason, the rights and licenses granted to Licensee under this Agreement shall immediately cease. Licensee shall immediately stop using the Software and destroy all copies of the Software and/or the Documentation which are in Licensee's control.
+6.6	The provisions of Sections 4, 5, 6.6, 7, 8, 9, 10.4 and 10.5 shall survive any termination or expiration of this Agreement.
+
+7.	WARRANTY
+Licensee acknowledges that the Software and/or Documentation are provided by Licensor free of charge. Accordingly, without prejudice to Section 8 and without limiting Licensor's warranty for fraudulent concealment of defects in the Software and/or Documentation, the Software and/or Documentation provided by Licensor under this Agreement is provided "AS IS" without any warranty or liability of any kind and Licensor hereby expressly disclaims any warranties or representations, whether express, implied, statutory or otherwise, including but not limited to warranties of workmanship, merchantability, fitness for a particular purpose, defects in the Software and/or Documentation, or non-infringement of third parties' intellectual property rights.
+
+8.	LIABILITY
+8.1	Nothing in this Agreement shall limit or exclude Licensor's liability under mandatory statutory liability laws, for injuries to life, body or health, for fraudulent concealment of defects in the Software and/or Documentation, or in cases of Licensor's intentional misconduct or gross negligence.
+8.2	Without prejudice to the provisions in this Section, Licensor's liability under this Agreement shall be excluded in all other cases.
+
+9.	EXPORT REGULATIONS
+9.1	Licensee shall comply with all export control relevant requisites for performance of this Agreement.
+9.2	Licensee shall comply with all laws and regulations related to export control applicable to Licensee, including but not limited to those of the U.S., Germany, the EU, Malaysia and Singapore. In particular, Licensee shall not export, re-export or transfer any of Licensor's products, information, software or technologies developed with or utilizing Licensor's technology, in violation of any applicable laws or regulations of the countries named above or any other country or regulatory regime having jurisdiction over an export or re-export of such products, information, software or technologies. 
+9.3	Licensee shall implement effective measures to ensure compliance with applicable anti-terrorism regulations, including but not limited to those of EU, U.S., Malaysia and Singapore as well as with any applicable official blacklists of any country.
+
+10.	GENERAL PROVISIONS
+10.1	General Terms and Conditions of either party shall not apply to this Agreement.
+10.2	Licensee shall not assign this Agreement or any rights or obligations hereunder, without the prior written consent of Licensor.
+10.3	If any provision of this Agreement is considered void or unfeasible by a court of competent jurisdiction, the remaining provisions of this Agreement shall remain in full force and effect.
+10.4	This Agreement shall be governed by German law without reference to its conflicts of law provisions. The application of the United Nations Convention on Contracts for the International Sale of Goods of April 11, 1980, shall be excluded.
+10.5	The district court of Munich (Landgericht München I) shall have exclusive jurisdiction for all disputes arising out of or in connection with this Agreement.
+10.6	This Agreement may only be modified or amended in writing. This requirement of written form can only be waived by mutual written agreement.

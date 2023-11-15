@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+  <checksum>1e167109992ee342f5f07c8e20551fdf78a23eacfcf9b0a93677826dc5788a9a</checksum>
+  <version label="V1.0.2"/>
+  <usesPython/>
+  <tabcontainer>
+    <tabcontainer label="Application">
+      <gridcontainer label="General">
+        <!-- TOP LEFT CONTAINER -->
+        <groupcontainer visible="false">
+          <checkbox label="Use Module" define="APP_CFG.ENABLE" svd="0" default="1" lockon="IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ=APP_CFG.FREQUENCY_KHZ;IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FACTOR=APP_CFG.SPEED_LOOP_FACTOR;IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FACTOR=APP_CFG.CURRENT_LOOP_FACTOR"/>
+        </groupcontainer>
+        <groupcontainer label="Parameter">
+          <treecontainer headerlabels="Structure;Settings;">
+            <!-- Frequency -->
+            <spinbox label="PWM Frequency" define="APP_CFG.FREQUENCY_KHZ" suffix=" kHz" svd="0" default="20" range="1;40">
+              <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.FREQUENCY_KHZ=APP_CFG.FREQUENCY_KHZ"/>
+              <action event="changed" cmd="setDef" data="IFX_MHA_PATTERNGEN_CFG.FREQUENCY=APP_CFG.FREQUENCY_KHZ"/>
+            </spinbox>
+            <!-- Current loop execution -->
+            <spinbox label="Current Loop Factor" define="APP_CFG.CURRENT_LOOP_FACTOR" svd="0" default="4" range="1;25">
+              <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FACTOR=APP_CFG.CURRENT_LOOP_FACTOR"/>
+            </spinbox>
+            <math label="Current Loop Frequency" unit=" Hz" define="APP_CFG.CURRENT_LOOP_FREQUENCY_HZ" formula="IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_FREQUENCY_HZ" svd="0"/>
+            <math label="Current Loop Period" unit=" us" define="APP_CFG.CURRENT_LOOP_PERIOD_US" format="%f" formula="IFX_MS_FOCSOLUTIONF16_CFG.CURRENT_LOOP_PERIOD_US" svd="0"/>
+            <!-- Speed loop execution -->
+            <spinbox label="Speed Loop Factor" define="APP_CFG.SPEED_LOOP_FACTOR" svd="0" default="10" range="1;25">
+              <action event="changed" cmd="setDef" data="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FACTOR=APP_CFG.SPEED_LOOP_FACTOR"/>
+            </spinbox>
+            <math label="Speed Loop Frequency" unit=" Hz" define="APP_CFG.SPEED_LOOP_FREQUENCY_HZ" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_FREQUENCY_HZ" svd="0"/>
+            <math label="Speed Loop Period" unit=" us" define="APP_CFG.SPEED_LOOP_PERIOD_US" format="%f" formula="IFX_MS_FOCSOLUTIONF16_CFG.SPEED_LOOP_PERIOD_US" svd="0"/>
+            <math label="Sampling Time" unit=" us" define="APP_CFG.SAMPLING_TIME_US" formula="IFX_MS_FOCSOLUTIONF16_CFG.SAMPLING_TIME_US" svd="0"/>
+          </treecontainer>
+        </groupcontainer>
+      </gridcontainer>
+    </tabcontainer>
+    <tabcontainer label="MCTRL Solution">
+      <includepath path="../../TLE987x-eSL-BAS-EVAL/TLE9879QXA40/"/>
+      <include>Ifx_MS_FocSolutionF16.xml</include>
+    </tabcontainer>
+    <tabcontainer label="MCTRL Drive Algorithm">
+      <includepath path="../../TLE987x-eSL-BAS-EVAL/TLE9879QXA40/"/>
+      <include>Ifx_MDA_FluxEstimatorF16.xml</include>
+      <include>Ifx_MDA_FocControllerF16.xml</include>
+      <include>Ifx_MDA_IToFControllerF16.xml</include>
+      <include>Ifx_MDA_VToFControllerF16.xml</include>
+      <include>Ifx_MDA_StartAngleIdentF16.xml</include>
+    </tabcontainer>
+    <tabcontainer label="MCTRL Actuator Sensor">
+      <includepath path="../../TLE987x-eSL-BAS-EVAL/TLE9879QXA40/"/>
+      <include>Ifx_MAS_ModulatorF16.xml</include>
+    </tabcontainer>
+    <tabcontainer label="MCTRL Hardware Abstraction">
+      <includepath path="../../TLE987x-eSL-BAS-EVAL/TLE9879QXA40/"/>
+      <include>Ifx_MHA_MeasurementADC.xml</include>
+      <include>Ifx_MHA_PatternGen.xml</include>
+      <include>Ifx_MHA_BridgeDrv.xml</include>
+    </tabcontainer>
+    <includepath path="../../TLE987x-eSL-BAS-EVAL/TLE9879QXA40/"/>
+    <include>MATHPKG.xml</include>
+    <include>ICW_TLE987x.xml</include>
+  </tabcontainer>
+</ifxmlcfg>

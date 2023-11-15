@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.6.2">
+    <checksum>922c2aa7f9bf67c0b0b37d739f66fd2f9b264f9f01108d16332783a46d391a74</checksum>
+    <version label="V1.0.6"/>
+    <header file="Ifx_MDA_FocControllerF16_Cfg.h" fullname="1"/>
+    <!--********************************************************************************-->
+    <!--                                      FOC                                       -->
+    <!--********************************************************************************-->
+    <groupcontainer label="FOC Controller">        
+        <timer define="INIT_TIMER_DRIVEALGO" interval="10" singleShot="1" run="1" visible="false">
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.DIRECT_INDUCTANCE_MH.max=IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_TEMP"/>
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.QUADRATURE_INDUCTANCE_MH.max=IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_TEMP"/>
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_ID_PI_PROPGAIN_MAX"/>
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_IQ_PI_PROPGAIN_MAX"/>
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_ID_PI_KI_TS_MAX"/>
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_IQ_PI_KI_TS_MAX"/>
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_ID_PI_KAW_TS_MAX"/>
+            <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_IQ_PI_KAW_TS_MAX"/>
+        </timer>
+        
+        <gridcontainer columns="3" label="Field Oriented Controller" desc="Field Oriented Controller Parameters">
+            <groupcontainer label="System Parameters">
+                <treecontainer headerlabels="Structure;Settings;" columnwidths="350;200;0">
+                    <doublespinbox label="Base voltage" suffix=" V" define="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V" header="Ifx_MDA_FocControllerF16_Cfg.h" svd="0" default="24.00000">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V.min=0"/>
+                    </doublespinbox>
+                    
+                    <!-- Limit max and min values of the PI outputs -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.MAX_VOLTAGE_V" formula="(32767/32768)*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_LOW_LIMIT_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.MAX_VOLTAGE_V"/>
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_UPP_LIMIT_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.MAX_VOLTAGE_V"/>
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_LOW_LIMIT_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.MAX_VOLTAGE_V"/>
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_UPP_LIMIT_REAL.max=IFX_MDA_FOCCONTROLLERF16_CFG.MAX_VOLTAGE_V"/>
+                    </math>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.MIN_VOLTAGE_V" formula="0-IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_LOW_LIMIT_REAL.min=IFX_MDA_FOCCONTROLLERF16_CFG.MIN_VOLTAGE_V"/>
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_UPP_LIMIT_REAL.min=IFX_MDA_FOCCONTROLLERF16_CFG.MIN_VOLTAGE_V"/>
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_LOW_LIMIT_REAL.min=IFX_MDA_FOCCONTROLLERF16_CFG.MIN_VOLTAGE_V"/>
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_UPP_LIMIT_REAL.min=IFX_MDA_FOCCONTROLLERF16_CFG.MIN_VOLTAGE_V"/>
+                    </math>
+
+                    <doublespinbox label="Base current" suffix=" A" define="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A" header="Ifx_MDA_FocControllerF16_Cfg.h" svd="0" default="24.00000">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A.min=0"/>
+                    </doublespinbox>
+                    
+                    <doublespinbox label="Base inductance" suffix=" mH" define="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_MH"  default="2.00000" >
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_MH.min=0"/>
+                    </doublespinbox>
+                    
+                    <!-- Sampling time -->
+                    <spinbox label="Sampling time" suffix=" us" define="IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US" header="Ifx_MDA_FocControllerF16_Cfg.h" svd="0" default="50" range="25;10000"/>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_TEMP" formula="(32767/32768)*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_MH"  visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.DIRECT_INDUCTANCE_MH.max=IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_TEMP"/>
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.QUADRATURE_INDUCTANCE_MH.max=IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_TEMP"/>
+                    </math>
+            
+                    <doublespinbox label="Direct inductance" suffix=" mH" define="IFX_MDA_FOCCONTROLLERF16_CFG.DIRECT_INDUCTANCE_MH"  default="1.00000" range="0;100"/>
+                    <doublespinbox label="Quadrature inductance" suffix=" mH" define="IFX_MDA_FOCCONTROLLERF16_CFG.QUADRATURE_INDUCTANCE_MH"  default="1.00000" range="0;100"/>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.DIRECT_INDUCTANCE_Q15" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.DIRECT_INDUCTANCE_MH/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_MH*2^15)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" svd="0"/>
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.QUADRATURE_INDUCTANCE_Q15" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.QUADRATURE_INDUCTANCE_MH/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_INDUCTANCE_MH*2^15)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" svd="0"/>
+                    
+                    <checkbox label="Enable DQ decoupling" define="IFX_MDA_FOCCONTROLLERF16_CFG.DQDECOUPLINGENABLE" header="Ifx_MDA_FocControllerF16_Cfg.h" default="1"/>
+                    
+                    <!-- Calculate Q formats automatically and lock Q formats -->
+                    <checkbox label="Calculate best precision Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT" default="1" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE;IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE;IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_AUTO_Q_FORMAT_VALUE;IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_AUTO_Q_FORMAT_VALUE;IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_AUTO_Q_FORMAT_VALUE;IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_AUTO_Q_FORMAT_VALUE"/>
+                    <checkbox label="Limit voltage vector with D axis prioritization" define="IFX_MDA_FOCCONTROLLERF16_CFG.LIMIT_VOLT_VECTOR_D_PRIO" header="Ifx_MDA_FocControllerF16_Cfg.h" default="1"/>
+                </treecontainer>
+            </groupcontainer>
+
+            <!-- ID -->
+            <groupcontainer label="Id PI controller">
+                <treecontainer headerlabels="Structure;Settings;" columnwidths="350;200;0">
+                    <doublespinbox label="Proportional gain" suffix=" V/A" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_REAL" default="0.01000"/>
+                    
+                    <math label="Proportional gain" format="%.5f" formula="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_REAL*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN" visible="false" />
+                    
+                    <!-- Calculate Q format automatically -->
+                    <math label="Auto Q format" formula="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN &lt; 1 ? 15 : 15-ceil(log10(IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN)/log10(2))" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false"/>
+                    
+                    <!-- Handle special case where input is a power of 2 -->
+                    <math label="Auto Q format" formula="(2^(15-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN ? IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE" svd="0" visible="false"/>
+                    
+                    <!-- Just updates the Q format if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_UPDATE_Q_FORMAT" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_Q_FORMAT" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_UPDATE_Q_FORMAT"/>
+                    </math>
+                    
+                    <!-- Limit of the gain parameter according to Q format -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_MAX" formula="((2^(16-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_Q_FORMAT-1))-(2^(-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_Q_FORMAT)))*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A" svd="0" visible="false"/>
+                    
+                    <!-- Limit the gain depending if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_ID_PI_PROPGAIN_MAX" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? 32767*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_MAX" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="INIT_TIMER_DRIVEALGO.run=1"/>
+                    </math>
+                    
+                    <combo label="Proportional gain Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_Q_FORMAT" header="Ifx_MDA_FocControllerF16_Cfg.h" default="label=Q0 (0 fractional bits)">
+                        <item label="Q0 (0 fractional bits)" value="0" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q1 (1 fractional bits)" value="1" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q2 (2 fractional bits)" value="2" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q3 (3 fractional bits)" value="3" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q4 (4 fractional bits)" value="4" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q5 (5 fractional bits)" value="5" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q6 (6 fractional bits)" value="6" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q7 (7 fractional bits)" value="7" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q8 (8 fractional bits)" value="8" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q9 (9 fractional bits)" value="9" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q10 (10 fractional bits)" value="10" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q11 (11 fractional bits)" value="11" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q12 (12 fractional bits)" value="12" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q13 (13 fractional bits)" value="13" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q14 (14 fractional bits)" value="14" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                        <item label="Q15 (15 fractional bits)" value="15" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT=15" />
+                    </combo>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN*2^IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_PROPGAIN_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                    
+                    <doublespinbox label="Integral gain " suffix=" V/As" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_REAL" default="0.01000"/>
+                    <math label="Integral gain x Sampling time, Ki*Ts" format="%.5f" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS" formula="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_REAL*(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A)/(IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V*1000000)" visible="false" />
+                    
+                    <!-- Calculate Q format automatically -->
+                    <math label="Auto Q format" formula="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS &lt; 1 ? 15 : 15-ceil(log10(IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS)/log10(2))" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false"/>
+                    
+                    <!-- Handle special case where input is a power of 2 -->
+                    <math label="Auto Q format" formula="(2^(15-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS ? IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_AUTO_Q_FORMAT_VALUE" svd="0" visible="false"/>
+                    
+                    <!-- Just updates the Q format if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_UPDATE_Q_FORMAT" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_AUTO_Q_FORMAT_VALUE : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_Q_FORMAT" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_UPDATE_Q_FORMAT"/>
+                    </math>
+                    
+                    <!-- Limit of the gain parameter according to Q format -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_MAX" formula="((2^(16-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_Q_FORMAT-1))-(2^(-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_Q_FORMAT)))*(IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V*1000000)/(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A)" svd="0" visible="false"/>
+                    
+                    <!-- Limit the gain depending if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_ID_PI_KI_TS_MAX" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? 32767*(IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V*1000000)/(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A) : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_MAX" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="INIT_TIMER_DRIVEALGO.run=1"/>
+                    </math>
+                    
+                    <combo label="Ki*Ts Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_Q_FORMAT" header="Ifx_MDA_FocControllerF16_Cfg.h" default="label=Q0 (0 fractional bits)">
+                        <item label="Q0 (0 fractional bits)" value="0" />
+                        <item label="Q1 (1 fractional bits)" value="1" />
+                        <item label="Q2 (2 fractional bits)" value="2" />
+                        <item label="Q3 (3 fractional bits)" value="3" />
+                        <item label="Q4 (4 fractional bits)" value="4" />
+                        <item label="Q5 (5 fractional bits)" value="5" />
+                        <item label="Q6 (6 fractional bits)" value="6" />
+                        <item label="Q7 (7 fractional bits)" value="7" />
+                        <item label="Q8 (8 fractional bits)" value="8" />
+                        <item label="Q9 (9 fractional bits)" value="9" />
+                        <item label="Q10 (10 fractional bits)" value="10" />
+                        <item label="Q11 (11 fractional bits)" value="11" />
+                        <item label="Q12 (12 fractional bits)" value="12" />
+                        <item label="Q13 (13 fractional bits)" value="13" />
+                        <item label="Q14 (14 fractional bits)" value="14" />
+                        <item label="Q15 (15 fractional bits)" value="15" />
+                    </combo>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS*2^IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KI_TS_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+
+                    <!-- User enters real lower limit -->
+                    <doublespinbox label="Output lower limit" suffix=" V" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_LOW_LIMIT_REAL" default="-1.00000" />
+                    
+                    <!-- Calculated normalized lower limit -->
+                    <math label="Output lower limit" format="%.5f" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_LOW_LIMIT" formula="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_LOW_LIMIT_REAL/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V" visible="false" />
+ 
+                    <!-- User enters real upper limit -->
+                    <doublespinbox label="Output upper limit" suffix=" V" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_UPP_LIMIT_REAL" default="1.00000" />
+                    
+                    <!-- Calculated normalized upper limit -->
+                    <math label="Output upper limit" format="%.5f" formula="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_UPP_LIMIT_REAL/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_UPP_LIMIT" visible="false" />
+                    
+                    <combo label="Limits Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT" header="Ifx_MDA_FocControllerF16_Cfg.h" default="label=Q15 (15 fractional bits)">
+                        <item label="Q0 (0 fractional bits)" value="0" />
+                        <item label="Q1 (1 fractional bits)" value="1" />
+                        <item label="Q2 (2 fractional bits)" value="2" />
+                        <item label="Q3 (3 fractional bits)" value="3" />
+                        <item label="Q4 (4 fractional bits)" value="4" />
+                        <item label="Q5 (5 fractional bits)" value="5" />
+                        <item label="Q6 (6 fractional bits)" value="6" />
+                        <item label="Q7 (7 fractional bits)" value="7" />
+                        <item label="Q8 (8 fractional bits)" value="8" />
+                        <item label="Q9 (9 fractional bits)" value="9" />
+                        <item label="Q10 (10 fractional bits)" value="10" />
+                        <item label="Q11 (11 fractional bits)" value="11" />
+                        <item label="Q12 (12 fractional bits)" value="12" />
+                        <item label="Q13 (13 fractional bits)" value="13" />
+                        <item label="Q14 (14 fractional bits)" value="14" />
+                        <item label="Q15 (15 fractional bits)" value="15" />
+                    </combo>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_LOW_LIMIT_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_LOW_LIMIT*2^IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_UPP_LIMIT_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_OUT_UPP_LIMIT*2^IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_LIMIT_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                    
+                    <!-- Anti-windup gain -->
+                    <doublespinbox label="Anti-windup gain (Back Calculation)" suffix=" 1/As" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_REAL" default="0.01000"/>
+                    <math label="Anti-windup gain x Sampling time, Kaw*Ts" format="%.5f" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS" formula="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_REAL*(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A)/(1000000)" visible="false" />
+                    
+                    <!-- Calculate Q format automatically -->
+                    <math label="Auto Q format" formula="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS &lt; 1 ? 15 : 15-ceil(log10(IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS)/log10(2))" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false"/>
+                    
+                    <!-- Handle special case where input is a power of 2 -->
+                    <math label="Auto Q format" formula="(2^(15-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS ? IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_AUTO_Q_FORMAT_VALUE" svd="0" visible="false"/>
+                    
+                    <!-- Just updates the Q format if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_UPDATE_Q_FORMAT" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_AUTO_Q_FORMAT_VALUE : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_Q_FORMAT" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_UPDATE_Q_FORMAT"/>
+                    </math>
+                    
+                    <!-- Limit of the gain parameter according to Q format -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_MAX" formula="((2^(16-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_Q_FORMAT-1))-(2^(-IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_Q_FORMAT)))*(1000000)/(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A)" svd="0" visible="false"/>
+                    
+                    <!-- Limit the gain depending if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_ID_PI_KAW_TS_MAX" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? 32767*(1000000)/(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A) : IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_MAX" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="INIT_TIMER_DRIVEALGO.run=1"/>
+                    </math>
+                    
+                    <combo label="Kaw*Ts Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_Q_FORMAT" header="Ifx_MDA_FocControllerF16_Cfg.h" default="label=Q0 (0 fractional bits)">
+                        <item label="Q0 (0 fractional bits)" value="0" />
+                        <item label="Q1 (1 fractional bits)" value="1" />
+                        <item label="Q2 (2 fractional bits)" value="2" />
+                        <item label="Q3 (3 fractional bits)" value="3" />
+                        <item label="Q4 (4 fractional bits)" value="4" />
+                        <item label="Q5 (5 fractional bits)" value="5" />
+                        <item label="Q6 (6 fractional bits)" value="6" />
+                        <item label="Q7 (7 fractional bits)" value="7" />
+                        <item label="Q8 (8 fractional bits)" value="8" />
+                        <item label="Q9 (9 fractional bits)" value="9" />
+                        <item label="Q10 (10 fractional bits)" value="10" />
+                        <item label="Q11 (11 fractional bits)" value="11" />
+                        <item label="Q12 (12 fractional bits)" value="12" />
+                        <item label="Q13 (13 fractional bits)" value="13" />
+                        <item label="Q14 (14 fractional bits)" value="14" />
+                        <item label="Q15 (15 fractional bits)" value="15" />
+                    </combo>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS*2^IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                </treecontainer>
+            </groupcontainer>
+
+            <!-- IQ -->
+            <groupcontainer label="Iq PI controller">
+                <treecontainer headerlabels="Structure;Settings;" label="Field Oriented Controller" desc="Field Oriented Controller Parameters" columnwidths="350;200;0">
+                    <doublespinbox label="Proportional gain" suffix=" V/A" default="0.01000" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_REAL"/>
+                    
+                    <math label="Proportional gain" format="%.5f" formula="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_REAL/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN" visible="false"/>
+                    
+                    <!-- Just updates the Q format if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_UPDATE_Q_FORMAT" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_Q_FORMAT" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_UPDATE_Q_FORMAT"/>
+                    </math>
+                    
+                    <!-- Calculate Q format automatically -->
+                    <math label="Auto Q format" formula="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN &lt; 1 ? 15 : 15-ceil(log10(IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN)/log10(2))" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false"/>
+                    
+                    <!-- Handle special case where input is a power of 2 -->
+                    <math label="Auto Q format" formula="(2^(15-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN ? IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_AUTO_Q_FORMAT_VALUE" svd="0" visible="false"/>
+                    
+                    <!-- Limit of the gain parameter according to Q format -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_MAX" formula="((2^(16-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_Q_FORMAT-1))-(2^(-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_Q_FORMAT)))*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A" svd="0" visible="false"/>
+                    
+                    <!-- Limit the gain depending if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_IQ_PI_PROPGAIN_MAX" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? 32767*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_MAX" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="INIT_TIMER_DRIVEALGO.run=1"/>
+                    </math>
+                    
+                    <combo label="Proportional gain Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_Q_FORMAT" header="Ifx_MDA_FocControllerF16_Cfg.h" default="label=Q0 (0 fractional bits)">
+                        <item label="Q0 (0 fractional bits)" value="0" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q1 (1 fractional bits)" value="1" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q2 (2 fractional bits)" value="2" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q3 (3 fractional bits)" value="3" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q4 (4 fractional bits)" value="4" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q5 (5 fractional bits)" value="5" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q6 (6 fractional bits)" value="6" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q7 (7 fractional bits)" value="7" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q8 (8 fractional bits)" value="8" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q9 (9 fractional bits)" value="9" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q10 (10 fractional bits)" value="10" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q11 (11 fractional bits)" value="11" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q12 (12 fractional bits)" value="12" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q13 (13 fractional bits)" value="13" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q14 (14 fractional bits)" value="14" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                        <item label="Q15 (15 fractional bits)" value="15" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT=15"/>
+                    </combo>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN*2^IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_PROPGAIN_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                    
+                    <doublespinbox label="Integral gain" suffix=" V/As" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_REAL" default="0.01000"/>
+                    <math label="Integral gain x Sampling time, Ki*Ts" format="%.5f" formula="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_REAL/(IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V*1000000)*(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A)" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS" visible="false"/>
+                    
+                    <!-- Limit of the gain parameter according to Q format -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_MAX" formula="((2^(16-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_Q_FORMAT-1))-(2^(-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_Q_FORMAT)))*(IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V*1000000)/(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A)" svd="0" visible="false"/>
+                    
+                    <!-- Limit the gain depending if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_IQ_PI_KI_TS_MAX" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? 32767*(IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V*1000000)/(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A) : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_MAX" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="INIT_TIMER_DRIVEALGO.run=1"/>
+                    </math>
+                    
+                    <!-- Calculate Q format automatically -->
+                    <math label="Auto Q format" formula="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS &lt; 1 ? 15 : 15-ceil(log10(IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS)/log10(2))" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false"/>
+                    
+                    <!-- Handle special case where input is a power of 2 -->
+                    <math label="Auto Q format" formula="(2^(15-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS ? IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_AUTO_Q_FORMAT_VALUE" svd="0" visible="false"/>
+                    
+                    <!-- Just updates the Q format if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_UPDATE_Q_FORMAT" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_AUTO_Q_FORMAT_VALUE : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_Q_FORMAT" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_UPDATE_Q_FORMAT"/>
+                    </math>
+                    
+                    <combo label="Ki*Ts Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_Q_FORMAT" header="Ifx_MDA_FocControllerF16_Cfg.h" default="label=Q0 (0 fractional bits)">
+                        <item label="Q0 (0 fractional bits)" value="0" />
+                        <item label="Q1 (1 fractional bits)" value="1" />
+                        <item label="Q2 (2 fractional bits)" value="2" />
+                        <item label="Q3 (3 fractional bits)" value="3" />
+                        <item label="Q4 (4 fractional bits)" value="4" />
+                        <item label="Q5 (5 fractional bits)" value="5" />
+                        <item label="Q6 (6 fractional bits)" value="6" />
+                        <item label="Q7 (7 fractional bits)" value="7" />
+                        <item label="Q8 (8 fractional bits)" value="8" />
+                        <item label="Q9 (9 fractional bits)" value="9" />
+                        <item label="Q10 (10 fractional bits)" value="10" />
+                        <item label="Q11 (11 fractional bits)" value="11" />
+                        <item label="Q12 (12 fractional bits)" value="12" />
+                        <item label="Q13 (13 fractional bits)" value="13" />
+                        <item label="Q14 (14 fractional bits)" value="14" />
+                        <item label="Q15 (15 fractional bits)" value="15" />
+                    </combo>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS*2^IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KI_TS_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                    
+                    <!-- User enters real lower limit -->
+                    <doublespinbox label="Output lower limit" suffix=" V" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_LOW_LIMIT_REAL" default="-1.00000" />
+                    
+                    <!-- Calculated normalized lower limit -->
+                    <math label="Output lower limit" format="%.5f" formula="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_LOW_LIMIT_REAL/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_LOW_LIMIT" visible="false" />
+
+                    <!-- User enters real upper limit -->
+                    <doublespinbox label="Output upper limit" suffix=" V" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_UPP_LIMIT_REAL" default="1.00000" />
+                    
+                    <!-- Calculated normalized upper limit -->
+                    <math label="Output upper limit" format="%.5f" formula="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_UPP_LIMIT_REAL/IFX_MDA_FOCCONTROLLERF16_CFG.BASE_VOLTAGE_V" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_UPP_LIMIT" visible="false" />
+                    
+                    <combo label="Limits Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT" header="Ifx_MDA_FocControllerF16_Cfg.h" default="label=Q15 (15 fractional bits)">
+                        <item label="Q0 (0 fractional bits)" value="0" />
+                        <item label="Q1 (1 fractional bits)" value="1" />
+                        <item label="Q2 (2 fractional bits)" value="2" />
+                        <item label="Q3 (3 fractional bits)" value="3" />
+                        <item label="Q4 (4 fractional bits)" value="4" />
+                        <item label="Q5 (5 fractional bits)" value="5" />
+                        <item label="Q6 (6 fractional bits)" value="6" />
+                        <item label="Q7 (7 fractional bits)" value="7" />
+                        <item label="Q8 (8 fractional bits)" value="8" />
+                        <item label="Q9 (9 fractional bits)" value="9" />
+                        <item label="Q10 (10 fractional bits)" value="10" />
+                        <item label="Q11 (11 fractional bits)" value="11" />
+                        <item label="Q12 (12 fractional bits)" value="12" />
+                        <item label="Q13 (13 fractional bits)" value="13" />
+                        <item label="Q14 (14 fractional bits)" value="14" />
+                        <item label="Q15 (15 fractional bits)" value="15" />
+                    </combo>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_LOW_LIMIT_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_LOW_LIMIT*2^IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_UPP_LIMIT_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_OUT_UPP_LIMIT*2^IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_LIMIT_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                    
+                    <!-- Anti-windup gain -->
+                    <doublespinbox label="Anti-windup gain (Back Calculation)" suffix=" 1/As" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_REAL" default="0.01000"/>
+                    <math label="Anti-windup gain x Sampling time, Kaw*Ts" format="%.5f" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS" formula="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_REAL*(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A)/(1000000)" visible="false" />
+                    
+                    <!-- Calculate Q format automatically -->
+                    <math label="Auto Q format" formula="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS &lt; 1 ? 15 : 15-ceil(log10(IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS)/log10(2))" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP" svd="0" visible="false"/>
+                    
+                    <!-- Handle special case where input is a power of 2 -->
+                    <math label="Auto Q format" formula="(2^(15-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP) == IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS ? IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP-1 : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_AUTO_Q_FORMAT_VALUE_TMP)" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_AUTO_Q_FORMAT_VALUE" svd="0" visible="false"/>
+                    
+                    <!-- Just updates the Q format if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_UPDATE_Q_FORMAT" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_AUTO_Q_FORMAT_VALUE : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_Q_FORMAT" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_Q_FORMAT=IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_UPDATE_Q_FORMAT"/>
+                    </math>
+                    
+                    <!-- Limit of the gain parameter according to Q format -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_MAX" formula="((2^(16-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_Q_FORMAT-1))-(2^(-IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_Q_FORMAT)))*(1000000)/(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A)" svd="0" visible="false"/>
+                    
+                    <!-- Limit the gain depending if auto calculation is enabled -->
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.UPDATE_IQ_PI_KAW_TS_MAX" formula="IFX_MDA_FOCCONTROLLERF16_CFG.AUTO_Q_FORMAT == 1 ? 32767*(1000000)/(IFX_MDA_FOCCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_FOCCONTROLLERF16_CFG.BASE_CURRENT_A) : IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_MAX" svd="0" visible="false">
+                        <action event="changed" cmd="setDef" data="INIT_TIMER_DRIVEALGO.run=1"/>
+                    </math>
+                    
+                    <combo label="Kaw*Ts Q format" define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_Q_FORMAT" header="Ifx_MDA_FocControllerF16_Cfg.h" default="label=Q0 (0 fractional bits)">
+                        <item label="Q0 (0 fractional bits)" value="0" />
+                        <item label="Q1 (1 fractional bits)" value="1" />
+                        <item label="Q2 (2 fractional bits)" value="2" />
+                        <item label="Q3 (3 fractional bits)" value="3" />
+                        <item label="Q4 (4 fractional bits)" value="4" />
+                        <item label="Q5 (5 fractional bits)" value="5" />
+                        <item label="Q6 (6 fractional bits)" value="6" />
+                        <item label="Q7 (7 fractional bits)" value="7" />
+                        <item label="Q8 (8 fractional bits)" value="8" />
+                        <item label="Q9 (9 fractional bits)" value="9" />
+                        <item label="Q10 (10 fractional bits)" value="10" />
+                        <item label="Q11 (11 fractional bits)" value="11" />
+                        <item label="Q12 (12 fractional bits)" value="12" />
+                        <item label="Q13 (13 fractional bits)" value="13" />
+                        <item label="Q14 (14 fractional bits)" value="14" />
+                        <item label="Q15 (15 fractional bits)" value="15" />
+                    </combo>
+                    
+                    <math define="IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_Q" formula="floor(IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS*2^IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_Q_FORMAT)" header="Ifx_MDA_FocControllerF16_Cfg.h" visible="false" />
+                </treecontainer>
+            </groupcontainer>
+            
+            <groupcontainer visible="false">
+                <!-- Lock anti-windup gain if the configuration for the anti-windup method is "Back Calculation" -->
+                <math define="IFX_MDA_FOCCONTROLLERF16_CFG.LOCK_ANTI_CHECK" formula="IFX_MATH_CFG_PI_ANTI_WIND!=2">
+                    <action event="changed" cmd="setDef" data="IFX_MDA_FOCCONTROLLERF16_CFG.LOCK_ANTI_WINDUP_GAINS=IFX_MDA_FOCCONTROLLERF16_CFG.LOCK_ANTI_CHECK"/>
+                </math>
+
+                <checkbox define="IFX_MDA_FOCCONTROLLERF16_CFG.LOCK_ANTI_WINDUP_GAINS" lockon="IFX_MDA_FOCCONTROLLERF16_CFG.ID_PI_KAW_TS_REAL=1;IFX_MDA_FOCCONTROLLERF16_CFG.IQ_PI_KAW_TS_REAL=1" />
+            </groupcontainer>           
+        </gridcontainer>
+    </groupcontainer>
+</ifxmlcfg>

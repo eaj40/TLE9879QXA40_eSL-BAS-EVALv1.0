@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package schemaVersion="1.7.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <license>doc/Licence_Agreement.txt</license>
+  <vendor>Infineon</vendor>
+  <name>TLE9879QXA40_eSL-BAS-EVAL</name>
+  <url>https://softwaretools.infineon.com/tools/com.ifx.tb.tool.tle987xeslbas</url>
+  <description>Infineon TLE987x_eSL-BAS-EVAL Motor Control Software</description>
+  <supportContact>http://www.infineon.com/cms/en/corporate/company/contact/support/index.html</supportContact>
+  <releases>
+    <release version="1.3.0" date="2022-09-30">
+    Initial CMSIS Release based on the official TLE987x Motor Control Software v1.3.0
+    </release>
+  </releases>
+  <conditions>
+    <condition id="cond_TLE987x">
+      <description>Infineon TLE987x device</description>
+      <require Dvendor="Infineon:7" Dname="TLE987*"/>
+    </condition>
+  </conditions>
+  <keywords>
+    <keyword>Infineon</keyword>
+    <keyword>TLE9879QXA40_eSL-BAS-EVAL</keyword>
+  </keywords>
+  <components>
+    <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MAS-BAS_v1.3.0-PR" Cversion="1.3.0" condition="cond_TLE987x">
+      <description>MAS-BAS_v1.3.0-PR</description>
+      <files>
+        <file category="utility" name="MAS-BAS_v1.3.0-PR/cfgwiz/Ifx_MAS_ModulatorF16.xml" attr="config"/>
+        <file category="header" name="MAS-BAS_v1.3.0-PR/include/Ifx_MAS_ModulatorF16.h" attr="config"/>
+        <file category="sourceC" name="MAS-BAS_v1.3.0-PR/src/Ifx_MAS_ModulatorF16.c" attr="config"/>
+        <file category="sourceC" name="MAS-BAS_v1.3.0-PR/src/Ifx_MAS_ModulatorF16_tableSin60Sqrt3.c" attr="config"/>
+      </files>
+    </component>
+    <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MDA-BAS_v1.3.0-PR" Cversion="1.3.0" condition="cond_TLE987x">
+      <description>MDA-BAS_v1.3.0-PR</description>
+      <files>
+        <file category="utility" name="MDA-BAS_v1.3.0-PR/cfgwiz/Ifx_MDA_FluxEstimatorF16.xml" attr="config"/>
+        <file category="utility" name="MDA-BAS_v1.3.0-PR/cfgwiz/Ifx_MDA_FocControllerF16.xml" attr="config"/>
+        <file category="utility" name="MDA-BAS_v1.3.0-PR/cfgwiz/Ifx_MDA_IToFControllerF16.xml" attr="config"/>
+        <file category="utility" name="MDA-BAS_v1.3.0-PR/cfgwiz/Ifx_MDA_StartAngleIdentF16.xml" attr="config"/>
+        <file category="utility" name="MDA-BAS_v1.3.0-PR/cfgwiz/Ifx_MDA_VToFControllerF16.xml" attr="config"/>
+        <file category="utility" name="MDA-BAS_v1.3.0-PR/cfgwiz/pos_est_ab.png" attr="config"/>
+        <file category="header" name="MDA-BAS_v1.3.0-PR/include/Ifx_MDA_FluxEstimatorF16.h" attr="config"/>
+        <file category="header" name="MDA-BAS_v1.3.0-PR/include/Ifx_MDA_FocControllerF16.h" attr="config"/>
+        <file category="header" name="MDA-BAS_v1.3.0-PR/include/Ifx_MDA_IToFControllerF16.h" attr="config"/>
+        <file category="header" name="MDA-BAS_v1.3.0-PR/include/Ifx_MDA_StartAngleIdentF16.h" attr="config"/>
+        <file category="header" name="MDA-BAS_v1.3.0-PR/include/Ifx_MDA_VToFControllerF16.h" attr="config"/>
+        <file category="sourceC" name="MDA-BAS_v1.3.0-PR/src/Ifx_MDA_FluxEstimatorF16.c" attr="config"/>
+        <file category="sourceC" name="MDA-BAS_v1.3.0-PR/src/Ifx_MDA_FocControllerF16.c" attr="config"/>
+        <file category="sourceC" name="MDA-BAS_v1.3.0-PR/src/Ifx_MDA_IToFControllerF16.c" attr="config"/>
+        <file category="sourceC" name="MDA-BAS_v1.3.0-PR/src/Ifx_MDA_StartAngleIdentF16.c" attr="config"/>
+        <file category="sourceC" name="MDA-BAS_v1.3.0-PR/src/Ifx_MDA_VToFControllerF16.c" attr="config"/>
+      </files>
+    </component>
+    <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MHA-BAS_TLE987x_v1.3.0-PR" Cversion="1.3.0" condition="cond_TLE987x">
+      <description>MHA-BAS_TLE987x_v1.3.0-PR</description>
+      <files>
+        <file category="utility" name="MHA-BAS_TLE987x_v1.3.0-PR/cfgwiz/Ifx_MHA_BridgeDrv.xml" attr="config"/>
+        <file category="utility" name="MHA-BAS_TLE987x_v1.3.0-PR/cfgwiz/Ifx_MHA_MeasurementADC.xml" attr="config"/>
+        <file category="utility" name="MHA-BAS_TLE987x_v1.3.0-PR/cfgwiz/Ifx_MHA_PatternGen.xml" attr="config"/>
+        <file category="header" name="MHA-BAS_TLE987x_v1.3.0-PR/include/Ifx_MHA_BridgeDrv.h" attr="config"/>
+        <file category="header" name="MHA-BAS_TLE987x_v1.3.0-PR/include/Ifx_MHA_BridgeDrv_TLE987.h" attr="config"/>
+        <file category="header" name="MHA-BAS_TLE987x_v1.3.0-PR/include/Ifx_MHA_MeasurementADC.h" attr="config"/>
+        <file category="header" name="MHA-BAS_TLE987x_v1.3.0-PR/include/Ifx_MHA_MeasurementADC_TLE987.h" attr="config"/>
+        <file category="header" name="MHA-BAS_TLE987x_v1.3.0-PR/include/Ifx_MHA_PatternGen.h" attr="config"/>
+        <file category="header" name="MHA-BAS_TLE987x_v1.3.0-PR/include/Ifx_MHA_PatternGen_TLE987.h" attr="config"/>
+        <file category="sourceC" name="MHA-BAS_TLE987x_v1.3.0-PR/src/Ifx_MHA_BridgeDrv_TLE987.c" attr="config"/>
+        <file category="sourceC" name="MHA-BAS_TLE987x_v1.3.0-PR/src/Ifx_MHA_MeasurementADC_TLE987.c" attr="config"/>
+        <file category="sourceC" name="MHA-BAS_TLE987x_v1.3.0-PR/src/Ifx_MHA_PatternGen_TLE987.c" attr="config"/>
+      </files>
+    </component>
+    <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="MS-BAS_TLE987x_v1.3.0-PR" Cversion="1.3.0" condition="cond_TLE987x">
+      <description>MS-BAS_TLE987x_v1.3.0-PR</description>
+      <files>
+        <file category="utility" name="MS-BAS_TLE987x_v1.3.0-PR/cfgwiz/Ifx_MS_FocSolutionF16.xml" attr="config"/>
+        <file category="header" name="MS-BAS_TLE987x_v1.3.0-PR/include/Ifx_MS_FocSolutionF16.h" attr="config"/>
+        <file category="sourceC" name="MS-BAS_TLE987x_v1.3.0-PR/src/Ifx_MS_FocSolutionF16.c" attr="config"/>
+      </files>
+    </component>
+    <component Cclass="TLE987x-eSL-BAS-EVAL" Cgroup="Math-BAS_TLE98xx_v1.3.0-PR" Cversion="1.3.0" condition="cond_TLE987x">
+      <description>Math-BAS_TLE98xx_v1.3.0-PR</description>
+      <files>
+        <file category="utility" name="Math-BAS_TLE98xx_v1.3.0-PR/cfgwiz/MATHPKG.xml" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_ComponentID.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_ComponentVersion.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Abs.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_AbsSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_AccelLimitF16.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Add.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_AddSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_AdvancedMath.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_All.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Arithmetic.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Atan.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Atan2.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_CartToPolar.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Clarke.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_ConvSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Cos.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_CurrentReconstruction.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Div.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_DivSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_DivShL.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_DivShLR.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_DivShLRSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_DivShLSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_DivShLSatNZ.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_DqDecouplingF16.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Interp1DLut.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_InvClarke.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_InvPark.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_LimitF16.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_LowPass1stF16.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MotorControl.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Mul.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShL.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShLR.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShLRAdd.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShLRAddSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShLRSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShLRSub.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShLRSubSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShR.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShRAdd.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShRAddSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShRSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShRSub.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_MulShRSubSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Neg.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_NegSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Park.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_PiF16.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_PLLF16.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_PolarToCart.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_RateLimitF16.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Sat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_ShL.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_ShLR.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_ShLRSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_ShLSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_ShR.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_ShRRnd.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Sin.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_SinCos.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_SpeedPreControlF16.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Sub.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_SubSat.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_Trigonometric.h" attr="config"/>
+        <file category="header" name="Math-BAS_TLE98xx_v1.3.0-PR/include/Ifx_Math_UsrOpt.h" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_AccelLimitF16.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_AdvancedMath.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Arithmetic.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Atan2.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_CartToPolar.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Clarke.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_CurrentReconstruction.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Interp1DLut.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_InvClarke.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_InvPark.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_LowPass1stF16.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Lut_Atan_F16_Table.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Lut_CartToPolar_F16_Table.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Lut_DivShL_F32_Table.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Lut_SinCos_F16_Table.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_MotorControl.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Park.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_PiF16.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_PLLF16.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_PolarToCart.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_RateLimitF16.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_SpeedPreControlF16.c" attr="config"/>
+        <file category="sourceC" name="Math-BAS_TLE98xx_v1.3.0-PR/src/Ifx_Math_Trigonometric.c" attr="config"/>
+      </files>
+    </component>
+  </components>
+  <examples>
+    <example name="TLE9879QXA40_eSL-BAS-EVAL" doc="doc/Abstract.txt" folder="TLE987x_FOC_BASIC_Sensorless_Example">
+      <description>Example project using the Motor Control Software Libraries BASIC for TLE987x and the corresponding SDK for TLE987x</description>
+      <board name="TLE9879 EvalKit" vendor="Infineon"/>
+      <project>
+        <environment name="uv" load="FOC.uvprojx"/>
+      </project>
+      <attributes>
+        <category>Motor Control Library</category>
+      </attributes>
+    </example>
+  </examples>
+ </package>

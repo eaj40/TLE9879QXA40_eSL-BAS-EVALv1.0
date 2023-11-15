@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.5.0">
+    <checksum>ef09813420da28ba0f1fc85c391f43afc6a6cb4a4882af56c4c2dcdf66db886b</checksum>
+    <version label="V1.0.2"></version>
+    <tabcontainer label="Math Library">
+        <header file="Ifx_Math_Cfg.h" fullname="1"/>
+        <!--********************************************************************************-->
+        <!--                                      Math Package                              -->
+        <!--********************************************************************************-->
+        <gridcontainer columns="1" label="Math Library Configurations">
+            <treecontainer headerlabels="Structure;Settings;" columnwidths="450;150">
+                <!-- Math Config -->
+                <combo label="PI controllers discretization method" define="IFX_MATH_CFG_PI_DISC" header="Ifx_Math_Cfg.h" svd="0" default="label=Trapezoidal">
+                    <item label="Trapezoidal" value="0" />
+                    <item label="Backward Euler" value="1" />
+                    <item label="Forward Euler" value="2" />
+                </combo>
+                        
+                <combo label="PI controllers anti-windup method" define="IFX_MATH_CFG_PI_ANTI_WIND" header="Ifx_Math_Cfg.h" svd="0" default="label=Clamp">
+                    <item label="None" value="0" />
+                    <item label="Clamp" value="1" />
+                    <item label="Back Calculation" value="2" />
+                </combo>
+                
+                <combo label="PLL delay length" define="IFX_MATH_CFG_PLL_DELAY_LENGTH" header="Ifx_Math_Cfg.h" svd="0" default="label=32 cycles">
+                    <item label="2 cycles" value="2" />
+                    <item label="4 cycles" value="4" />
+                    <item label="8 cycles" value="8" />
+                    <item label="16 cycles" value="16" />
+                    <item label="32 cycles" value="32" />
+                </combo>
+                
+                <combo label="Cartesian to Polar table size" define="IFX_MATH_CFG_CARTTOPOLAR_LUT_SIZE" header="Ifx_Math_Cfg.h" default="label=10 bits">
+                    <item label="8 bits" value="8" />
+                    <item label="10 bits" value="10" />
+                    <item label="12 bits" value="12" />
+                </combo>
+                
+                <combo label="Sine table size" define="IFX_MATH_CFG_SIN_LUT_SIZE" header="Ifx_Math_Cfg.h" default="label=10 bits">
+                    <item label="8 bits" value="8" />
+                    <item label="10 bits" value="10" />
+                    <item label="12 bits" value="12" />
+                </combo>
+                
+                <combo label="Atan table size" define="IFX_MATH_CFG_ATAN_LUT_SIZE" header="Ifx_Math_Cfg.h" default="label=10 bits">
+                    <item label="8 bits" value="8" />
+                    <item label="10 bits" value="10" />
+                    <item label="12 bits" value="12" />
+                </combo>
+            </treecontainer>
+        </gridcontainer>
+    </tabcontainer>
+</ifxmlcfg>

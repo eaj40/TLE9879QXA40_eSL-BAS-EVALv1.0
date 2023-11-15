@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.5.0">
+    <checksum>285f9bef7c3dc019a62da27153b23d55b4372dbe112ed9b1250e20f5de135e7d</checksum>
+    <version label="V1.0.4"/>
+    <header file="Ifx_MDA_VToFControllerF16_Cfg.h" fullname="1"/>
+    <!--********************************************************************************-->
+    <!--                                      V/F                                       -->
+    <!--********************************************************************************-->
+    <treecontainer headerlabels="Structure;Settings;" label="V/f" desc="V/f Parameters" columnwidths="450;250">  
+
+        <timer define="BASE_MECH_SPEED_MAX_RPM_TIMER" interval="10" singleShot="1" run="1" visible="false">
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_RPM.max=IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_MAX_RPM" />
+        </timer>
+
+        <doublespinbox label="Base voltage" suffix=" V" define="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V" header="Ifx_MDA_VToFControllerF16_Cfg.h" default="24.00000">
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V.min=1"/>
+        </doublespinbox>
+
+        <spinbox label="Base mechanical speed" suffix=" rpm" define="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_RPM" default="8000">
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_RPM.min=1"/>
+            <action event="changed" cmd="setDef" data="BASE_MECH_SPEED_MAX_RPM_TIMER.run=1"/>
+        </spinbox>
+
+        <math label="Base electrical speed" unit=" rad/s" define="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_ELEC_SPEED_RADPS" formula="floor(IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_RPM*IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS*6.283185307179586/60)" header="Ifx_MDA_VToFControllerF16_Cfg.h" svd="0" />
+
+        <spinbox label="Sampling time" suffix=" us" define="IFX_MDA_VTOFCONTROLLERF16_CFG.SAMPLING_TIME_US" header="Ifx_MDA_VToFControllerF16_Cfg.h" default="50" range="25;10000">
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.SAMPLING_TIME_US.min=1"/>
+            <action event="changed" cmd="setDef" data="BASE_MECH_SPEED_MAX_RPM_TIMER.run=1"/>
+        </spinbox>
+
+        <spinbox label="Pole pairs" define="IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS" svd="0" default="4">
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS.min=1"/>
+            <action event="changed" cmd="setDef" data="BASE_MECH_SPEED_MAX_RPM_TIMER.run=1"/>
+        </spinbox>
+
+        <!-- Limit the base speed according to the sampling time and data type of Angle increment -->
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_MAX_RPM" formula="(1000000*60)/(6.283185307179586*IFX_MDA_VTOFCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS)" visible="false"/>
+
+        <spinbox label="Rated mechanical speed" suffix=" rpm" define="IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_MECH_SPEED_RPM" default="4000">
+            <!-- Limit the corner mechanical speed to the rated speed -->
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.CORNER_MECH_SPEED_RPM.max=IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_MECH_SPEED_RPM" />
+        </spinbox>
+
+        <math label="Rated electrical speed" unit=" rad/s" define="IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_ELEC_SPEED_RADPS" formula="floor(IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_MECH_SPEED_RPM*IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS*6.283185307179586/60)" svd="0" />
+
+        <spinbox label="Corner mechanical speed" suffix=" rpm" define="IFX_MDA_VTOFCONTROLLERF16_CFG.CORNER_MECH_SPEED_RPM" default="250" >
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_MECH_SPEED_RPM.min=IFX_MDA_VTOFCONTROLLERF16_CFG.CORNER_MECH_SPEED_RPM"/>
+        </spinbox>
+        
+        <math label="Corner electrical speed" unit=" rad/s" define="IFX_MDA_VTOFCONTROLLERF16_CFG.CORNER_ELEC_SPEED_RADPS" formula="floor(IFX_MDA_VTOFCONTROLLERF16_CFG.CORNER_MECH_SPEED_RPM*IFX_MDA_VTOFCONTROLLERF16_CFG.POLE_PAIRS*6.283185307179586/60)" svd="0" />
+
+        <!-- Limit the rated speed to the base mechanical speed - resolution -->
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_TEMP_RPM" formula="(32767/32768)*IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_RPM" visible="false" >
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_MECH_SPEED_RPM.max=IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_MECH_SPEED_TEMP_RPM"/>
+        </math>
+
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_TEMP" formula="(32767/32768)*IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V" visible="false" >
+            <!-- Limit the rated volatge to the base voltage - resolution -->
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.V2RATED_SPEED_V.max=IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_TEMP"/>
+        </math>
+
+        <doublespinbox label="Voltage at rated speed" suffix=" V" define="IFX_MDA_VTOFCONTROLLERF16_CFG.V2RATED_SPEED_V" default="12.00000">
+            <!-- Limit the corner voltage to the rated volatge -->
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.V2CORNER_SPEED_V.max=IFX_MDA_VTOFCONTROLLERF16_CFG.V2RATED_SPEED_V"/>
+        </doublespinbox>
+        <doublespinbox label="Voltage at corner speed" define="IFX_MDA_VTOFCONTROLLERF16_CFG.V2CORNER_SPEED_V" suffix=" V" default="0.75000" >
+            <!-- Limit the minimum voltage to the corner volatge -->
+            <action event="changed" cmd="setDef" data="IFX_MDA_VTOFCONTROLLERF16_CFG.V2MIN_SPEED_V.max=IFX_MDA_VTOFCONTROLLERF16_CFG.V2CORNER_SPEED_V"/>            
+        </doublespinbox>
+        <doublespinbox label="Voltage at minimum speed" define="IFX_MDA_VTOFCONTROLLERF16_CFG.V2MIN_SPEED_V" suffix=" V" default="0.75000" />
+
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.ANGLE_INC_Q14" formula="floor(IFX_MDA_VTOFCONTROLLERF16_CFG.SAMPLING_TIME_US*IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_ELEC_SPEED_RADPS*16384/(1000000.0*6.283185307179586))" header="Ifx_MDA_VToFControllerF16_Cfg.h" visible="false" />            
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.CORNER_SPEED" formula="floor((IFX_MDA_VTOFCONTROLLERF16_CFG.CORNER_ELEC_SPEED_RADPS*(2^15))/IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_ELEC_SPEED_RADPS)" header="Ifx_MDA_VToFControllerF16_Cfg.h" visible="false" />
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_SPEED" formula="floor((IFX_MDA_VTOFCONTROLLERF16_CFG.RATED_ELEC_SPEED_RADPS*(2^15))/IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_ELEC_SPEED_RADPS)" header="Ifx_MDA_VToFControllerF16_Cfg.h" visible="false" />
+                    
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.V2MIN_SPEED" formula="floor((IFX_MDA_VTOFCONTROLLERF16_CFG.V2MIN_SPEED_V*(2^15))/IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V)" header="Ifx_MDA_VToFControllerF16_Cfg.h" visible="false" />
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.V2CORNER_SPEED" formula="floor((IFX_MDA_VTOFCONTROLLERF16_CFG.V2CORNER_SPEED_V*(2^15))/IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V)" header="Ifx_MDA_VToFControllerF16_Cfg.h" visible="false" />
+        <math define="IFX_MDA_VTOFCONTROLLERF16_CFG.V2RATED_SPEED" formula="floor((IFX_MDA_VTOFCONTROLLERF16_CFG.V2RATED_SPEED_V*(2^15))/IFX_MDA_VTOFCONTROLLERF16_CFG.BASE_VOLTAGE_V)" header="Ifx_MDA_VToFControllerF16_Cfg.h" visible="false" />
+    </treecontainer>
+</ifxmlcfg>        
